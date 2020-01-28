@@ -335,6 +335,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                 <th style='text-align: center;'>Age</th>
                                                 <th style='text-align: center;'>Show</th>
                                                 <th style='text-align: center;'>Update</th>
+                                                <th style='text-align: center;'>Password Reset</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -375,6 +376,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                     </a>
                                                                 </div>
                                                             </td>
+                                                            <td>
+                                                                <div style='text-align: center;' class='table-data-feature'>
+                                                                    <a href='password_reset_student.php?edit=$sid'>
+                                                                    <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
+                                                                        <i class='fas fa-key'></i>
+                                                                    </button>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
                                                         </tr>
                                                     ";
                                                     $count++;
@@ -390,6 +400,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                 <th style='text-align: center;'>Age</th>
                                                 <th style='text-align: center;'>Show</th>
                                                 <th style='text-align: center;'>Update</th>
+                                                <th style='text-align: center;'>Password Reset</th>
                                             </tr>
                                         </tfoot>
                                     </table>
