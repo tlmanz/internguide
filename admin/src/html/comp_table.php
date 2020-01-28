@@ -357,7 +357,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                             <td><p style='text-align: center;'>$age</p></td>
                                                             <td>
                                                                 <div style='text-align: center;' class='table-data-feature'>
-                                                                    <a href='customer_show.php?edit=$1'>
+                                                                    <a href='company_show.php?edit=$1'>
                                                                     <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
                                                                         <i class='fas fa-list'></i>
                                                                     </button>
@@ -366,7 +366,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                             </td>
                                                             <td>
                                                                 <div style='text-align: center;' class='table-data-feature'>
-                                                                    <a href='customer_show.php?edit=$1'>
+                                                                    <a href='company_edit.php?edit=$1'>
                                                                     <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
                                                                         <i class='fas fa-edit'></i>
                                                                     </button>
