@@ -342,8 +342,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                 $sql = "select * from employee";
                                                 $runsql = mysqli_query($connection, $sql);
                                                 $count = 1;
+                                                
                                                 while($row = mysqli_fetch_array($runsql))
-                                                {
+                                                {   
+                                                    $sid = $row['id']; //cid for employee table is id
                                                     $firstname = $row['ename'];
                                                     $email = $row['email'];
                                                     $uni = "UOM";
@@ -357,7 +359,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                             <td><p style='text-align: center;'>$age</p></td>
                                                             <td>
                                                                 <div style='text-align: center;' class='table-data-feature'>
-                                                                    <a href='company_show.php?edit=$1'>
+                                                                    <a href='company_show.php?edit=$sid'>
                                                                     <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
                                                                         <i class='fas fa-list'></i>
                                                                     </button>
@@ -366,7 +368,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                             </td>
                                                             <td>
                                                                 <div style='text-align: center;' class='table-data-feature'>
-                                                                    <a href='company_edit.php?edit=$1'>
+                                                                    <a href='company_edit.php?edit=$sid'>
                                                                     <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
                                                                         <i class='fas fa-edit'></i>
                                                                     </button>
