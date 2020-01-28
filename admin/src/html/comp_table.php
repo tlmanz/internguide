@@ -321,8 +321,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Student Table</h4>
-                                <h6 class="card-subtitle">This table contains all the students who registered with this system</h6>
+                                <h4 class="card-title">Company Table</h4>
+                                <h6 class="card-subtitle">This table contains all the Companies which registered with this system</h6>
                                 <div class="table-responsive">
                                     <table id="default_order" class="table table-striped table-bordered display no-wrap"
                                         style="width:100%">
@@ -378,7 +378,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                             </td>
                                                             <td>
                                                                 <div style='text-align: center;' class='table-data-feature'>
-                                                                    <a href='password_reset.php?edit=$sid&tab=employee'>
+                                                                    <a href='password_reset_company.php?edit=$sid'>
                                                                     <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
                                                                         <i class='fas fa-key'></i>
                                                                     </button>

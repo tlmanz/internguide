@@ -320,8 +320,7 @@
             <?php
             if(isset($_GET['edit'])){
                 $edit_id = $_GET['edit'];
-                $edit_table = $_GET['tab'];
-                $get_student = "select * from $edit_table where id='$edit_id'";
+                $get_student = "select * from employee where id='$edit_id'";
                 $run_edit_student = mysqli_query($connection , $get_student);
                 $row_emp = mysqli_fetch_array($run_edit_student);
                 $id = $row_emp['id'];
@@ -343,7 +342,7 @@
                             </div>
                             <br>
                             <div style="text-align: center;">
-                                <form action='../dist/php/reset_pw.php' method='post' enctype='multipart/form-data'>
+                                <form action='../dist/php/reset_pw_2.php' method='post' enctype='multipart/form-data'>
                                     <div class="form-body">
                                         <div class="row">
                                             <div class="col-md-6 m-auto">
