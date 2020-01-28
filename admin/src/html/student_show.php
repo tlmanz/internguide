@@ -317,10 +317,10 @@
                     <!-- *************************************************************** -->
                     <!-- Start First Cards -->
                     <!-- *************************************************************** -->
-                    <?php
+                   <?php
                         if(isset($_GET['edit'])){
                             $edit_id = $_GET['edit'];
-                            $get_student = "select * from customer_account where cid='$edit_id'";
+                            $get_student = "select * from customer_account where cid='$edit_id'"; //id is cid for customer_account table
                             $run_edit_student = mysqli_query($connection , $get_student);
                             $row_emp = mysqli_fetch_array($run_edit_student);
                             $id = $row_emp['cid'];
@@ -336,6 +336,7 @@
                             $gpa = $row_emp['gpa'];
                             $linkedin = $row_emp['linkedin'];
                             $web = $row_emp['web'];
+                            $age = $row_emp['age'];
                             $desc1 = $row_emp['description1'];
                             $photo = $row_emp['cphoto'];
                             $cv = $row_emp['cv'];
@@ -558,7 +559,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                 <!-- ============================================================== -->
                 <!-- End Container fluid  -->
                 <!-- ============================================================== -->

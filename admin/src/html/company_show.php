@@ -320,7 +320,7 @@
                     <?php
                         if(isset($_GET['edit'])){
                             $edit_id = $_GET['edit'];
-                            $get_student = "select * from customer_account where cid='$edit_id'";
+                            $get_student = "select * from customer_account where cid='$edit_id'"; //id is id for admin table
                             $run_edit_student = mysqli_query($connection , $get_student);
                             $row_emp = mysqli_fetch_array($run_edit_student);
                             $id = $row_emp['cid'];
