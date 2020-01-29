@@ -12,6 +12,7 @@ session_start();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->   
 	<link href="img/favicon.ico" rel="shortcut icon"/>
+    <title>Intern Guide - One Place for All Intern Needs</title>
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet">
@@ -50,7 +51,7 @@ session_start();
 			$introduction = $row['introduction'];
 			$vision = $row['vision'];
 			$mission = $row['mission'];
-			$photo1 = $row['photo1'];
+			$photo1 = $row['image'];
 			$loc1 = "../company/src/assets/".$photo1;
 			$photo2 = $row['photo2'];
 			$loc2 = "../company/src/assets/".$photo2;  

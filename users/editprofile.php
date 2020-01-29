@@ -4,10 +4,10 @@
     session_start();
      
     // Check if the user is already logged in, if yes then redirect him to welcome page
-    // if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_SESSION["usertype"]) ){
-    //     header("location: usr_login.php");
-    //     exit;
-    //     }
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_SESSION["usertype"]) || $_SESSION["usertype"] !== 'student'){
+    header("location: usr_login.php");
+    exit;
+    }
     ?>
     <!DOCTYPE html>
     <html dir="ltr" lang="en">
@@ -142,7 +142,7 @@
                                         My Profile</a>
                                     
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="javascript:void(0)"><i data-feather="power"
+                                    <a class="dropdown-item" href="php/logout.php"><i data-feather="power"
                                             class="svg-icon mr-2 ml-1"></i>
                                         Logout</a>
                                     
@@ -174,7 +174,7 @@
                                     </span></a>
                             </li>
                             <li class="list-divider"></li>
-                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="logout.php"
+                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="php/logout.php"
                                     aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
                                         class="hide-menu">Logout</span></a></li>
 
