@@ -470,9 +470,9 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group mb-4">
                                                                 <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="field">
-                                                                    <option type='text' value="1" >One</option>
-                                                                    <option type='text' value="2">Two</option>
-                                                                    <option type='text' value="3">Three</option>
+                                                                    <option type='text' value="Electronic and Telecommunication" >Electronic and Telecommunication</option>
+                                                                    <option type='text' value="Computer Science and Engineering">Computer Science and Engineering</option>
+                                                                    <option type='text' value="Civil Engineering">Civil Engineering</option>
                                                                 </select>
                                                             </div>
                                                         </div>
