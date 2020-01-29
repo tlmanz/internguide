@@ -4,10 +4,10 @@
     session_start();
      
     // Check if the user is already logged in, if yes then redirect him to welcome page
-    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_SESSION["usertype"]) ){
-        header("location: user_login.php");
-        exit;
-        }
+    // if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_SESSION["usertype"]) ){
+    //     header("location: usr_login.php");
+    //     exit;
+    //     }
     ?>
     <!DOCTYPE html>
     <html dir="ltr" lang="en">
@@ -20,16 +20,16 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <!-- Favicon icon -->
-        <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-        <link href="../assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+        <link rel="icon" type="image/png" sizes="16x16" href="../admin/src/assets/images/favicon.png">
+        <link href="../admin/src/assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
         <title>Intern Guide - One Place for All Intern Needs</title>
         <!-- Custom CSS -->
-        <link href="../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
-        <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
-        <link href="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+        <link href="../admin/src/assets/extra-libs/c3/c3.min.css" rel="stylesheet">
+        <link href="../admin/src/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+        <link href="../admin/src/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
         <!-- Custom CSS -->
         <!-- <link href="../dist/css/style.min.css" rel="stylesheet"> -->
-        <link href="../dist/css/style.css" rel="stylesheet">
+        <link href="../admin/src/dist/css/style.css" rel="stylesheet">
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -71,17 +71,17 @@
                             <a href="index.php">
                                 <b class="logo-icon">
                                     <!-- Dark Logo icon -->
-                                    <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                                    <img src="../admin/src/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
                                     <!-- Light Logo icon -->
-                                    <img src="../assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                                    <img src="../admin/src/assets/images/logo-icon.png" alt="homepage" class="light-logo" />
                                 </b>
                                 <!--End Logo icon -->
                                 <!-- Logo text -->
                                 <span class="logo-text">
                                     <!-- dark Logo text -->
-                                    <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                                    <img src="../admin/src/assets/images/logo-text.png" alt="homepage" class="dark-logo" />
                                     <!-- Light Logo text -->
-                                    <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                                    <img src="../admin/src/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
                                 </span>
                             </a>
                         </div>
@@ -114,32 +114,23 @@
                             <!-- ============================================================== -->
                             <!-- Search -->
                             <!-- ============================================================== -->
-                            <li class="nav-item d-none d-md-block">
-                                <a class="nav-link" href="javascript:void(0)">
-                                    <form>
-                                        <div class="customize-input">
-                                            <input class="form-control custom-shadow custom-radius border-0 bg-white"
-                                                type="search" placeholder="Search" aria-label="Search">
-                                            <i class="form-control-icon" data-feather="search"></i>
-                                        </div>
-                                    </form>
-                                </a>
-                            </li>
+                            
                             <!-- ============================================================== -->
                             <!-- User profile and search -->
                             <?php
-                                $get_admin = "select * from admin where id=".$_SESSION['id'];
-                                $run_edit_admin = mysqli_query($connection , $get_admin);
-                                $row_admin = mysqli_fetch_array($run_edit_admin);
-                                $name = $row_admin['name'];
-                                $photo = $row_admin['aphoto'];
-                                $loc = "../assets/".$photo;                                    
+                                $get_user = "select * from customer_account where cid=".$_SESSION['cid'];
+                                $run_edit_user = mysqli_query($connection , $get_user);
+                                    $row_user = mysqli_fetch_array($run_edit_user);
+                                    $name = $row_user['firstname']." ".$row_user['lastname'];
+                                    $user_photo = $row_user['cphoto'];
+                                    $loc = "../admin/src/assets/".$user_photo; 
+                                                             
                             ?>
                             <!-- ============================================================== -->
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
-                                    <img src="<?php echo $loc ?>" alt="user" class="rounded-circle"
+                                    <img src=<?php echo $loc?> alt="user" class="rounded-circle"
                                         width="40">
                                     <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
                                             class="text-dark"><?php echo $name ?></span> <i data-feather="chevron-down"
@@ -176,94 +167,17 @@
                     <!-- Sidebar navigation-->
                     <nav class="sidebar-nav">
                         <ul id="sidebarnav">
-                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index.php"
-                                    aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
-                                        class="hide-menu">Dashboard</span></a></li>
-                            <li class="list-divider"></li> 
-                            <li class="nav-small-cap"><span class="hide-menu">User Management</span></li>
-                            <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
-                                    aria-expanded="false"><i class="fa fa-users-cog"></i><span
-                                        class="hide-menu">Administrators</span></a>
-                                <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                                    <li class="sidebar-item"><a href="admin_admin.php" class="sidebar-link"><span
-                                                class="hide-menu"> Admin Manager
-                                            </span></a>
-                                    </li>
-                                    <li class="sidebar-item"><a href="admin_table.php" class="sidebar-link"><span
-                                                class="hide-menu"> Admin List
-                                            </span></a>
-                                    </li>
-                                    <li class="sidebar-item"><a href="admin_add.php" class="sidebar-link"><span
-                                                class="hide-menu"> Add an Admin
-                                            </span></a>
-                                    </li>
-                                    <li class="sidebar-item"><a href="admin_remove.php" class="sidebar-link"><span
-                                                class="hide-menu"> Remove an Admin
-                                            </span></a>
-                                    </li>
-                                </ul>
-                                <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
-                                    aria-expanded="false"><i class="fa fa-users"></i><span
-                                        class="hide-menu">Students</span></a>
-                                <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                                    <li class="sidebar-item"><a href="student_admin.php" class="sidebar-link"><span
-                                                class="hide-menu"> Student Manager
-                                            </span></a>
-                                    </li>
-                                    <li class="sidebar-item"><a href="stu_table.php" class="sidebar-link"><span
-                                                class="hide-menu"> Student List
-                                            </span></a>
-                                    </li>
-                                    <li class="sidebar-item"><a href="student_admin.php" class="sidebar-link"><span
-                                                class="hide-menu"> Add a Student
-                                            </span></a>
-                                    </li>
-                                    <li class="sidebar-item"><a href="student_remove.php" class="sidebar-link"><span
-                                                class="hide-menu"> Remove a Student
-                                            </span></a>
-                                    </li>
-                                </ul>
-                                <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
-                                    aria-expanded="false"><i class="fa fa-city"></i><span
-                                        class="hide-menu">Companies</span></a>
-                                <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                                    <li class="sidebar-item"><a href="company_admin.php" class="sidebar-link"><span
-                                                class="hide-menu"> Company Manager
-                                            </span></a>
-                                    </li>
-                                    <li class="sidebar-item"><a href="comp_table.php" class="sidebar-link"><span
-                                                class="hide-menu"> Company List
-                                            </span></a>
-                                    </li>
-                                    <li class="sidebar-item"><a href="company_add.php" class="sidebar-link"><span
-                                                class="hide-menu"> Add a Company
-                                            </span></a>
-                                    </li>
-                                    <li class="sidebar-item"><a href="company_remove.php" class="sidebar-link"><span
-                                                class="hide-menu"> Remove a Company
-                                            </span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="list-divider"></li>
-                            <li class="nav-small-cap"><span class="hide-menu">Report Generation</span></li>
-
-                            <li class="sidebar-item"> <a class="sidebar-link" href="admin_pdf.php"
-                                    aria-expanded="false"><i class="fa fa-file-pdf"></i><span
-                                        class="hide-menu">Administrator Data
+                            
+                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="userprofile.php"
+                                    aria-expanded="false"><i data-feather="sidebar" class="feather-icon"></i><span
+                                        class="hide-menu">View profile
                                     </span></a>
                             </li>
-                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="student_pdf.php"
-                                    aria-expanded="false"><i class="fa fa-file-pdf"></i><span
-                                        class="hide-menu">Student Data</span></a></li>
-                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="company_pdf.php"
-                                    aria-expanded="false"><i class="fa fa-file-pdf"></i><span
-                                        class="hide-menu">Company Data</span></a></li>
-
                             <li class="list-divider"></li>
-                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="../dist/php/logout.php"
+                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="logout.php"
                                     aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
                                         class="hide-menu">Logout</span></a></li>
+
                         </ul>
                     </nav>
                     <!-- End Sidebar navigation -->
@@ -318,8 +232,8 @@
                     <!-- Start First Cards -->
                     <!-- *************************************************************** -->
                     <?php
-                        if(isset($_GET['edit'])){
-                            $edit_id = $_GET['edit'];
+                        if(isset($_SESSION['cid'])){
+                            $edit_id = $_SESSION['cid'];
                             $get_student = "select * from customer_account where cid='$edit_id'";
                             $run_edit_student = mysqli_query($connection , $get_student);
                             $row_emp = mysqli_fetch_array($run_edit_student);
@@ -340,8 +254,8 @@
                             $photo = $row_emp['cphoto'];
                             $cv = $row_emp['cv'];
                             $created = $row_emp['created_at'];
-                            $p_loc = "../assets/".$photo;
-                            $back = $_SESSION['prev'];
+                            $p_loc = "../admin/src/assets/".$photo;
+                            
                          }
                     ?>
                     <div class="row">
@@ -357,7 +271,7 @@
                                     </div>
                                     <br>
                                     <div style="text-align: center;">
-                                    <form action='../dist/php/student_update.php' method='post' enctype='multipart/form-data'>
+                                    <form action='../admin/src/dist/php/student_update.php' method='post' enctype='multipart/form-data'>
                                         <div class="form-body">
                                             <div class="form-group row">
                                                 <label class="col-md-2">User ID</label>
@@ -563,10 +477,6 @@
                                         <div style='text-align: center;'>
                                             <button type ='submit' class="btn btn-rounded btn-info"><i class='fa fa-sync-alt'></i>&nbspUpdate</button>
                                             &nbsp&nbsp
-                                            <a href = '<?php echo $back ?>' >
-                                                <button class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
-                                            </a>
-                                            &nbsp&nbsp
                                             <button type="reset" class="btn btn-rounded btn-danger"><i class='fa fa-ban'></i>&nbspReset</button>
                                         </div>
                                     </div>
@@ -602,27 +512,27 @@
         <!-- ============================================================== -->
         <!-- All Jquery -->
         <!-- ============================================================== -->
-        <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-        <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
-        <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../admin/src/assets/libs/jquery/dist/jquery.min.js"></script>
+        <script src="../admin/src/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+        <script src="../admin/src/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
         <!-- apps -->
         <!-- apps -->
-        <script src="../dist/js/app-style-switcher.js"></script>
-        <script src="../dist/js/feather.min.js"></script>
-        <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-        <script src="../dist/js/sidebarmenu.js"></script>
+        <script src="../admin/src/dist/js/app-style-switcher.js"></script>
+        <script src="../admin/src/dist/js/feather.min.js"></script>
+        <script src="../admin/src/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+        <script src="../admin/src/dist/js/sidebarmenu.js"></script>
         <!--Custom JavaScript -->
-        <script src="../dist/js/custom.min.js"></script>
+        <script src="../admin/src/dist/js/custom.min.js"></script>
         <!--This page JavaScript -->
-        <script src="../assets/extra-libs/c3/d3.min.js"></script>
-        <script src="../assets/extra-libs/c3/c3.min.js"></script>
-        <script src="../assets/libs/chartist/dist/chartist.min.js"></script>
-        <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-        <script src="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
-        <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
-        <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
-        <script src="../assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
-        <script src="../dist/js/pages/datatable/datatable-basic.init.js"></script>
+        <script src="../admin/src/assets/extra-libs/c3/d3.min.js"></script>
+        <script src="../admin/src/assets/extra-libs/c3/c3.min.js"></script>
+        <script src="../admin/src/assets/libs/chartist/dist/chartist.min.js"></script>
+        <script src="../admin/src/assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+        <script src="../admin/src/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
+        <script src="../admin/src/assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="../admin/src/dist/js/pages/dashboards/dashboard1.min.js"></script>
+        <script src="../admin/src/assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="../admin/src/dist/js/pages/datatable/datatable-basic.init.js"></script>
         <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     </body>
 

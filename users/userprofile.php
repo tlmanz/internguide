@@ -72,6 +72,25 @@ if ($result = mysqli_query($connection, $sql)) {
 					<!-- ============================================================== -->
 					<ul class="navbar-nav float-left mr-auto ml-3 pl-1">
 
+						<h3 class="page-title text-truncate text-dark font-weight-medium mb-1">
+                                <?php
+                                date_default_timezone_set('Asia/Colombo');
+                                if(date("H") < 12){
+                                    echo "Good Morning";
+                                }elseif(date("H") > 11 && date("H") < 18){
+                                    echo "Good Afternoon";
+                                }elseif(date("H") > 17){
+                                    echo "Good Evening";
+                                }
+                                ?>
+                            <?php echo $username ?>!</h3> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+                        <h1 style="font-size:120%; "selected><?php
+                                        date_default_timezone_set('Asia/Colombo');
+                                        $mydate=getdate(date("U"));
+                                        echo "$mydate[weekday], $mydate[month] $mydate[mday], $mydate[year]";
+                                    ?></h1>
+
 					
 						<!-- Notification -->
 
@@ -118,7 +137,7 @@ if ($result = mysqli_query($connection, $sql)) {
 		</header>
 
 		</header>
-
+        
 		<section class="hero-section">
 
 			<div class="container-fluid">
