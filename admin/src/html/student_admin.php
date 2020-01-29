@@ -398,6 +398,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                         </thead>
                                         <tbody>
                                             <?php
+                                            $_SESSION['prev']='student_admin.php';
                                         $sql = 'SELECT * FROM customer_account ORDER BY cid DESC LIMIT 5';
                                         $runsql = mysqli_query($connection, $sql);
                                         while($row = mysqli_fetch_array($runsql)){

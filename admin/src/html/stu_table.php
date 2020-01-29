@@ -343,7 +343,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                 $sql = "select * from customer_account";
                                                 $runsql = mysqli_query($connection, $sql);
                                                 $count = 1;
-                                                $_SESSION['prev'] = 'stu_table.php';
                                                 while($row = mysqli_fetch_array($runsql))
                                                 {   
                                                     $sid = $row['cid'];

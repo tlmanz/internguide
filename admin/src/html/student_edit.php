@@ -341,7 +341,6 @@
                             $cv = $row_emp['cv'];
                             $created = $row_emp['created_at'];
                             $p_loc = "../assets/".$photo;
-                            $back = $_SESSION['prev'];
                          }
                     ?>
                     <div class="row">
@@ -563,8 +562,8 @@
                                         <div style='text-align: center;'>
                                             <button type ='submit' class="btn btn-rounded btn-info"><i class='fa fa-sync-alt'></i>&nbspUpdate</button>
                                             &nbsp&nbsp
-                                            <a href = '<?php echo $back ?>' >
-                                                <button class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
+                                            <a href = "stu_table.php" >
+                                                <button class="btn btn-rounded btn-success"><i class='fa fa-table'></i>&nbspBack to Table</button>
                                             </a>
                                             &nbsp&nbsp
                                             <button type="reset" class="btn btn-rounded btn-danger"><i class='fa fa-ban'></i>&nbspReset</button>
