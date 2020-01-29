@@ -499,7 +499,7 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <input id='text-input' type="number" class="form-control" name="gpa"
-                                                                    placeholder="GPA" min="0" max="4.2"value="<?php echo $gpa ?>" required>
+                                                                    placeholder="GPA" step='0.0001' min="0" max="4.2"value="<?php echo $gpa ?>" required>
                                                             </div>
                                                         </div>
                                                     </div>
