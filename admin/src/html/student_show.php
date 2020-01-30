@@ -360,42 +360,41 @@
                                     <form action="#">
                                         <div class="form-body">
                                             <div class="form-group row">
-                                                <label class="col-md-2">User ID</label>
+                                                <label class="col-md-2"></label>
                                                 <div class="col-md-10">
                                                     <div class="row">
                                                         <div class="col-md-5">
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" value="<?php echo $id ?>" readonly>
+                                                                <label class="col-md-3">ID</label>
+                                                                <input type="text" class="form-control text-center"
+                                                                    placeholder="First Name" value='<?php echo $id ?>' readonly>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <label class="col-md-6">Username</label>
+                                                                <input type="text" class="form-control text-center"
+                                                                    placeholder="Last Name" value='<?php echo $username?>' readonly>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-md-2">Username</label>
+                                                <label class="col-md-2"></label>
                                                 <div class="col-md-10">
                                                     <div class="row">
                                                         <div class="col-md-5">
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" value='<?php echo $username ?>' readonly>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-md-2">Name</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-5">
-                                                            <div class="form-group">
-                                                                <input type="text" class="form-control"
+                                                                <label class="col-md-6">First Name</label>
+                                                                <input type="text" class="form-control text-center"
                                                                     placeholder="First Name" value='<?php echo $firstname ?>' readonly>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-5">
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control"
+                                                                <label class="col-md-6">Last Name</label>
+                                                                <input type="text" class="form-control text-center"
                                                                     placeholder="Last Name" value='<?php echo $lastname?>' readonly>
                                                             </div>
                                                         </div>
@@ -403,13 +402,33 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-md-2">NIC<br>Number</label>
+                                                <label class="col-md-2"></label>
                                                 <div class="col-md-10">
                                                     <div class="row">
-                                                        <div class="col-md-7">
+                                                        <div class="col-md-5">
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control"
+                                                                <label class="col-md-6">NIC Number</label>
+                                                                <input type="text" class="form-control text-center"
                                                                     placeholder="xxxxxxxxxV" value='<?php echo $nic ?>' readonly>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <label class="col-md-6">Mobile Number</label>
+                                                                <input type="text" class="form-control text-center"
+                                                                    placeholder="07xxxxxxxx" value='<?php echo $phone?>' readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-md-2">Email</label>
+                                                <div class="col-md-10">
+                                                    <div class="row">
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <input id='text-input' type="text" name="email" class="form-control" value="<?php echo $email ?>" readonly>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -422,19 +441,6 @@
                                                         <div class="col-md-10">
                                                             <div class="form-group">
                                                                 <textarea type='text' name='' id='' class="form-control" rows="3" placeholder="Address..." readonly><?php echo $address ?></textarea>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-md-2">Mobile Number</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <input type="tel" class="form-control"
-                                                                    placeholder="07xxxxxxxx" value='<?php echo $phone ?>' readonly>
                                                             </div>
                                                         </div>
                                                     </div>

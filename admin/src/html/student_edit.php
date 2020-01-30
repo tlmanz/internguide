@@ -359,24 +359,21 @@
                                     <form action='../dist/php/student_update.php' method='post' enctype='multipart/form-data'>
                                         <div class="form-body">
                                             <div class="form-group row">
-                                                <label class="col-md-2">User ID</label>
+                                                <label class="col-md-2"></label>
                                                 <div class="col-md-10">
                                                     <div class="row">
                                                         <div class="col-md-5">
                                                             <div class="form-group">
-                                                                <input type="number" name="cid" class="form-control" value="<?php echo $id ?>" readonly>
+                                                                <label class="col-md-3">ID</label>
+                                                                <input type="text" class="form-control text-center"
+                                                                    placeholder="First Name" value='<?php echo $id ?>' name='cid' readonly>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-md-2">Username</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
                                                         <div class="col-md-5">
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" value='<?php echo $username ?>' readonly>
+                                                                <label class="col-md-6">Username</label>
+                                                                <input type="text" class="form-control text-center"
+                                                                    placeholder="Last Name" value='<?php echo $username?>' readonly>
                                                             </div>
                                                         </div>
                                                     </div>

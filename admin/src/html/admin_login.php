@@ -75,9 +75,9 @@
 							Username / Password?
 						</a>
 						<br>
-						<a class="txt2" href="usr_register.php">
-							Create your Account
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						<a class="txt10" href="index.php">
+							<i class="fa fa-home m-l-7" aria-hidden="true"></i>
+							Go Home
 						</a>
 					</div>
 				</form>
