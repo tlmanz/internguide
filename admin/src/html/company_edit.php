@@ -344,7 +344,9 @@
                             $vision = $row_emp['vision'];
                             $mission = $row_emp['mission'];
                             $p_loc = "../assets/".$photo;
-                            $back = $_SESSION['prev'];
+                            $p1_loc = "../assets/".$photo2;
+                            $p2_loc = "../assets/".$photo3;
+                            $p3_loc = "../assets/".$photo4;
                         }
                         ?>
                         <div class="row">
@@ -360,7 +362,7 @@
                                         </div>
                                         <br>
                                         <div style="text-align: center;">
-                                            <form action='../dist/php/student_update.php' method='post' enctype='multipart/form-data'>
+                                            <form action='../dist/php/company_update.php' method='post' enctype='multipart/form-data'>
                                                 <div class="form-body">
                                                     <div class="form-group row">
                                                         <label class="col-md-2"></label>
@@ -370,7 +372,7 @@
                                                                     <div class="form-group">
                                                                         <label class="col-md-3">ID</label>
                                                                         <input type="text" class="form-control text-center"
-                                                                        placeholder="First Name" value='<?php echo $id ?>' readonly>
+                                                                        placeholder="First Name" value='<?php echo $id ?>' name='id' readonly>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-5">
@@ -391,14 +393,14 @@
                                                                     <div class="form-group">
                                                                         <label class="col-md-8">Company Name</label>
                                                                         <input type="text" class="form-control text-center"
-                                                                        placeholder="First Name" value='<?php echo $firstname ?>' required>
+                                                                        placeholder="Company Name" value='<?php echo $firstname ?>' name="name" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-5">
                                                                     <div class="form-group">
                                                                         <label class="col-md-8">Contact Number</label>
                                                                         <input type="text" class="form-control text-center"
-                                                                        placeholder="07xxxxxxxx" value='<?php echo $phone?>' required>
+                                                                        placeholder="07xxxxxxxx" value='<?php echo $phone?>' name='phone' required>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -412,7 +414,7 @@
                                                                     <div class="form-group">
                                                                         <label class="col-md-8">Email</label>
                                                                         <input type="text" class="form-control text-center"
-                                                                        placeholder="Email Address" value='<?php echo $email ?>' required>
+                                                                        placeholder="Email Address" value='<?php echo $email ?>' name='email' required>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -424,7 +426,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
-                                                                        <textarea class="form-control" rows="3" placeholder="Introduction" required><?php echo $intro ?></textarea>
+                                                                        <textarea class="form-control" rows="3" placeholder="Introduction" name='intro' required><?php echo $intro ?></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -436,7 +438,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
-                                                                        <textarea type='text' name='' id='' class="form-control" rows="3" placeholder="Address..." required><?php echo $address ?></textarea>
+                                                                        <textarea type='text' class="form-control" rows="3" placeholder="Address..." name='address' required><?php echo $address ?></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -448,7 +450,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
-                                                                        <textarea type='text' name='' id='' class="form-control" rows="3" placeholder="Vision" required><?php echo $vision ?></textarea>
+                                                                        <textarea type='text'  class="form-control" rows="3" placeholder="Vision" name='vision' required><?php echo $vision ?></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -460,7 +462,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
-                                                                        <textarea type='text' name='' id='' class="form-control" rows="3" placeholder="Mission" required><?php echo $mission ?></textarea>
+                                                                        <textarea type='text' class="form-control" rows="3" placeholder="Mission" name='mission' required><?php echo $mission ?></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -472,7 +474,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
-                                                                        <textarea type='text' name='' id='' class="form-control" rows="3" placeholder="Description" required><?php echo $desc1 ?></textarea>
+                                                                        <textarea type='text' class="form-control" rows="3" placeholder="Description"  name='description' required><?php echo $desc1 ?></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -512,7 +514,7 @@
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
                                                                         <input type="tel" class="form-control"
-                                                                        placeholder="URL.." value="<?php echo $linkedin ?>" required>
+                                                                        placeholder="URL.." value="<?php echo $linkedin ?>" name='linkedin' required>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -525,7 +527,7 @@
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
                                                                         <input type="tel" class="form-control"
-                                                                        placeholder="URL.." value="<?php echo $pinterest ?>" required>
+                                                                        placeholder="URL.." value="<?php echo $pinterest ?>" name='pin' required>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -538,7 +540,7 @@
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
                                                                         <input type="tel" class="form-control"
-                                                                        placeholder="URL.." value="<?php echo $twitter ?>" required>
+                                                                        placeholder="URL.." value="<?php echo $twitter ?>" name='twitter' required>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -551,7 +553,7 @@
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
                                                                         <input type="tel" class="form-control"
-                                                                        placeholder="URL.." value="<?php echo $facebook ?>" required>
+                                                                        placeholder="URL.." value="<?php echo $facebook ?>" name='facebook' required>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -561,30 +563,42 @@
                                                         <div class="custom-file">
                                                             <input id='file-input' name='logo' type="file" class="custom-file-input" id="inputGroupFile04">
                                                             <label class="custom-file-label" for="inputGroupFile04">Choose Company Logo</label>
+                                                            <input id='file-input' name='deflogo' value='<?php echo $p_loc?>'>
                                                         </div>
                                                     </div><br>
                                                     <div class="input-group">
                                                         <div class="custom-file">
-                                                            <input id='file-input' name='logo' type="file" class="custom-file-input" id="inputGroupFile04">
+                                                            <input id='file-input' name='image1' type="file" class="custom-file-input" id="inputGroupFile04">
                                                             <label class="custom-file-label" for="inputGroupFile04">Choose Slide Image 1</label>
+                                                            <input id='file-input' name='defimage1' value='<?php echo $p1_loc?>'>
                                                         </div>
                                                     </div><br>
                                                     <div class="input-group">
                                                         <div class="custom-file">
-                                                            <input id='file-input' name='logo' type="file" class="custom-file-input" id="inputGroupFile04">
+                                                            <input id='file-input' name='image2' type="file" class="custom-file-input" id="inputGroupFile04">
                                                             <label class="custom-file-label" for="inputGroupFile04">Choose Slide Image 2</label>
+                                                            <input id='file-input' name='defimage2' value='<?php echo $p2_loc?>' >
                                                         </div>
                                                     </div><br>
                                                     <div class="input-group">
                                                         <div class="custom-file">
-                                                            <input id='file-input' name='logo' type="file" class="custom-file-input" id="inputGroupFile04">
+                                                            <input id='file-input' name='image3' type="file" class="custom-file-input" id="inputGroupFile04">
                                                             <label class="custom-file-label" for="inputGroupFile04">Choose Slide Image 3</label>
+                                                            <input id='file-input' name='defimage3' value='<?php echo $p3_loc?>'>
                                                         </div>
                                                     </div><br>
+                                                    <div style="font-size:100% ">
+                                                    <fieldset class="checkbox">
+                                                        <label>
+                                                            <input type='hidden' value='0' name='check'>
+                                                            <input style='transform: scale(1.5);' type="checkbox" name='check' value="1" >&nbsp&nbsp&nbspTick This to Update without Images
+                                                        </label>
+                                                    </fieldset>
+                                                </div>
                                                     <div class = 'footer'>
                                                         <div style='text-align: center;'>
-                                                            <a href = '<?php echo $back ?>' >
-                                                                <button class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
+                                                            <a href = 'company_admin.php' >
+                                                                <button type='' class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
                                                             </a>
                                                             &nbsp&nbsp
                                                             <button type ='submit' class="btn btn-rounded btn-info"><i class='fa fa-sync-alt'></i>&nbspUpdate</button>
@@ -599,54 +613,54 @@
                                 </div>
                             </div>
                         </div>
-                            <!-- ============================================================== -->
-                            <!-- End Container fluid  -->
-                            <!-- ============================================================== -->
-
-                            <!-- ============================================================== -->
-                            <!-- footer -->
-                            <!-- ============================================================== -->
-                            <footer class="footer text-center text-muted">
-                                All Rights Reserved by Ward12. Designed and Developed by <a
-                                href="https://wrappixel.com">TeamX</a>.
-                            </footer>
-                            <!-- ============================================================== -->
-                            <!-- End footer -->
-                            <!-- ============================================================== -->
-                        </div>
                         <!-- ============================================================== -->
-                        <!-- End Page wrapper  -->
+                        <!-- End Container fluid  -->
+                        <!-- ============================================================== -->
+
+                        <!-- ============================================================== -->
+                        <!-- footer -->
+                        <!-- ============================================================== -->
+                        <footer class="footer text-center text-muted">
+                            All Rights Reserved by Ward12. Designed and Developed by <a
+                            href="https://wrappixel.com">TeamX</a>.
+                        </footer>
+                        <!-- ============================================================== -->
+                        <!-- End footer -->
                         <!-- ============================================================== -->
                     </div>
                     <!-- ============================================================== -->
-                    <!-- End Wrapper -->
+                    <!-- End Page wrapper  -->
                     <!-- ============================================================== -->
-                    <!-- End Wrapper -->
-                    <!-- ============================================================== -->
-                    <!-- All Jquery -->
-                    <!-- ============================================================== -->
-                    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-                    <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
-                    <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-                    <!-- apps -->
-                    <!-- apps -->
-                    <script src="../dist/js/app-style-switcher.js"></script>
-                    <script src="../dist/js/feather.min.js"></script>
-                    <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-                    <script src="../dist/js/sidebarmenu.js"></script>
-                    <!--Custom JavaScript -->
-                    <script src="../dist/js/custom.min.js"></script>
-                    <!--This page JavaScript -->
-                    <script src="../assets/extra-libs/c3/d3.min.js"></script>
-                    <script src="../assets/extra-libs/c3/c3.min.js"></script>
-                    <script src="../assets/libs/chartist/dist/chartist.min.js"></script>
-                    <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-                    <script src="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
-                    <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
-                    <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
-                    <script src="../assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
-                    <script src="../dist/js/pages/datatable/datatable-basic.init.js"></script>
-                    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-                </body>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Wrapper -->
+                <!-- ============================================================== -->
+                <!-- End Wrapper -->
+                <!-- ============================================================== -->
+                <!-- All Jquery -->
+                <!-- ============================================================== -->
+                <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+                <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+                <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+                <!-- apps -->
+                <!-- apps -->
+                <script src="../dist/js/app-style-switcher.js"></script>
+                <script src="../dist/js/feather.min.js"></script>
+                <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+                <script src="../dist/js/sidebarmenu.js"></script>
+                <!--Custom JavaScript -->
+                <script src="../dist/js/custom.min.js"></script>
+                <!--This page JavaScript -->
+                <script src="../assets/extra-libs/c3/d3.min.js"></script>
+                <script src="../assets/extra-libs/c3/c3.min.js"></script>
+                <script src="../assets/libs/chartist/dist/chartist.min.js"></script>
+                <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+                <script src="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
+                <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
+                <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
+                <script src="../assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
+                <script src="../dist/js/pages/datatable/datatable-basic.init.js"></script>
+                <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+            </body>
 
-                </html>
+            </html>

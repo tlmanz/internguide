@@ -331,7 +331,6 @@
                 $photo = $row_emp['aphoto'];
                 $created = $row_emp['created_at'];
                 $p_loc = "../assets/".$photo;
-                $back = $_SESSION['prev'];
             }
             ?>
             <div class="row">
@@ -340,7 +339,7 @@
                         <div class="card-body">
                             <h2 class="card-title">Administrator Details</h2>
                             <div class= 'text-center'>
-                                <img src='../assets/adminImages/default.png' alt='image' class="rounded-circle"
+                                <img src='<?php echo $p_loc ?>' alt='image' class="rounded-circle"
                                 width="150">
                                 <br><br>
                                 <h3>Profile Picture</h3>
@@ -378,7 +377,7 @@
                                                         <div class="form-group">
                                                             <label class="col-md-6">Email</label>
                                                             <input type="text" class="form-control text-center"
-                                                            placeholder="First Name" name='email' value='<?php echo $email ?>'>
+                                                            placeholder="Email" name='email' value='<?php echo $email ?>' required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-5">
@@ -398,13 +397,13 @@
                                                 <div class="row">
                                                     <div class="col-md-5">
                                                         <div class="form-group">
-                                                            <input id='text-input' type="text" class="form-control"
+                                                            <input id='text-input' type="text" class="form-control text-center"
                                                             placeholder="First Name" name='firstname' value='<?php echo $firstname ?>' required="">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-5">
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control"
+                                                            <input type="text" class="form-control text-center"
                                                             placeholder="Last Name" name='lastname' value='<?php echo $lastname ?>' required="">
                                                         </div>
                                                     </div>
@@ -417,7 +416,7 @@
                                                 <div class="row">
                                                     <div class="col-md-5">
                                                         <div class="form-group">
-                                                            <input id='text-input' type="text" class="form-control"
+                                                            <input id='text-input' type="text" class="form-control text-center "
                                                             placeholder="07xxxxxxxx" name='phone' value='<?php echo $phone ?>' required="">
                                                         </div>
                                                     </div>
@@ -427,8 +426,9 @@
                                         <br>
                                         <div class="input-group">
                                             <div class="custom-file">
-                                                <input id='file-input' name='profile' type="file" class="custom-file-input" id="inputGroupFile04" required="">
+                                                <input id='file-input' name='profile' type="file" class="custom-file-input" id="inputGroupFile04">
                                                 <label class="custom-file-label" for="inputGroupFile04">Choose Profile Picture</label>
+                                                <input name='defphoto' value='<?php echo $p_loc?>'>
                                             </div>
                                         </div>
                                     </div>

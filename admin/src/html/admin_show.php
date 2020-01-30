@@ -332,7 +332,6 @@
                 $photo = $row_emp['aphoto'];
                 $created = $row_emp['created_at'];
                 $p_loc = "../assets/".$photo;
-                $back = $_SESSION['prev'];
             }
             ?>
             <div class="row">
