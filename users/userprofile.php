@@ -85,7 +85,7 @@ if ($result = mysqli_query($connection, $sql)) {
                                 ?>
                             <?php echo $username ?>!</h3> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 
-                        <h1 style="font-size:120%; "selected><?php
+                        <h1 style="font-size:120%; "selected ><?php
                                         date_default_timezone_set('Asia/Colombo');
                                         $mydate=getdate(date("U"));
                                         echo "$mydate[weekday], $mydate[month] $mydate[mday], $mydate[year]";
@@ -108,14 +108,14 @@ if ($result = mysqli_query($connection, $sql)) {
 
 					<li class="nav-item d-none d-md-block" style="width:400px">
 					<div class="col-md-7 text-md-right header-buttons">
-						<a href="#" class="site-btn">Download CV</a>
+						<a href="download.php" class="site-btn">Download CV</a>
 						
 					</div>
 					</li>
 
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<img src=<?php echo $imageAdd?> alt="user" class="rounded-circle" width="40">
+								<img src='<?php echo $imageAdd?>' alt="user" class="rounded-circle" width="40">
 								<span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span class="text-dark">Jason Doe</span> <i data-feather="chevron-down" class="svg-icon"></i></span>
 							</a>
 							<div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
@@ -151,7 +151,7 @@ if ($result = mysqli_query($connection, $sql)) {
 				</div>
 			</div>
 			<div class="container-fluid text-center">
-				<img src=<?php echo $imageAdd ?> alt="image" class="img-fluid rounded" width="350">
+				<img src='<?php echo $imageAdd ?>' alt="image" class="img-fluid rounded" width="350">
 				<div class="hero-text">
 					<h2><?php echo $username ?></h2>
 					<p>I’m a digital designer in love with photography, painting and<br>discovering new worlds and cultures.</p>

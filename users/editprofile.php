@@ -130,7 +130,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
-                                    <img src=<?php echo $loc?> alt="user" class="rounded-circle"
+                                    <img src='<?php echo $loc?>' alt="user" class="rounded-circle"
                                         width="40">
                                     <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
                                             class="text-dark"><?php echo $name ?></span> <i data-feather="chevron-down"
@@ -271,7 +271,7 @@
                                     </div>
                                     <br>
                                     <div style="text-align: center;">
-                                    <form action='../admin/src/dist/php/student_update.php' method='post' enctype='multipart/form-data'>
+                                    <form action='uploadManager.php' method='post' enctype='multipart/form-data'>
                                         <div class="form-body">
                                             <div class="form-group row">
                                                 <label class="col-md-2">User ID</label>
@@ -459,7 +459,7 @@
                                             </div>
                                             <div class="input-group">
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="inputGroupFile04">
+                                                    <input type="file" name='cv' class="custom-file-input" id="inputGroupFile04">
                                                     <label class="custom-file-label" for="inputGroupFile04">Choose PDF</label>
                                                 </div>
                                             </div>
