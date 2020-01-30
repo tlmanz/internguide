@@ -571,8 +571,8 @@
                                                         <div class="custom-file">
                                                             <input id='file-input' name='logo' type="file" class="custom-file-input" id="inputGroupFile04">
                                                             <label class="custom-file-label" for="inputGroupFile04">Choose Company Logo</label>
-                                                            <input id='file-input' name='deflogo' value='<?php echo $p_loc?>'>
                                                         </div>
+                                                        <input type='hidden' id='file-input' name='deflogo' value='<?php echo $p_loc?>'>
                                                     </div><br>
                                                     <div class="input-group">
                                                         <div class="custom-file">

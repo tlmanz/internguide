@@ -20,31 +20,39 @@ $status = $_POST['check'];
 
 	// Logo For Company
 $p_loc = __DIR__."/../../assets/companyImages/";
-$lphoto = $p_loc.basename($_FILES['logo']['name']);
+$temp = explode(".", $_FILES["logo"]["name"]);
+$newfilename = round(microtime(true)) .$id.'logo'.'.' . end($temp);
+$lphoto = $p_loc.$newfilename;
 $imageFileType = strtolower(pathinfo($lphoto,PATHINFO_EXTENSION));
-$logopath = "companyImages/".basename($_FILES['logo']['name']);
+$logopath = "companyImages/".$newfilename;
 $deflogopath = $_POST['deflogo'];
 	//////////////////////////////////////////////////////////////////////////
 
 	// Slider Image 1 /////////////////////////////////////////////////////////////
 $s_loc = __DIR__."/../../assets/companyImages/slider/";
-$s1photo = $s_loc.basename($_FILES['image1']['name']);
+$temp1 = explode(".", $_FILES["image1"]["name"]);
+$newfilename1 = round(microtime(true)) .$id.'slide1'.'.' . end($temp1);
+$s1photo = $s_loc.$newfilename1;
 $imageFileType1 = strtolower(pathinfo($s1photo,PATHINFO_EXTENSION));
-$s1path = "companyImages/slider/".basename($_FILES['image1']['name']);
+$s1path = "companyImages/slider/".$newfilename1;
 $defs1path = $_POST['defimage1'];
 	/////////////////////////////////////////////////////////////////////////////
 
 	// Slider Image 2 /////////////////////////////////////////////////////////////
-$s2photo = $s_loc.basename($_FILES['image2']['name']);
+$temp2 = explode(".", $_FILES["image2"]["name"]);
+$newfilename2 = round(microtime(true)) .$id.'slide2'.'.' . end($temp2);
+$s2photo = $s_loc.$newfilename2;
 $imageFileType2 = strtolower(pathinfo($s2photo,PATHINFO_EXTENSION));
-$s2path = "companyImages/slider/".basename($_FILES['image2']['name']);
+$s2path = "companyImages/slider/".$newfilename2;
 $defs2path = $_POST['defimage2'];
 	/////////////////////////////////////////////////////////////////////////////
 
 	// Slider Image 3 /////////////////////////////////////////////////////////////
-$s3photo = $s_loc.basename($_FILES['image3']['name']);
+$temp3 = explode(".", $_FILES["image3"]["name"]);
+$newfilename3 = round(microtime(true)) .$id.'slide3'.'.' . end($temp3);
+$s3photo = $s_loc.$newfilename3;
 $imageFileType3 = strtolower(pathinfo($s3photo,PATHINFO_EXTENSION));
-$s3path = "companyImages/slider/".basename($_FILES['image3']['name']);
+$s3path = "companyImages/slider/".$newfilename3;
 $defs3path = $_POST['defimage3'];
 	/////////////////////////////////////////////////////////////////////////////
 		// echo "outside";

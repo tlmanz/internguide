@@ -10,9 +10,11 @@ $imagepathdef = $_POST['defphoto'];
 $status = $_POST['check'];
 
 $p_loc =__DIR__."/../../assets/adminImages/";
-$aphoto = $p_loc.basename($_FILES['profile']['name']);
+$temp = explode(".", $_FILES["profile"]["name"]);
+$newfilename = round(microtime(true)) .$id.'.' . end($temp);
+$aphoto = $p_loc.$newfilename;
 $imageFileType = strtolower(pathinfo($aphoto,PATHINFO_EXTENSION));
-$imagepath = "adminImages/".basename($_FILES['profile']['name']);
+$imagepath = "adminImages/".$newfilename;
 $defimagepath = $_POST['defphoto'];
 		// echo "outside";
 if($status !== '0'){

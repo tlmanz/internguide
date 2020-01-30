@@ -17,9 +17,11 @@ $desc1 = $_POST['description1'];
 $status = $_POST['check'];
 		// $cv = $POST['cv'];
 $p_loc = __DIR__."/../../assets/userImages/";
-$cphoto = $p_loc.basename($_FILES['profile']['name']);
+$temp = explode(".", $_FILES["profile"]["name"]);
+$newfilename = round(microtime(true)) .$cid. '.' . end($temp);
+$cphoto = $p_loc.$newfilename;
 $imageFileType = strtolower(pathinfo($cphoto,PATHINFO_EXTENSION));
-$imagepath = "userImages/".basename($_FILES['profile']['name']);
+$imagepath = "userImages/".$newfilename;
 $defimagepath = $_POST['defprofile'];
 		// echo "outside";
 if($status !== '0'){

@@ -11,9 +11,11 @@
 	$password = password_hash($pass, PASSWORD_DEFAULT);
 	
 	$p_loc = __DIR__."/../../assets/adminImages/";
-	$aphoto = $p_loc.basename($_FILES['profile']['name']);
+	$temp = explode(".", $_FILES["profile"]["name"]);
+	$newfilename = round(microtime(true)) .$username.'.'.end($temp);
+	$aphoto = $p_loc.$newfilename;
 	$imageFileType = strtolower(pathinfo($aphoto,PATHINFO_EXTENSION));
-	$imagepath = "adminImages/".basename($_FILES['profile']['name']);
+	$imagepath = "adminImages/".$newfilename;
 
 	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "JPG"&& $imageFileType != "JPEG"&& $imageFileType != "PNG") {
    		
