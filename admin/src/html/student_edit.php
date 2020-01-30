@@ -393,7 +393,7 @@
                                                     <div class="col-md-5">
                                                         <div class="form-group">
                                                             <label class="col-md-6">Password</label>
-                                                            <a href='password_reset_company.php?edit=<?php echo $id ?>' class="form-control text-center">
+                                                            <a href='password_reset_student.php?edit=<?php echo $id ?>' class="form-control text-center">
                                                                 Click To Reset Password
                                                             </a>
                                                         </div>
