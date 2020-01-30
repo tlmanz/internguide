@@ -361,7 +361,7 @@
                                                     <div class="row">
                                                         <div class="col-md-5">
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" name='password' placeholder="Password" required="">
+                                                                <input type="password" class="form-control" name='password' placeholder="Password" required="">
                                                             </div>
                                                         </div>
                                                     </div>

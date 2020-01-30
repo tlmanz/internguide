@@ -380,12 +380,22 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-md-2">Email</label>
+                                            <label class="col-md-2"></label>
                                             <div class="col-md-10">
                                                 <div class="row">
-                                                    <div class="col-md-10">
+                                                    <div class="col-md-5">
                                                         <div class="form-group">
-                                                            <input id='text-input' type="text" name="email" class="form-control" value="<?php echo $email ?>" readonly>
+                                                            <label class="col-md-8">Email</label>
+                                                            <input type="text" class="form-control text-center"
+                                                            placeholder="Company Name" value='<?php echo $email ?>' name="email" readonly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <div class="form-group">
+                                                            <label class="col-md-6">Password</label>
+                                                            <a href='password_reset_company.php?edit=<?php echo $id ?>' class="form-control text-center">
+                                                                Click To Reset Password
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -414,7 +424,7 @@
                                             <label class="col-md-2">NIC<br>Number</label>
                                             <div class="col-md-10">
                                                 <div class="row">
-                                                    <div class="col-md-7">
+                                                    <div class="col-md-5">
                                                         <div class="form-group">
                                                             <input id='text-input' type="text" class="form-control"
                                                             placeholder="xxxxxxxxxV" name='nic' value='<?php echo $nic ?>' required>

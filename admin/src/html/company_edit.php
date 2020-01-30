@@ -410,11 +410,19 @@
                                                         <label class="col-md-2"></label>
                                                         <div class="col-md-10">
                                                             <div class="row">
-                                                                <div class="col-md-10">
+                                                                <div class="col-md-5">
                                                                     <div class="form-group">
                                                                         <label class="col-md-8">Email</label>
                                                                         <input type="text" class="form-control text-center"
-                                                                        placeholder="Email Address" value='<?php echo $email ?>' name='email' required>
+                                                                        placeholder="Company Name" value='<?php echo $email ?>' name="email" required>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-5">
+                                                                    <div class="form-group">
+                                                                        <label class="col-md-6">Password</label>
+                                                                        <a href='password_reset_company.php?edit=<?php echo $id ?>' class="form-control text-center">
+                                                                            Click To Reset Password
+                                                                        </a>
                                                                     </div>
                                                                 </div>
                                                             </div>
