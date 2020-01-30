@@ -342,7 +342,6 @@
                             $cv = $row_emp['cv'];
                             $created = $row_emp['created_at'];
                             $p_loc = "../assets/".$photo;
-                            $back = $_SESSION['prev'];
                          }
                     ?>
                     <div class="row">
@@ -549,9 +548,7 @@
                                     </form>
                                         <br>
                                             <div style='text-align: center;'>
-                                                <a href = '<?php echo $back ?>' >
-                                                    <button class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
-                                                </a>
+                                                    <button class="btn btn-rounded btn-success" onclick="history.back()"><i class='fa fa-arrow-left'></i>&nbspBack</button>
                                                 <a href = "student_edit.php?edit=<?php echo $edit_id?>" >
                                                     <button class="btn btn-rounded btn-info">&nbsp<i class='fa fa-sync-alt'></i>&nbspUpdate Details</button>
                                                 </a>

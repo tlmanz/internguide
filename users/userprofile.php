@@ -3,10 +3,10 @@
 require_once "../admin/config/connect.php";
 session_start();
 
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-	header("location: usr_login.php");
-	exit;
-}
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_SESSION["usertype"]) || $_SESSION["usertype"] !== 'student'){
+    header("location: usr_login.php");
+    exit;
+    }
 
 $user = $_SESSION['username'];
 $sql = "SELECT * from customer_account WHERE username = '$user';";
@@ -31,6 +31,7 @@ if ($result = mysqli_query($connection, $sql)) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->
 	<link href="civic/img/favicon.ico" rel="shortcut icon" />
+    <title>Intern Guide - One Place for All Intern Needs</title>
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet">
@@ -115,7 +116,7 @@ if ($result = mysqli_query($connection, $sql)) {
 
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<img src='<?php echo $imageAdd?>' alt="user" class="rounded-circle" width="40">
+								<img src='<?php echo $imageAdd?>' alt='user' class="rounded-circle" width="40">
 								<span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span class="text-dark">Jason Doe</span> <i data-feather="chevron-down" class="svg-icon"></i></span>
 							</a>
 							<div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
@@ -124,7 +125,7 @@ if ($result = mysqli_query($connection, $sql)) {
 								<a class="dropdown-item" href="editprofile.php"><i data-feather="credit-card" class="svg-icon mr-2 ml-1"></i>
 									Edit profile</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="logout.php"><i data-feather="power" class="svg-icon mr-2 ml-1"></i>
+								<a class="dropdown-item" href="php/logout.php"><i data-feather="power" class="svg-icon mr-2 ml-1"></i>
 									Logout</a>
 							</div>
 						</li>

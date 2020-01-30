@@ -341,7 +341,6 @@
                             $cv = $row_emp['cv'];
                             $created = $row_emp['created_at'];
                             $p_loc = "../assets/".$photo;
-                            $back = $_SESSION['prev'];
                          }
                     ?>
                     <div class="row">
@@ -483,9 +482,9 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group mb-4">
                                                                 <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="field">
-                                                                    <option type='text' value="1" <?php if($field=="1") echo 'selected="selected"'; ?>>One</option>
-                                                                    <option type='text' value="2"<?php if($field=="2") echo 'selected="selected"'; ?>>Two</option>
-                                                                    <option type='text' value="3"<?php if($field=="3") echo 'selected="selected"'; ?>>Three</option>
+                                                                    <option type='text' value="Electronic and Telecommunication" <?php if($field=="Electronic and Telecommunication") echo 'selected="selected"'; ?>>Electronic and Telecommunication</option>
+                                                                    <option type='text' value="Computer Science and Engineering"<?php if($field=="Computer Science and Engineering") echo 'selected="selected"'; ?>>Computer Science and Engineering</option>
+                                                                    <option type='text' value="Civil Engineering"<?php if($field=="Civil Engineering") echo 'selected="selected"'; ?>>Civil Engineering</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -499,7 +498,7 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <input id='text-input' type="number" class="form-control" name="gpa"
-                                                                    placeholder="GPA" min="0" max="4.2"value="<?php echo $gpa ?>" required>
+                                                                    placeholder="GPA" step='0.0001' min="0" max="4.2"value="<?php echo $gpa ?>" required>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -563,8 +562,8 @@
                                         <div style='text-align: center;'>
                                             <button type ='submit' class="btn btn-rounded btn-info"><i class='fa fa-sync-alt'></i>&nbspUpdate</button>
                                             &nbsp&nbsp
-                                            <a href = '<?php echo $back ?>' >
-                                                <button class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
+                                            <a href = "stu_table.php" >
+                                                <button class="btn btn-rounded btn-success"><i class='fa fa-table'></i>&nbspBack to Table</button>
                                             </a>
                                             &nbsp&nbsp
                                             <button type="reset" class="btn btn-rounded btn-danger"><i class='fa fa-ban'></i>&nbspReset</button>

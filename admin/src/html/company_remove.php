@@ -344,7 +344,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                 $count = 1;
                                                 $tab = 'employee';
                                                 while($row = mysqli_fetch_array($runsql))
-                                                {
+                                                {   
+                                                    $sid = $row['id'];
                                                     $firstname = $row['ename'];
                                                     $email = $row['email'];
                                                     $uni = "UOM";
@@ -358,7 +359,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                             <td><p style='text-align: center;'>$age</p></td>
                                                             <td>
                                                                 <div style='text-align: center;' class='table-data-feature'>
-                                                                    <a href='customer_show.php?edit=$1'>
+                                                                    <a href='customer_show.php?edit=$sid'>
                                                                     <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
                                                                         <i class='fas fa-list'></i>
                                                                     </button>
@@ -367,9 +368,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                             </td>
                                                             <td>
                                                                 <div style='text-align: center;' class='table-data-feature'>
-                                                                    <a href='../dist/php/remove_user.php?edit=$sid&tab=$tab'>
+                                                                    <a href='../dist/php/remove_user_1.php?edit=$sid&tab=$tab'>
                                                                     <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
-                                                                        <i class='fas fa-edit'></i>
+                                                                        <i class='fas fa-trash'></i>
                                                                     </button>
                                                                     </a>
                                                                 </div>
