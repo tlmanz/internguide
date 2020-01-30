@@ -11,7 +11,7 @@
 			if ($run_del_item) {
 				
 				echo "<script>alert ('An User Removed from the database successfully!')</script>";
-				echo "<script>window.open('../../html/.php','_self')</script>";
+				echo "<script>window.open('../../html/student_remove.php','_self')</script>";
 
 			}
 		}

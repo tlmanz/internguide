@@ -2,7 +2,6 @@
     require_once (__DIR__.'/../../../config/connect.php');
     
 	$firstname = $_POST['firstname'];
-	echo $firstname;
 	$pass = $_POST['password'];
 	$username = $_POST['username'];
 	$lastname = $_POST['lastname'];

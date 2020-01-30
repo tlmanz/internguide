@@ -383,7 +383,7 @@
                                                 <label class="col-md-2">Email</label>
                                                 <div class="col-md-10">
                                                     <div class="row">
-                                                        <div class="col-md-5">
+                                                        <div class="col-md-10">
                                                             <div class="form-group">
                                                                 <input id='text-input' type="text" name="email" class="form-control" value="<?php echo $email ?>" readonly>
                                                             </div>
@@ -479,9 +479,20 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group mb-4">
                                                                 <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="field">
-                                                                    <option type='text' value="Electronic and Telecommunication" <?php if($field=="Electronic and Telecommunication") echo 'selected="selected"'; ?>>Electronic and Telecommunication</option>
+                                                                    <option type='text' value="Electronic and Telecommunication Engineering" <?php if($field=="Electronic and Telecommunication Engineering") echo 'selected="selected"'; ?>>Electronic and Telecommunication Engineering</option>
                                                                     <option type='text' value="Computer Science and Engineering"<?php if($field=="Computer Science and Engineering") echo 'selected="selected"'; ?>>Computer Science and Engineering</option>
                                                                     <option type='text' value="Civil Engineering"<?php if($field=="Civil Engineering") echo 'selected="selected"'; ?>>Civil Engineering</option>
+                                                                    <option type='text' value="Bio Medical Engineering" <?php if($field=="Bio Medical Engineering") echo 'selected="selected"'; ?>>Bio Medical Engineering</option>
+                                                                    <option type='text' value="Electrical Engineering"<?php if($field=="Electrical Engineering") echo 'selected="selected"'; ?>>Electrical Engineering</option>
+                                                                    <option type='text' value="Mechanical Engineering"<?php if($field=="Mechanical Engineering") echo 'selected="selected"'; ?>>Mechanical Engineering</option>
+                                                                    <option type='text' value="Chemical and Process Engineering" <?php if($field=="Chemical and Process Engineering") echo 'selected="selected"'; ?>>Chemical and Process Engineering</option>
+                                                                    <option type='text' value="Material Engineering"<?php if($field=="Material Engineering") echo 'selected="selected"'; ?>>Material Engineering</option>
+                                                                    <option type='text' value="Textile Engineering"<?php if($field=="Textile Engineering") echo 'selected="selected"'; ?>>Textile Engineering</option>
+                                                                    <option type='text' value="Earth Resource Engineering"<?php if($field=="Earth Resource Engineering") echo 'selected="selected"'; ?>>Earth Resource Engineering</option>
+                                                                    <option type='text' value="Architecture" <?php if($field=="Architecture") echo 'selected="selected"'; ?>>Architecture</option>
+                                                                    <option type='text' value="Business"<?php if($field=="Business") echo 'selected="selected"'; ?>>Business</option>
+                                                                    <option type='text' value="Information Technology"<?php if($field=="Information Technology") echo 'selected="selected"'; ?>>Information Technology</option>
+                                                                    <option type='text' value="Other"<?php if($field=="Other") echo 'selected="selected"'; ?>>Other</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -558,10 +569,6 @@
                                     <div class = 'footer'>
                                         <div style='text-align: center;'>
                                             <button type ='submit' class="btn btn-rounded btn-info"><i class='fa fa-sync-alt'></i>&nbspUpdate</button>
-                                            &nbsp&nbsp
-                                            <a href = "stu_table.php" >
-                                                <button class="btn btn-rounded btn-success"><i class='fa fa-table'></i>&nbspBack to Table</button>
-                                            </a>
                                             &nbsp&nbsp
                                             <button type="reset" class="btn btn-rounded btn-danger"><i class='fa fa-ban'></i>&nbspReset</button>
                                         </div>

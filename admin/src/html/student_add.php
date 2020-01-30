@@ -316,9 +316,6 @@
                     <!-- *************************************************************** -->
                     <!-- Start First Cards -->
                     <!-- *************************************************************** -->
-                    <?php
-                        $back = $_SESSION['prev'];
-                    ?>
                     <div class="row">
                         <div style='margin-left: auto; margin-right: auto;'class="col-8">
                             <div class="card">
@@ -467,12 +464,23 @@
                                                 <label class="col-md-2">Field of Study</label>
                                                 <div class="col-md-10">
                                                     <div class="row">
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-8">
                                                             <div class="form-group mb-4">
                                                                 <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="field">
-                                                                    <option type='text' value="Electronic and Telecommunication" >Electronic and Telecommunication</option>
+                                                                    <option type='text' value="Electronic and Telecommunication" >Electronic and Telecommunication Engineering</option>
                                                                     <option type='text' value="Computer Science and Engineering">Computer Science and Engineering</option>
+                                                                    <option type='text' value="Civil Engineering">Bio Medical Engineering</option>
                                                                     <option type='text' value="Civil Engineering">Civil Engineering</option>
+                                                                    <option type='text' value="Electrical Engineering">Electrical Engineering</option>
+                                                                    <option type='text' value="Mechanical Engineering">Mechanical Engineering</option>
+                                                                    <option type='text' value="Chemical and Process Engineering">Chemical and Process Engineering</option>
+                                                                    <option type='text' value="Material Engineering">Material Engineering</option>
+                                                                    <option type='text' value="Textile Engineering">Textile Engineering</option>
+                                                                    <option type='text' value="Earth Resource Engineering">Earth Resource Engineering</option>
+                                                                    <option type='text' value="Architecture">Architecture</option>
+                                                                    <option type='text' value="Business">Business</option>
+                                                                    <option type='text' value="Information Technology">Information Technology</option>
+                                                                    <option type='text' value="Other">Other</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -486,7 +494,7 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <input id='text-input' type="number" class="form-control" name="gpa"
-                                                                    placeholder="GPA" min="0" max="4.2" required="">
+                                                                    placeholder="GPA for three decimal places" min="0" max="4.2" step="0.0001" required="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -499,7 +507,7 @@
                                                         <div class="col-md-10">
                                                             <div class="form-group">
                                                                 <input id='text-input' type='text' class="form-control" name="linkedin"
-                                                                    placeholder="URL.." required="">
+                                                                    placeholder="URL..">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -512,7 +520,7 @@
                                                         <div class="col-md-10">
                                                             <div class="form-group">
                                                                 <input id='text-input' type='text' class="form-control" name="web"
-                                                                    placeholder="URL.." required="">
+                                                                    placeholder="URL..">
                                                             </div>
                                                         </div>
                                                     </div>
