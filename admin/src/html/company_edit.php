@@ -570,31 +570,31 @@
                                                         <div class="custom-file">
                                                             <input id='file-input' name='image1' type="file" class="custom-file-input" id="inputGroupFile04">
                                                             <label class="custom-file-label" for="inputGroupFile04">Choose Slide Image 1</label>
-                                                            <input id='file-input' name='defimage1' value='<?php echo $p1_loc?>'>
                                                         </div>
+                                                        <input type='hidden' id='file-input' name='defimage1' value='<?php echo $p1_loc?>'>
                                                     </div><br>
                                                     <div class="input-group">
                                                         <div class="custom-file">
                                                             <input id='file-input' name='image2' type="file" class="custom-file-input" id="inputGroupFile04">
                                                             <label class="custom-file-label" for="inputGroupFile04">Choose Slide Image 2</label>
-                                                            <input id='file-input' name='defimage2' value='<?php echo $p2_loc?>' >
                                                         </div>
+                                                        <input type='hidden' id='file-input' name='defimage2' value='<?php echo $p2_loc?>' >
                                                     </div><br>
                                                     <div class="input-group">
                                                         <div class="custom-file">
                                                             <input id='file-input' name='image3' type="file" class="custom-file-input" id="inputGroupFile04">
                                                             <label class="custom-file-label" for="inputGroupFile04">Choose Slide Image 3</label>
-                                                            <input id='file-input' name='defimage3' value='<?php echo $p3_loc?>'>
                                                         </div>
+                                                        <input type='hidden' id='file-input' name='defimage3' value='<?php echo $p3_loc?>'>
                                                     </div><br>
                                                     <div style="font-size:100% ">
-                                                    <fieldset class="checkbox">
-                                                        <label>
-                                                            <input type='hidden' value='0' name='check'>
-                                                            <input style='transform: scale(1.5);' type="checkbox" name='check' value="1" >&nbsp&nbsp&nbspTick This to Update without Images
-                                                        </label>
-                                                    </fieldset>
-                                                </div>
+                                                        <fieldset class="checkbox">
+                                                            <label>
+                                                                <input type='hidden' value='0' name='check'>
+                                                                <input style='transform: scale(1.5);' type="checkbox" name='check' value="1" >&nbsp&nbsp&nbspTick This to Update without Images
+                                                            </label>
+                                                        </fieldset>
+                                                    </div>
                                                     <div class = 'footer'>
                                                         <div style='text-align: center;'>
                                                             <a href = 'company_admin.php' >

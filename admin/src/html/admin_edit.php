@@ -428,12 +428,20 @@
                                             <div class="custom-file">
                                                 <input id='file-input' name='profile' type="file" class="custom-file-input" id="inputGroupFile04">
                                                 <label class="custom-file-label" for="inputGroupFile04">Choose Profile Picture</label>
-                                                <input name='defphoto' value='<?php echo $p_loc?>'>
                                             </div>
+                                            <input type='hidden' name='defphoto' value='<?php echo $p_loc?>'>
                                         </div>
                                     </div>
                                 </div>
                                 <br>
+                                <div style="font-size:100% ">
+                                    <fieldset class="checkbox text-center">
+                                        <label>
+                                            <input type='hidden' value='0' name='check'>
+                                            <input style='transform: scale(1.5);' type="checkbox" name='check' value="1" >&nbsp&nbsp&nbspTick This to Update without Images
+                                        </label>
+                                    </fieldset>
+                                </div>
                                 <div class = 'footer'>
                                     <div style='text-align: center;'>
                                         <a href = 'admin_admin.php' >
