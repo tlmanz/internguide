@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "connect.php";
+require_once ('connect.php');
 session_start();
 
 ?>
@@ -51,8 +51,9 @@ session_start();
         </div>
     </div>
     <?php
-            // $get_admin = "select * from employee where id =            .$_SESSION['id']";
-            $get_admin = "select * from employee where id = 1";
+             //$s_id = $_GET['edit'];
+            $s_id = '1';
+            $get_admin = "select * from employee where id ='$s_id'";
             $run_edit_admin = mysqli_query($connection,$get_admin);
             $row = mysqli_fetch_array($run_edit_admin);
 			$name = $row['ename'];
@@ -79,7 +80,11 @@ session_start();
             $photo7 = $row['photo7'];
             $loc7 = "../company/src/assets/".$photo7;  
             $field = $row['field'];      
-            $areas = (explode(",",$field));                         
+            $areas = (explode(",",$field));  
+            $_SESSION["loggedin"] = true;
+            $_SESSION["id"] = $s_id;
+            $_SESSION["username"] = $name;
+            $_SESSION["usertype"] = "company";                        
         ?>
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
@@ -134,11 +139,11 @@ session_start();
                                         class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                                <a class="dropdown-item" href="updat.php"><i data-feather="settings"
+                                <a class="dropdown-item" href="company_edit.php"><i data-feather="settings"
                                         class="svg-icon mr-2 ml-1"></i>
                                     Account Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="login.php"><i data-feather="power"
+                                <a class="dropdown-item" href="company_login.php"><i data-feather="power"
                                         class="svg-icon mr-2 ml-1"></i>
                                     Logout</a>
                             </div>
