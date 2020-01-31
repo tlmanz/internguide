@@ -25,15 +25,9 @@ if($username == $student_name){
 }
 else{
 $student_list = $student_name.",".$student_list;
-<<<<<<< HEAD
 array_push($student_list,$student_name);
 
 $update="UPDATE employee SET student='$student_list' WHERE id='$id_company'";
-=======
-//$set_list = array_unique($student_list);
-//$student_list = array_push($student_list,$student_name);
-$update="UPDATE employee SET student='$set_list' WHERE id='$id_company'";
->>>>>>> 67dad4fa0a5c03c2e0adae0d5b1c41fe40f4c7ff
 $run_querry=mysqli_query($connection, $update);
 }
 $count++;

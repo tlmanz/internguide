@@ -56,9 +56,11 @@ session_start();
             $run_edit_admin = mysqli_query($connection,$get_admin);
             $row = mysqli_fetch_array($run_edit_admin);
 			$name = $row['ename'];
-			$id = $row['id'];
+            $id = $row['id'];
+            $photo1 = $row['image'];
+			$loc1 = "../company/src/assets/".$photo1;
             $student = $row['student'];      
-            $areas = (explode(",",$student));                         
+            $student_array = (explode(",",$student));                         
         ?>
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
@@ -187,10 +189,10 @@ session_start();
                                                 while($row = mysqli_fetch_array($runsql))
                                                 {   
                                                     $count_1 = 0;
-                                                    while($count_1 < count($student))
+                                                    while($count_1 < count($student_array))
                                                     {
                                                         
-                                                        if($student[$count_1] == $row['username']) {  
+                                                        if($student_array[$count_1] == $row['username']) {  
                 
                                                             $sid = $row['cid']; //cid for employee table is id
                                                             $firstname = $row['firstname'].' '.$row['lastname'];
