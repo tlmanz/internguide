@@ -1,8 +1,8 @@
 <?php
 // Include config file
 require_once "connect.php";
- $id_company=trim($_GET['id']);
- $id_student=trim($_GET['userid']);
+ $id_student =trim($_GET['userid']);
+ $id_company =trim($_GET['id']);
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -282,7 +282,7 @@ require_once "connect.php";
 			</div>
             <footer  class="footer text-center text-muted">
 				<div class="text-md-center header-buttons">
-					<a class='site-btn' href="update.php?id_student=<?php echo $id_student ?> &id_company=<?php echo $id_company ?>">Request For Intern
+					<a class='site-btn' href='update.php?id_student=$id_student&id_company=$id_company'>Request For Intern
 
 					</a>
                 </div>
