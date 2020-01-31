@@ -146,7 +146,7 @@
                             class="svg-icon"></i></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                            <a class="dropdown-item" href="javascript:void(0)"><i data-feather="user"
+                            <a class="dropdown-item" href="admin_show.php?edit=<?php echo $_SESSION['id'] ?>"><i data-feather="user"
                                 class="svg-icon mr-2 ml-1"></i>
                             My Profile</a>
 
@@ -327,6 +327,7 @@
                 $username = $row_emp['username'];
                 $photo = $row_emp['aphoto'];
                 $p_loc = "../assets/".$photo;
+                $myid = $_SESSION['id'];
             }
             ?>
             <div class="row">
@@ -349,6 +350,7 @@
                                                 <div class="form-group">
                                                     <label>User ID</label>
                                                     <input type="text" class="form-control text-center" placeholder="col-md-12" value='<?php echo $id ?>' name='id' readonly>
+                                                    <input type="hidden" value='<?php echo $myid ?>' name='myid'>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 ml-auto">

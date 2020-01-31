@@ -112,6 +112,7 @@
                                     $name = $row_user['firstname']." ".$row_user['lastname'];
                                     $user_photo = $row_user['cphoto'];
                                     $loc = $user_photo; 
+                                    $p_loc = "../admin/src/assets/".$user_photo;
                                                              
                             ?>
 
@@ -146,7 +147,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
-                                    <img src='<?php echo $loc?>' alt="user" class="rounded-circle"
+                                    <img src='<?php echo $p_loc?>' alt="user" class="rounded-circle"
                                         width="40">
                                     <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
                                             class="text-dark"><?php echo $name ?></span> <i data-feather="chevron-down"
@@ -259,50 +260,68 @@
                             $photo = $row_emp['cphoto'];
                             $cv_loc = $row_emp['cv'];
                             $created = $row_emp['created_at'];
+                            $dob = $row_emp['dob'];
+                            $age = $row_emp['age'];
                             //$p_loc = "../admin/src/assets/".$photo;
                             
                          }
                     ?>
                     <div class="row">
-                        <div style='margin-left: auto; margin-right: auto;'class="col-8">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h2 class="card-title">Student Details</h2>
-                                    <div class= 'text-center'>
-                                        <img src='<?php echo $loc ?>' alt='image' class='rounded-circle' height='150'
-                                                width="150">
-                                        <br><br>
-                                        <h3>Profile Picture</h3>
+                <div style='margin-left: auto; margin-right: auto;'class="col-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Student Details</h2>
+                            <div class= 'text-center'>
+                                <img src='<?php echo $p_loc ?>' alt='image' class='rounded-circle' height='150'
+                                width="150">
+                                <br><br>
+                                <h3>Profile Picture</h3>
+                                <div style='margin-left: auto; margin-right: auto;' class="col-sm-5 col-md-7">
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <form action='imageUploadManager.php' method='post' enctype='multipart/form-data'>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-outline-secondary" type="submit">Update Profile Image</button>
+                                                    </div>
+                                                    <div class="custom-file">
+                                                        <input type="file" name='profile' class="custom-file-input" id="inputGroupFile03">
+                                                        <input type="hidden" name='id' value='<?php echo $id ?>'>
+                                                        <input type="hidden" name='username' value='<?php echo $username?>'>
+                                                        <label class="custom-file-label" for="inputGroupFile03"></label>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
-                                    <br>
-                                    <div style="text-align: center;">
-                                    <form action='uploadManager.php' method='post' enctype='multipart/form-data'>
-                                        <div class="form-body">
-                                            <div class="form-group row">
-                                                <label class="col-md-2">User ID</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-5">
-                                                            <div class="form-group">
-                                                                <input type="number" name="cid" class="form-control" value="<?php echo $id ?>" readonly>
-                                                            </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div style="text-align: center;">
+                                <form action='uploadmanager.php' method='post' enctype='multipart/form-data'>
+                                    <div class="form-body">
+                                        <div class="form-group row">
+                                            <label class="col-md-2"></label>
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-5">
+                                                        <div class="form-group">
+                                                            <label class="col-md-3">ID</label>
+                                                            <input type="text" class="form-control text-center"
+                                                            placeholder="First Name" value='<?php echo $id ?>' name='cid' readonly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <div class="form-group">
+                                                            <label class="col-md-6">Username</label>
+                                                            <input type="text" class="form-control text-center"
+                                                            placeholder="Username" name='username' value='<?php echo $username?>' readonly>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
-                                                <label class="col-md-2">Username</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-5">
-                                                            <div class="form-group">
-                                                                <input type="text" class="form-control" value='<?php echo $username ?>' readonly>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
+                                        </div>
+                                        <div class="form-group row">
                                             <label class="col-md-2"></label>
                                             <div class="col-md-10">
                                                 <div class="row">
@@ -310,7 +329,7 @@
                                                         <div class="form-group">
                                                             <label class="col-md-8">Email</label>
                                                             <input type="text" class="form-control text-center"
-                                                            placeholder="Company Name" value='<?php echo $email ?>' name="email" readonly>
+                                                            placeholder="Company Name" value='<?php echo $email ?>' name="email">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-5">
@@ -324,88 +343,109 @@
                                                 </div>
                                             </div>
                                         </div>
-                                            <div class="form-group row">
-                                                <label class="col-md-2">Name</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-5">
-                                                            <div class="form-group">
-                                                                <input id='text-input' type="text" class="form-control"
-                                                                    placeholder="First Name" name='firstname' value='<?php echo $firstname ?>' required>
-                                                            </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2"></label>
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-5">
+                                                        <div class="form-group">
+                                                            <label class="col-md-8">Date of Birth</label>
+                                                            <input type="date" class="form-control text-center" name='dob'
+                                                            placeholder="Date of Birth" min='1980-01-01' max='2005-01-01' value='<?php echo $dob ?>' reqired>
                                                         </div>
-                                                        <div class="col-md-5">
-                                                            <div class="form-group">
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="Last Name" name='lastname' value='<?php echo $lastname?>' required>
-                                                            </div>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <div class="form-group">
+                                                            <label class="col-md-8">Age</label>
+                                                            <input type="number" class="form-control text-center"
+                                                            placeholder="Age" min='10' max='40' name='age' value='<?php echo $age?>' required>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
-                                                <label class="col-md-2">NIC<br>Number</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-7">
-                                                            <div class="form-group">
-                                                                <input id='text-input' type="text" class="form-control"
-                                                                    placeholder="xxxxxxxxxV" name='nic' value='<?php echo $nic ?>' required>
-                                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2">Name</label>
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-5">
+                                                        <div class="form-group">
+                                                            <input id='text-input' type="text" class="form-control"
+                                                            placeholder="First Name" name='firstname' value='<?php echo $firstname ?>' required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control"
+                                                            placeholder="Last Name" name='lastname' value='<?php echo $lastname?>' required>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
-                                                <label class="col-md-2">Address</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-10">
-                                                            <div class="form-group">
-                                                                <textarea id='text-input' type='text' name='address' class="form-control" rows="3" placeholder="Address..." required><?php echo $address ?></textarea>
-                                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2">NIC<br>Number</label>
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-5">
+                                                        <div class="form-group">
+                                                            <input id='text-input' type="text" class="form-control"
+                                                            placeholder="xxxxxxxxxV" name='nic' value='<?php echo $nic ?>' required>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
-                                                <label class="col-md-2">Mobile Number</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <input id='text-input' type="text" class="form-control"
-                                                                    placeholder="07xxxxxxxx" name='telephone' value='<?php echo $phone ?>' required>
-                                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2">Address</label>
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-10">
+                                                        <div class="form-group">
+                                                            <textarea id='text-input' type='text' name='address' class="form-control" rows="3" placeholder="Address..." required><?php echo $address ?></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
-                                                <label class="col-md-2">Gender</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-1">
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2">Mobile Number</label>
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <input id='text-input' type="text" class="form-control"
+                                                            placeholder="07xxxxxxxx" name='telephone' value='<?php echo $phone ?>' required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2">Gender</label>
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-1">
                                                         <div class="custom-control custom-radio">
                                                             <input type="radio" id="customRadio1" name="gender"
-                                                                class="custom-control-input" value="m" <?php if ($gender == "m") echo "checked"; ?>>
+                                                            class="custom-control-input" value="m" <?php if ($gender == "m") echo "checked"; ?>>
                                                             <label class="custom-control-label" for="customRadio1">Male&nbsp&nbsp&nbsp</label>
                                                         </div>
                                                         <div class="custom-control custom-radio">
                                                             <input type="radio" id="customRadio2" name="gender"
-                                                                class="custom-control-input" value = 'f' <?php if ($gender == "f") echo "checked"; ?>>
+                                                            class="custom-control-input" value = 'f' <?php if ($gender == "f") echo "checked"; ?>>
                                                             <label class="custom-control-label" for="customRadio2">Female&nbsp&nbsp&nbsp</label>
                                                         </div>
                                                         <div class="custom-control custom-radio">
                                                             <input type="radio" id="customRadio3" name="gender"
-                                                                class="custom-control-input" value = 'n' <?php if ($gender == "n") echo "checked"; ?>>
+                                                            class="custom-control-input" value = 'n' <?php if ($gender == "n") echo "checked"; ?>>
                                                             <label class="custom-control-label" for="customRadio3">N/A</label>
                                                         </div>
                                                     </div>
-                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
+                                        </div>
+                                        <div class="form-group row">
                                             <label class="col-md-2">Field of Study</label>
                                             <div class="col-md-10">
                                                 <div class="row">
@@ -432,7 +472,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                            <div class="form-group row">
+                                        <div class="form-group row">
                                             <label class="col-md-2">GPA <br>(Up to Day)</label>
                                             <div class="col-md-10">
                                                 <div class="row">
@@ -445,95 +485,70 @@
                                                 </div>
                                             </div>
                                         </div>
-                                            <div class="form-group row">
-                                                <label class="col-md-2">LinkedIn <br>URL</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-10">
-                                                            <div class="form-group">
-                                                                <input id='text-input' type='text' class="form-control" name="linkedin"
-                                                                    placeholder="URL.." value="<?php echo $linkedin ?>" required>
-                                                            </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2">LinkedIn <br>URL</label>
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-10">
+                                                        <div class="form-group">
+                                                            <input id='text-input' type='text' class="form-control" name="linkedin"
+                                                            placeholder="URL.." value="<?php echo $linkedin ?>" required>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-md-2">Blog or Web <br>(Personal)</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-10">
-                                                            <div class="form-group">
-                                                                <input id='text-input' type='text' class="form-control" name="web"
-                                                                    placeholder="URL.." value="<?php echo $web ?>" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-md-2">About</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-10">
-                                                            <div class="form-group">
-                                                                <textarea id='text-input' type='text' class="form-control" name="description1" rows="3" placeholder="About..." required><?php echo $desc1 ?></textarea>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="input-group">
-                                                <div class="custom-file">
-                                                    <input type="file" name='cv' class="custom-file-input" id="inputGroupFile04">
-                                                    <label class="custom-file-label" for="inputGroupFile04">Choose PDF</label>
-                                                </div>
-                                                <input type='hidden' id='file-input' name='preCV' value='<?php echo $cv_loc?>'>
-                                            </div>
-                                            <br>
-                                            <div class="input-group">
-                                                <div class="custom-file">
-                                                    <input id='file-input' name='profile' type="file" class="custom-file-input" id="inputGroupFile04">
-                                                    <label class="custom-file-label" for="inputGroupFile04">Choose Profile Picture</label>
-                                                </div>
-                                                <input type='hidden' id='file-input' name='preImg' value='<?php echo $photo?>'>
                                             </div>
                                         </div>
-                                    </div>
-                                    <br>
-                                    <div class="card-body">
-                                    <div style="font-size:100% ">
-                                    <fieldset class="checkbox text-center">
-                                        <label>
-                                            <input type='hidden' value='0' name='checkImage'>
-                                            <input style='transform: scale(1.5);' type="checkbox" name='checkImage' value="1" >&nbsp&nbsp&nbspTick This to Update Without Updating Profile Picture
-                                        </label>
-                                    </fieldset>
-                                    </div>
-
-                                    <div style="font-size:100% ">
-                                    <fieldset class="checkbox text-center">
-                                        <label>
-                                            <input type='hidden' value='0' name='checkCV'>
-                                            <input style='transform: scale(1.5);' type="checkbox" name='checkCV' value="1" >&nbsp&nbsp&nbsp&nbsp&nbspTick This to Update Without Updating CV
-                                        </label>
-                                    </fieldset>
+                                        <div class="form-group row">
+                                            <label class="col-md-2">Blog or Web <br>(Personal)</label>
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-10">
+                                                        <div class="form-group">
+                                                            <input id='text-input' type='text' class="form-control" name="web"
+                                                            placeholder="URL.." value="<?php echo $web ?>" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2">About</label>
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-10">
+                                                        <div class="form-group">
+                                                            <textarea id='text-input' type='text' class="form-control" name="description1" rows="3" placeholder="About..." required><?php echo $desc1 ?></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" name='cv' id="inputGroupFile04">
+                                                <label class="custom-file-label" for="inputGroupFile04">Choose PDF</label>
+                                            </div>
+                                            <input type="hidden" name='oldcv' value="<?php echo $cv_loc ?>">
+                                            <input type="hidden" name='oldemail' value="<?php echo $email ?>">
+                                        </div>
+                                        <br>
                                     </div>
                                 </div>
-
-                                    <div class = 'footer'>
-                                        <div style='text-align: center;'>
-                                            <button type ='submit' class="btn btn-rounded btn-info"><i class='fa fa-sync-alt'></i>&nbspUpdate</button>
-                                            &nbsp&nbsp
-                                            <button type="reset" class="btn btn-rounded btn-danger"><i class='fa fa-ban'></i>&nbspReset</button>
-                                        </div>
+                                <br>
+                                <div class = 'footer'>
+                                    <div style='text-align: center;'>
+                                        <button type ='submit' class="btn btn-rounded btn-info"><i class='fa fa-sync-alt'></i>&nbspUpdate</button>
+                                        &nbsp&nbsp
+                                        <button type="reset" class="btn btn-rounded btn-danger"><i class='fa fa-ban'></i>&nbspReset</button>
                                     </div>
-                                    </form> 
-                                    </div>
-                            </div>
+                                </div>
+                            </form> 
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+                                    
                 <!-- ============================================================== -->
                 <!-- End Container fluid  -->
                 <!-- ============================================================== -->
