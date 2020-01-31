@@ -107,7 +107,7 @@ if ($result = mysqli_query($connection, $sql)) {
                         <!-- ============================================================== -->
                         <div class="navbar-brand">
                             <!-- Logo icon -->
-                            <a href="index.php">
+                            <a href="userprofile.php">
                                 <b class="logo-icon">
                                     <!-- Dark Logo icon -->
                                     <img src="../admin/src/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
