@@ -94,7 +94,7 @@ elseif($phonenum < 1){
 }
 if($phonenum < 1 || $emailnum > 0){
 	echo "<script>alert ('$error')</script>";
-	echo "<script>window.open('company_edit.php?edit=$id','_self')</script>";
+	//echo "<script>window.open('company_edit.php?edit=$id','_self')</script>";
 }
 else{
 	if($status !== '0'){
@@ -108,11 +108,11 @@ else{
 				$run_query = mysqli_query($connection , $query1);
 				if($run_query){
 					echo "<script>alert ('Company Profile Updated!')</script>";
-					echo "<script>window.open('company_new.php','_self')</script>";
+					//echo "<script>window.open('company_new.php','_self')</script>";
 				}
 				else{
 					echo "<script>alert ('Oops! Something Went Wrong.. Contact Help!')</script>";
-					echo "<script>window.open('help.php','_self')</script>";
+					//echo "<script>window.open('help.php','_self')</script>";
 				}
 
 			}
@@ -120,14 +120,14 @@ else{
 		}else{
 
 			echo "<script>alert ('Oops! Something Went Wrong.. Contact Help!')</script>";
-			echo "<script>window.open('help.php','_self')</script>";
+			//echo "<script>window.open('help.php','_self')</script>";
 		}
 	}
 	else{
 		if($imageFileType1 != "jpg" && $imageFileType1 != "png" && $imageFileType1 != "jpeg" && $imageFileType1 != "gif" && $imageFileType1 != "JPG" && $imageFileType1 != "JPEG"&& $imageFileType1 != "PNG" && $imageFileType2 != "jpg" && $imageFileType2 != "png" && $imageFileType2 != "jpeg" && $imageFileType2 != "gif" && $imageFileType2 != "JPG" && $imageFileType2 != "JPEG"&& $imageFileType2 != "PNG" && $imageFileType3 != "jpg" && $imageFileType3 != "png" && $imageFileType3 != "jpeg" && $imageFileType3 != "gif" && $imageFileType3 != "JPG" && $imageFileType3 != "JPEG" && $imageFileType3 != "PNG"  && $imageFileType4 != "jpg" && $imageFileType4 != "png" && $imageFileType4 != "jpeg" && $imageFileType4 != "gif" && $imageFileType4 != "JPG" && $imageFileType4 != "JPEG"&& $imageFileType4 != "PNG" && $imageFileType5 != "jpg" && $imageFileType5 != "png" && $imageFileType5 != "jpeg" && $imageFileType5 != "gif" && $imageFileType5 != "JPG" && $imageFileType5 != "JPEG"&& $imageFileType5 != "PNG" && $imageFileType6 != "jpg" && $imageFileType6 != "png" && $imageFileType6 != "jpeg" && $imageFileType6 != "gif" && $imageFileType6 != "JPG" && $imageFileType6 != "JPEG"&& $imageFileType6 != "PNG" ) {
 
 			echo "<script>alert ('Sorry, only JPG, JPEG, PNG & GIF files are allowed. Select Again!')</script>";
-			echo "<script>window.open('company_edit.php?edit=$id','_self')</script>";
+			//echo "<script>window.open('company_edit.php?edit=$id','_self')</script>";
 
 		}else{
 
@@ -143,11 +143,11 @@ else{
 						$run_query = mysqli_query($connection , $query1);
 						if($run_query){
 							echo "<script>alert ('Company Profile Updated!')</script>";
-							echo "<script>window.open('company_new.php','_self')</script>";
+							//echo "<script>window.open('company_new.php','_self')</script>";
 						}
 						else{
 							echo "<script>alert ('Something Went Wrong.. Contact Help!')</script>";
-							echo "<script>window.open('help.php','_self')</script>";
+							//echo "<script>window.open('help.php','_self')</script>";
 						}
 
 					}
@@ -155,7 +155,7 @@ else{
 				}else{
 
 					echo "<script>alert ('Something Went Wrong.. Contact Help!')</script>";
-					echo "<script>window.open('html/help.php','_self')</script>";
+					//echo "<script>window.open('html/help.php','_self')</script>";
 				}
 			}
 		}
