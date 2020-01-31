@@ -78,9 +78,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
             $photo5 = $row['photo5'];
             $loc5 = "../company/src/assets/".$photo5; 
             $photo6 = $row['photo6'];
-            $loc6 = "../company/src/assets/".$photo6; 
-            $photo7 = $row['photo7'];
-            $loc7 = "../company/src/assets/".$photo7;  
+            $loc6 = "../company/src/assets/".$photo6;  
             $field = $row['field'];      
             $areas = (explode(",",$field));                         
         ?>
@@ -207,8 +205,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                             $p4_loc = "../company/src/assets/".$photo5; 
                             $photo6 = $row_emp['photo6'];
                             $p5_loc = "../company/src/assets/".$photo6; 
-                            $photo7 = $row_emp['photo7'];
-                            $p6_loc = "../company/src/assets/".$photo7;
                         
                         ?>
                         <div class="row">
@@ -243,7 +239,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                         </div>
                                         <br>
                                         <div style="text-align: center;">
-                                            <form action='company_edit.php' method='post' enctype='multipart/form-data'>
+                                            <form action='company_new.php' method='post' enctype='multipart/form-data'>
                                                 <div class="form-body">
                                                     <div class="form-group row">
                                                         <label class="col-md-2"></label>
@@ -483,13 +479,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                             <label class="custom-file-label" for="inputGroupFile04">Choose Slide Image 5</label>
                                                         </div>
                                                         <input type='hidden' id='file-input' name='defimage5' value='<?php echo $p5_loc?>'>
-                                                    </div><br>
-                                                    <div class="input-group">
-                                                        <div class="custom-file">
-                                                            <input id='file-input' name='image6' type="file" class="custom-file-input" id="inputGroupFile04">
-                                                            <label class="custom-file-label" for="inputGroupFile04">Choose Slide Image 6</label>
-                                                        </div>
-                                                        <input type='hidden' id='file-input' name='defimage6' value='<?php echo $p6_loc?>'>
                                                     </div><br>
                                                     <div style="font-size:100% ">
                                                         <fieldset class="checkbox">
