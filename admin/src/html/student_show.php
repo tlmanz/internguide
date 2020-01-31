@@ -341,6 +341,8 @@
                             $photo = $row_emp['cphoto'];
                             $cv = $row_emp['cv'];
                             $created = $row_emp['created_at'];
+                            $dob = $row_emp['dob'];
+                            $age = $row_emp['age'];
                             $p_loc = "../assets/".$photo;
                         }
                         ?>
@@ -414,9 +416,30 @@
                                                                 </div>
                                                                 <div class="col-md-5">
                                                                     <div class="form-group">
-                                                                        <label class="col-md-8">Mobile Number</label>
+                                                                        <label class="col-md-8">Contact Number</label>
                                                                         <input type="text" class="form-control text-center"
                                                                         placeholder="07xxxxxxxx" value='<?php echo $phone?>' readonly>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-2"></label>
+                                                        <div class="col-md-10">
+                                                            <div class="row">
+                                                                <div class="col-md-5">
+                                                                    <div class="form-group">
+                                                                        <label class="col-md-8">Date of Birth</label>
+                                                                        <input type="text" class="form-control text-center"
+                                                                        placeholder="Date of Birth" value='<?php echo $dob ?>' readonly>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-5">
+                                                                    <div class="form-group">
+                                                                        <label class="col-md-8">Age</label>
+                                                                        <input type="text" class="form-control text-center"
+                                                                        placeholder="Age" value='<?php echo $age?>' readonly>
                                                                     </div>
                                                                 </div>
                                                             </div>

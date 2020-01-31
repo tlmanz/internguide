@@ -343,6 +343,25 @@
                                 width="150">
                                 <br><br>
                                 <h3>Profile Picture</h3>
+                                <div style='margin-left: auto; margin-right: auto;' class="col-sm-5 col-md-7">
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <form action='../dist/php/admin_image_update.php' method='post' enctype='multipart/form-data'>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-outline-secondary" type="submit">Update Profile Image</button>
+                                                    </div>
+                                                    <div class="custom-file">
+                                                        <input type="file" name='profile' class="custom-file-input" id="inputGroupFile03">
+                                                        <input type="hidden" name='id' value='<?php echo $id ?>'>
+                                                        <input type="hidden" name='username' value='<?php echo $username?>'>
+                                                        <label class="custom-file-label" for="inputGroupFile03"></label>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <br>
                             <div style="text-align: center;">
@@ -424,24 +443,9 @@
                                             </div>
                                         </div>
                                         <br>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input id='file-input' name='profile' type="file" class="custom-file-input" id="inputGroupFile04">
-                                                <label class="custom-file-label" for="inputGroupFile04">Choose Profile Picture</label>
-                                            </div>
-                                            <input type='hidden' name='defphoto' value='<?php echo $p_loc?>'>
-                                        </div>
                                     </div>
                                 </div>
                                 <br>
-                                <div style="font-size:100% ">
-                                    <fieldset class="checkbox text-center">
-                                        <label>
-                                            <input type='hidden' value='0' name='check'>
-                                            <input style='transform: scale(1.5);' type="checkbox" name='check' value="1" >&nbsp&nbsp&nbspTick This to Update without Images
-                                        </label>
-                                    </fieldset>
-                                </div>
                                 <div class = 'footer'>
                                     <div style='text-align: center;'>
                                         <a href = 'admin_admin.php' >

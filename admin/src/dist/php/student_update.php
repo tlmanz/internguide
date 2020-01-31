@@ -15,17 +15,20 @@ $linkedin = $_POST['linkedin'];
 $web = $_POST['web'];
 $desc1 = $_POST['description1'];
 $status = $_POST['check'];
+$username = $_POST['username'];
+$dob = $_POST['dob'];
+$age = $_POST['age'];
 		// $cv = $POST['cv'];
 $p_loc = __DIR__."/../../assets/userImages/";
 $temp = explode(".", $_FILES["profile"]["name"]);
-$newfilename = round(microtime(true)) .$cid. '.' . end($temp);
+$newfilename = $username. '.' . end($temp);
 $cphoto = $p_loc.$newfilename;
 $imageFileType = strtolower(pathinfo($cphoto,PATHINFO_EXTENSION));
 $imagepath = "userImages/".$newfilename;
 $defimagepath = $_POST['defprofile'];
 		// echo "outside";
 if($status !== '0'){
-	$query1 = "update customer_account set firstname='$firstname',lastname='$lastname', nic = '$nic', gender = '$gender', field = '$field', address='$address',telephone='$phone',email='$email', gpa = '$gpa', linkedin = '$linkedin', web = '$web', description1 = '$desc1' where cid = '$cid' ";
+	$query1 = "update customer_account set firstname='$firstname',lastname='$lastname', nic = '$nic', gender = '$gender', field = '$field', address='$address',telephone='$phone',email='$email', gpa = '$gpa', linkedin = '$linkedin', web = '$web', description1 = '$desc1', dob = '$dob', age = '$age' where cid = '$cid' ";
 	$run_query = mysqli_query($connection , $query1);
 	if($run_query){
 		echo "<script>alert ('Profile Updated Successfully Without Updating Profile Picture and Your CV!')</script>";
@@ -41,7 +44,7 @@ else{
 		if (move_uploaded_file($_FILES["profile"]["tmp_name"], $cphoto)) {
 		// echo "insert";
 
-			$query1 = "update customer_account set firstname='$firstname',lastname='$lastname', nic = '$nic', gender = '$gender', field = '$field', address='$address',telephone='$phone',email='$email', gpa = '$gpa', linkedin = '$linkedin', web = '$web', description1 = '$desc1', cphoto = '$imagepath' where cid = '$cid' ";
+			$query1 = "update customer_account set firstname='$firstname',lastname='$lastname', nic = '$nic', gender = '$gender', field = '$field', address='$address',telephone='$phone',email='$email', gpa = '$gpa', linkedin = '$linkedin', web = '$web', description1 = '$desc1', cphoto = '$imagepath', dob = '$dob', age = '$age where cid = '$cid' ";
 			$run_query = mysqli_query($connection , $query1);
 			if($run_query){
 				echo "<script>alert ('Profile Updated Successfully!')</script>";
