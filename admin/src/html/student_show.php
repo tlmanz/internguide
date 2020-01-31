@@ -133,7 +133,7 @@
                         $row_admin = mysqli_fetch_array($run_edit_admin);
                         $name = $row_admin['name'];
                         $photo = $row_admin['aphoto'];
-                        $loc = "../assets/".$photo;                                    
+                        $loc = "../assets/".$photo;                              
                         ?>
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
@@ -146,7 +146,7 @@
                             class="svg-icon"></i></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                            <a class="dropdown-item" href="javascript:void(0)"><i data-feather="user"
+                            <a class="dropdown-item" href="admin_show.php?edit=<?php echo $_SESSION['id'] ?>"><i data-feather="user"
                                 class="svg-icon mr-2 ml-1"></i>
                             My Profile</a>
                             
