@@ -433,7 +433,7 @@
                                                 <div class="row">
                                                     <div class="col-md-10">
                                                         <div class="form-group">
-                                                            <textarea id='text-input' type='text' name='address' class="form-control" rows="3" placeholder="Address..." required></textarea>
+                                                            <textarea id='text-input' type='text' name='address' class="form-control" rows="3" placeholder="Address line by line" required></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -523,7 +523,7 @@
                                                     <div class="col-md-10">
                                                         <div class="form-group">
                                                             <input id='text-input' type='text' class="form-control" name="linkedin"
-                                                            placeholder="URL..">
+                                                            placeholder="www.example.com">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -536,7 +536,7 @@
                                                     <div class="col-md-10">
                                                         <div class="form-group">
                                                             <input id='text-input' type='text' class="form-control" name="web"
-                                                            placeholder="URL..">
+                                                            placeholder="www.example.com">
                                                         </div>
                                                     </div>
                                                 </div>
