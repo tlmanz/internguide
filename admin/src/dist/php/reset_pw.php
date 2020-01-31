@@ -1,4 +1,5 @@
 <?php
+//Admin Password Reset
 require_once (__DIR__.'/../../../config/connect.php');
 
 $new_password = $_POST['newpassword'];

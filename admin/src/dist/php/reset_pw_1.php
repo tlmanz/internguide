@@ -1,4 +1,5 @@
 <?php
+//Student Password Reset
 require_once (__DIR__.'/../../../config/connect.php');
 
 $new_password = $_POST['newpassword'];
@@ -12,8 +13,6 @@ else{
 	$password = password_hash($new_password, PASSWORD_DEFAULT);
 	$query1 = "update customer_account set password='$password' where cid=".$pw_id;
 	$run_pw_update = mysqli_query($connection , $query1);
-	echo 'fail';
-	echo $pw_id;
 	if ($run_pw_update) {
 
 		echo "<script>alert ('Password Resetted Successfully!')</script>";

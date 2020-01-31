@@ -321,8 +321,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Student Table</h4>
-                                <h6 class="card-subtitle">This table contains all the students who registered with this system</h6>
+                                <h4 class="card-title">Company Table</h4>
+                                <h6 class="card-subtitle">This table contains all the Companies which are registered with this system and you can remove any of them</h6>
                                 <div class="table-responsive">
                                     <table id="default_order" class="table table-striped table-bordered display no-wrap"
                                         style="width:100%">
@@ -334,7 +334,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                 <th style='text-align: center;'>University</th>
                                                 <th style='text-align: center;'>Age</th>
                                                 <th style='text-align: center;'>Show</th>
-                                                <th style='text-align: center;'>Update</th>
+                                                <th style='text-align: center;'>Remove</th>
                                             </tr>
                                         </thead>
                                         <tbody>

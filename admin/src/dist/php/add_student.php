@@ -2,7 +2,6 @@
     require_once (__DIR__.'/../../../config/connect.php');
     
 	$firstname = $_POST['firstname'];
-	echo $firstname;
 	$pass = $_POST['password'];
 	$username = $_POST['username'];
 	$lastname = $_POST['lastname'];
@@ -20,9 +19,11 @@
 	$password = password_hash($pass, PASSWORD_DEFAULT);
 	
 	$p_loc = __DIR__."/../../assets/userImages/";
-	$cphoto = $p_loc.basename($_FILES['profile']['name']);
+	$temp = explode(".", $_FILES["profile"]["name"]);
+	$newfilename = round(microtime(true)) .$username. '.' . end($temp);
+	$cphoto = $p_loc.$newfilename;
 	$imageFileType = strtolower(pathinfo($cphoto,PATHINFO_EXTENSION));
-	$imagepath = "userImages/".basename($_FILES['profile']['name']);
+	$imagepath = "userImages/".$newfilename;
 
 	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "JPG"&& $imageFileType != "JPEG"&& $imageFileType != "PNG") {
    		

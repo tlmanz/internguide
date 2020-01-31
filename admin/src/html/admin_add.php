@@ -316,16 +316,13 @@
                     <!-- *************************************************************** -->
                     <!-- Start First Cards -->
                     <!-- *************************************************************** -->
-                    <?php
-                        $back = $_SESSION['prev'];
-                    ?>
                     <div class="row">
                         <div style='margin-left: auto; margin-right: auto;'class="col-8">
                             <div class="card">
                                 <div class="card-body">
-                                    <h2 class="card-title">Student Details</h2>
+                                    <h2 class="card-title">Administrator Details</h2>
                                     <div class= 'text-center'>
-                                        <img src='../assets/userImages/default.png' alt='image' class="rounded-circle"
+                                        <img src='../assets/adminImages/default.png' alt='image' class="rounded-circle"
                                                 width="150">
                                         <br><br>
                                         <h3>Profile Picture</h3>
@@ -364,7 +361,7 @@
                                                     <div class="row">
                                                         <div class="col-md-5">
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" name='password' placeholder="Password" required="">
+                                                                <input type="password" class="form-control" name='password' placeholder="Password" required="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -402,138 +399,16 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-md-2">NIC<br>Number</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-7">
-                                                            <div class="form-group">
-                                                                <input id='text-input' type="text" class="form-control"
-                                                                    placeholder="xxxxxxxxxV" name='nic' required="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-md-2">Address</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-10">
-                                                            <div class="form-group">
-                                                                <textarea id='text-input' type='text' name='address' class="form-control" rows="3" placeholder="Address..." required></textarea>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
                                                 <label class="col-md-2">Mobile Number</label>
                                                 <div class="col-md-10">
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <input id='text-input' type="text" class="form-control"
-                                                                    placeholder="07xxxxxxxx" name='telephone' required="">
+                                                                    placeholder="07xxxxxxxx" name='phone' required="">
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-md-2">Gender</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-1">
-                                                        <div class="custom-control custom-radio">
-                                                            <input type="radio" id="customRadio1" name="gender"
-                                                                class="custom-control-input" value="m" >
-                                                            <label class="custom-control-label" for="customRadio1">Male&nbsp&nbsp&nbsp</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio">
-                                                            <input type="radio" id="customRadio2" name="gender"
-                                                                class="custom-control-input" value = 'f' >
-                                                            <label class="custom-control-label" for="customRadio2">Female&nbsp&nbsp&nbsp</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio">
-                                                            <input type="radio" id="customRadio3" name="gender"
-                                                                class="custom-control-input" value = 'n' >
-                                                            <label class="custom-control-label" for="customRadio3">N/A</label>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-md-2">Field of Study</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group mb-4">
-                                                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="field">
-                                                                    <option type='text' value="1" >One</option>
-                                                                    <option type='text' value="2">Two</option>
-                                                                    <option type='text' value="3">Three</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-md-2">GPA <br>(Up to Day)</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <input id='text-input' type="number" class="form-control" name="gpa"
-                                                                    placeholder="GPA" min="0" max="4.2" required="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-md-2">LinkedIn <br>URL</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-10">
-                                                            <div class="form-group">
-                                                                <input id='text-input' type='text' class="form-control" name="linkedin"
-                                                                    placeholder="URL.." required="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-md-2">Blog or Web <br>(Personal)</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-10">
-                                                            <div class="form-group">
-                                                                <input id='text-input' type='text' class="form-control" name="web"
-                                                                    placeholder="URL.." required="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-md-2">About</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-10">
-                                                            <div class="form-group">
-                                                                <textarea id='text-input' type='text' class="form-control" name="description1" rows="3" placeholder="About..." required></textarea>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="input-group">
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="inputGroupFile04" name='pdf' required="">
-                                                    <label class="custom-file-label" for="inputGroupFile04">Upload Your CV</label>
                                                 </div>
                                             </div>
                                             <br>
@@ -548,7 +423,7 @@
                                     <br>
                                     <div class = 'footer'>
                                         <div style='text-align: center;'>
-                                            <a href = '<?php echo $back ?>' >
+                                            <a href = 'admin_admin.php' >
                                                 <button class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
                                             </a>
                                             &nbsp&nbsp

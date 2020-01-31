@@ -5110,7 +5110,7 @@ button.bg-purple:focus {
 
 .rounded-circle {
   border-radius: 50%  !important;
-  overflow: hidden    !important;              }
+  max-width: 100%;              }
 
 .rounded-pill {
   border-radius: 50rem !important; }
