@@ -1,5 +1,5 @@
 <?php
-require_once "../admin/config/connect.php";
+require_once (__DIR__.'../../admin/config/connect.php');
 
 $cid = $_POST['cid'];
 $firstname = $_POST['firstname'];
@@ -14,121 +14,63 @@ $gpa = $_POST['gpa'];
 $linkedin = $_POST['linkedin'];
 $web = $_POST['web'];
 $desc1 = $_POST['description1'];
-$statusImg = $_POST['checkImage'];
-$statusCV = $_POST['checkCV'];
-//$cv = $_POST['cv'];
+$username = $_POST['username'];
+$dob = $_POST['dob'];
+$age = $_POST['age'];
+$oldcv = $_POST['oldcv'];
+$oldemail = $_POST['oldemail'];
+		// $cv = $POST['cv'];
+$emailnum = 0;
 
-$p_loc = "../admin/src/assets/userImages/";
-$temp = explode(".", $_FILES["profile"]["name"]);
-$newfilename = round(microtime(true)) .$cid. '.' . end($temp);
-$cphoto = $p_loc.$newfilename;
-$imageFileType = strtolower(pathinfo($cphoto,PATHINFO_EXTENSION));
-$imagepath = "userImages/".$newfilename;
-$defImagepath = $_POST['preImg'];
+if($email !== $oldemail ){
+	$emailnum = mysqli_num_rows(mysqli_query($connection, "SELECT * FROM `customer_account` WHERE ( `email` = '".$_POST['email']."' )"));
+}
+else{
+	$emailnum = 0;
+}
 
-//cv
-$cv_loc = "../admin/src/assets/studentCV/";
-$temp1 = explode(".", $_FILES["cv"]["name"]);
-$newCVname = round(microtime(true)) .$cid. '.' . end($temp1);
-$cv = $cv_loc.$newCVname;
-$CVFileType = strtolower(pathinfo($cv,PATHINFO_EXTENSION));
-$CVpath = "studentCV/".$newCVname;
-$defCVpath = $_POST['preCV'];
+if(!isset($_FILES['cv']) || $_FILES['cv']['error']== UPLOAD_ERR_NO_FILE){
+	$cvpath = $oldcv;
+}
+else{
+	$cv_loc = __DIR__."../../admin/src/assets/studentCV/";
+	$tempcv = explode(".", $_FILES["cv"]["name"]);
+	$cvfilename = $username. '.' . end($tempcv);
+	$cvname = $cv_loc.$cvfilename;
+	$cvFileType = strtolower(pathinfo($cvname,PATHINFO_EXTENSION));
+	$cvpath = "studentCV/".$cvfilename;
+	move_uploaded_file($_FILES["cv"]["tmp_name"], $cvname);
+	if($cvFileType !="pdf" && $cvFileType !="PDF"){
+		echo "<script>alert ('Sorry, only PDF files are allowed')</script>";
+		echo "<script>window.open('../../html/student_edit.php?edit=$cid','_self')</script>";
+	}
+}
 
-		// echo "outside";
-if(($statusImg !== '0') && ($statusCV !== '0')){
-	$query1 = "update customer_account set firstname='$firstname',lastname='$lastname', nic = '$nic', gender = '$gender', field = '$field', address='$address',telephone='$phone',email='$email', gpa = '$gpa', linkedin = '$linkedin', web = '$web', description1 = '$desc1' where cid = '$cid' ";
+//$emailnum = mysqli_num_rows(mysqli_query($connection, "SELECT * FROM `customer_account` WHERE ( `email` = '".$_POST['email']."' )"));
+$phonenum = preg_match('/^[0-9]{10}+$/', $phone);
+if ($phonenum < 1 && $emailnum > 0){
+	$error = 'Email Exists. Choose a Unique One!.. Check Your Contact Number Again!..';
+}
+elseif ($emailnum > 0){
+	$error = 'Email Exists. Choose a Unique One!';
+}
+if($phonenum < 1 || $emailnum > 0){
+	echo "<script>alert ('$error')</script>";
+	echo "<script>window.open('../../html/student_edit.php?edit=$cid','_self')</script>";
+}		// echo "outside";
+else{
+		// echo "insert";
+	$query1 = "update customer_account set firstname='$firstname',lastname='$lastname', nic = '$nic', gender = '$gender', field = '$field', address='$address',telephone='$phone',email='$email', gpa = '$gpa', linkedin = '$linkedin', web = '$web', description1 = '$desc1', dob = '$dob', age = '$age', cv = '$cvpath' where cid = '$cid' ";
 	$run_query = mysqli_query($connection , $query1);
 	if($run_query){
-		echo "<script>alert ('Profile Updated Successfully Without Updating Profile Picture and Your CV!')</script>";
-		//echo "<script>window.open('../../html/student_show.php?edit=$cid','_self')</script>";
-	}
-}
-elseif (($statusImg == '0') && ($statusCV == '0')){
-
-	if(($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "JPG" && $imageFileType != "JPEG"&& $imageFileType != "PNG") && ($CVFileType != "pdf")){
-		echo "<script>alert ('Sorry, only JPG, JPEG, PNG & GIF & pdf files are allowed. Select Again!')</script>";
-		echo "<script>window.open('../../html/student_edit.php?edit=$cid','_self')</script>";
+		echo "<script>alert ('Profile Updated Successfully!')</script>";
+		echo "<script>window.open('../../html/student_show.php?edit=$cid','_self')</script>";
 	}
 	else{
-		if ((move_uploaded_file($_FILES["profile"]["tmp_name"], $cphoto)) && (move_uploaded_file($_FILES["cv"]["tmp_name"], $cv))) {
-		// echo "insert";
-
-			$query1 = "update customer_account set firstname='$firstname',lastname='$lastname', nic = '$nic', gender = '$gender', field = '$field', address='$address',telephone='$phone',email='$email', gpa = '$gpa', linkedin = '$linkedin', web = '$web', description1 = '$desc1', cphoto = '$imagepath', cv = '$cv' where cid = '$cid' ";
-			$run_query = mysqli_query($connection , $query1);
-			if($run_query){
-				echo "<script>alert ('Profile Updated Successfully!')</script>";
-				echo "<script>window.open('../../html/student_show.php?edit=$cid','_self')</script>";
-			}
-			else{
-				echo "<script>alert ('Oops! Something Went Wrong1.. Contact Help!')</script>";
-				echo "<script>window.open('../../html/help.php','_self')</script>";
-			}
-		}
-		else{
-			echo "<script>alert ('Oops! Something Went Wrong2.. Contact Help!')</script>";
-			//echo "<script>window.open('../../html/help.php','_self')</script>";
-		}
-    }
-}
-elseif (($statusImg == '0') && ($statusCV != '0')){
-
-	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "JPG" && $imageFileType != "JPEG"&& $imageFileType != "PNG"){
-		echo "<script>alert ('Sorry, only JPG, JPEG, PNG & GIF files are allowed. Select Again!')</script>";
-		echo "<script>window.open('../../html/student_edit.php?edit=$cid','_self')</script>";
+		echo "<script>alert ('Oops! Something Went Wrong.. Contact Help!')</script>";
+		echo "<script>window.open('../../html/help.php','_self')</script>";
 	}
-	else{
-		if (move_uploaded_file($_FILES["profile"]["tmp_name"], $cphoto)) {
-		// echo "insert";
-
-			$query1 = "update customer_account set firstname='$firstname',lastname='$lastname', nic = '$nic', gender = '$gender', field = '$field', address='$address',telephone='$phone',email='$email', gpa = '$gpa', linkedin = '$linkedin', web = '$web', description1 = '$desc1', cphoto = '$imagepath', cv='$defCVpath' where cid = '$cid' ";
-			$run_query = mysqli_query($connection , $query1);
-			if($run_query){
-				echo "<script>alert ('Profile Updated Successfully!')</script>";
-				echo "<script>window.open('../../html/student_show.php?edit=$cid','_self')</script>";
-			}
-			else{
-				echo "<script>alert ('Oops! Something Went Wrong3.. Contact Help!')</script>";
-				//echo "<script>window.open('../../html/help.php','_self')</script>";
-			}
-		}
-		else{
-			echo "<script>alert ('Oops! Something Went Wrong4.. Contact Help!')</script>";
-			//echo "<script>window.open('../../html/help.php','_self')</script>";
-		}
-    }
 }
-elseif (($statusImg != '0') && ($statusCV == '0')){
-
-	if($CVFileType != "pdf"){
-		echo "<script>alert ('Sorry, pdf files are allowed. Select Again!')</script>";
-		echo "<script>window.open('../../html/student_edit.php?edit=$cid','_self')</script>";
-	}
-	else{
-		if (move_uploaded_file($_FILES["cv"]["tmp_name"], $cv)){
-		// echo "insert";
-
-			$query1 = "update customer_account set firstname='$firstname',lastname='$lastname', nic = '$nic', gender = '$gender', field = '$field', address='$address',telephone='$phone',email='$email', gpa = '$gpa', linkedin = '$linkedin', web = '$web', description1 = '$desc1', cv = '$cv',cphoto = '$defImagepath' where cid = '$cid' ";
-			$run_query = mysqli_query($connection , $query1);
-			if($run_query){
-				echo "<script>alert ('pdf uploaded Successfully!')</script>";
-				echo "<script>window.open('../../html/student_show.php?edit=$cid','_self')</script>";
-			}
-			else{
-				echo "<script>alert ('Oops! Something Went Wrong5.. Contact Help!')</script>";
-				echo "<script>window.open('../../html/help.php','_self')</script>";
-			}
-		}
-		else{
-			echo "<script>alert ('Oops! Something Went Wrong6.. Contact Help!')</script>";
-			echo "<script>window.open('../../html/help.php','_self')</script>";
-		}
-    }
-}
-
-		
-	
-
 
 
 ?>
