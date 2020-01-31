@@ -451,7 +451,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                         $sql2 = 'SELECT * FROM employee ORDER BY id DESC LIMIT 3';
                                         $runsql2 = mysqli_query($connection, $sql2);
                                         while($row2 = mysqli_fetch_array($runsql2)){
-                                            $id = $row['id'];
+                                            $id2 = $row2['id'];
                                             $name2 = $row2['ename'];
                                             $email2 =$row2['email'];
                                             $date2 = $row2['created_at'];
@@ -467,7 +467,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                 height='45' /></div>
                                                         <div class=''>
                                                             <h5 class='text-dark mb-0 font-16 font-weight-medium'>$name2</h5>
-                                                            <span class='text-muted font-14'>$email</span>
+                                                            <span class='text-muted font-14'>$email2</span>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -479,7 +479,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                 </td>
                                                 <td class='border-top-0 text-center px-2 py-4'>
                                                     <div style='text-align: center;' class='table-data-feature'>
-                                                    <a href='company_show.php?edit=$id'>
+                                                    <a href='company_show.php?edit=$id2'>
                                                         <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
                                                                 <i class='fas fa-list'></i>
                                                         </button>
@@ -488,7 +488,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                 </td>
                                                 <td class='font-weight-medium text-dark border-top-0 px-2 py-4'>
                                                 <div style='text-align: center;' class='table-data-feature'>
-                                                    <a href='company_edit.php?edit=$id'>
+                                                    <a href='company_edit.php?edit=$id2'>
                                                         <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
                                                                 <i class='fas fa-edit'></i>
                                                         </button>
