@@ -63,8 +63,8 @@ else{
 	$query1 = "update customer_account set firstname='$firstname',lastname='$lastname', nic = '$nic', gender = '$gender', field = '$field', address='$address',telephone='$phone',email='$email', gpa = '$gpa', linkedin = '$linkedin', web = '$web', description1 = '$desc1', dob = '$dob', age = '$age', cv = '$cvpath' where cid = '$cid' ";
 	$run_query = mysqli_query($connection , $query1);
 	if($run_query){
-		echo "<script>alert ('Profile Updated Successfully!')</script>";
-		echo "<script>window.open('../../html/student_show.php?edit=$cid','_self')</script>";
+		echo "<script>alert ('Profile Updated Successfully111!')</script>";
+		echo "<script>window.open('userprofile.php','_self')</script>";
 	}
 	else{
 		echo "<script>alert ('Oops! Something Went Wrong.. Contact Help!')</script>";
