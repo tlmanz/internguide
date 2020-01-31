@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "connect.php";
+require_once (__DIR__.'/../../../config/connect.php');
  $id_company=trim($_GET['id']);
  $id_student=trim($_GET['userid']);
 ?>
