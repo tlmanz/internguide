@@ -55,7 +55,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
         </div>
     </div>
     <?php
-    $s_id = $_SESSION['id'];
+    $s_id =  $_SESSION['id'];
     $get_admin = "select * from employee where id ='$s_id'";
     $run_edit_admin = mysqli_query($connection,$get_admin);
     $row = mysqli_fetch_array($run_edit_admin);
@@ -134,7 +134,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                         <li class="nav-item dropdown">
 
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
-<<<<<<< HEAD
                                 aria-haspopup="true" aria-expanded="false">
                                 <img src="<?php echo $loc1 ?>"  style="max-height:500px; max-width : 100px" alt="user" class="rounded-circle"
                                     width="40">
@@ -187,62 +186,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                         <div class="hero-info">
 									<h2 style="font-size:300%; "selected><?php echo $row['ename'] ?></h2>
 								</div>
-                        <div class="d-flex align-items-center">
-=======
-                            aria-haspopup="true" aria-expanded="false">
-                            <img src="<?php echo $loc1 ?>"  style="max-height:500px; max-width : 100px" alt="user" class="rounded-circle"
-                            width="40">
-                            <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
-                            class="text-dark"><?php echo $row['ename'] ?></span> <i data-feather="chevron-down"
-                            class="svg-icon"></i></span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                            <a class="dropdown-item" href="company_edit.php"><i data-feather="settings"
-                                class="svg-icon mr-2 ml-1"></i>
-                            Account Setting</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="php/logout.php"><i data-feather="power"
-                                class="svg-icon mr-2 ml-1"></i>
-                            Logout</a>
->>>>>>> 3e1a0f1153c3a5c85e02d5749fa20a97d5edf366
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <aside class="left-sidebar" data-sidebarbg="skin6">
-        <!-- Sidebar scroll-->
-        <div class="scroll-sidebar" data-sidebarbg="skin6">
-            <!-- Sidebar navigation-->
-            <nav class="sidebar-nav">
-                <ul id="sidebarnav">
-                    <li class="sidebar-item"> <a class="sidebar-link" href="studentlist.php"
-                        aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
-                        class="hide-menu">View Student List</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link" href="studentsearch.php"
-                            aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
-                            class="hide-menu">Search Students
-                        </span></a>
-                    </li>
-                </ul>
-            </nav>
-            <!-- End Sidebar navigation -->
-        </div>
-        <!-- End Sidebar scroll-->
-    </aside>
-    <div class="page-wrapper">
-        <div class="col-lg-6 text-md-center">
-            <figure class="hero-image">
-               <img src="<?php echo $loc1 ?>"  style="max-height:500px; max-width : 500px">
-           </figure>
-       </div>
-       <div class="page-breadcrumb">
-        <div class="row">
-            <div class="hero-info">
-               <h2 style="font-size:300%; "selected><?php echo $row['ename'] ?></h2>
-           </div>
-           <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center">
            </div>
            <div class="hero-info">
                <p  style="font-size:150%; "selected><?php echo $row['description'] ?></p>
