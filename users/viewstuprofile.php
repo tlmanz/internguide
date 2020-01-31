@@ -1,6 +1,6 @@
 <?php
 
-require_once "../admin/config/connect.php";
+require_once (__DIR__.'/../../../config/connect.php');
 session_start();
 
 // if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_SESSION["usertype"]) || $_SESSION["usertype"] !== 'company'){
