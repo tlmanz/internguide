@@ -322,6 +322,9 @@
                             $photo2 = $row_emp['photo2'];
                             $photo3 = $row_emp['photo3'];
                             $photo4 = $row_emp['photo4'];
+                            $photo5 = $row_emp['photo5'];
+                            $photo6 = $row_emp['photo6'];
+                            $photo7 = $row_emp['photo7'];
                             $pinterest = $row_emp['pin'];
                             $linkedin = $row_emp['linkedin'];
                             $facebook = $row_emp['facebook'];
@@ -333,6 +336,9 @@
                             $p1_loc = "../assets/".$photo2;
                             $p2_loc = "../assets/".$photo3;
                             $p3_loc = "../assets/".$photo4;
+                            $p4_loc = "../assets/".$photo5;
+                            $p5_loc = "../assets/".$photo6;
+                            $p6_loc = "../assets/".$photo7;
                         }
                         ?>
                         <div class="row">
@@ -593,6 +599,20 @@
                                                             <label class="custom-file-label" for="inputGroupFile04">Choose Slide Image 3</label>
                                                         </div>
                                                         <input type='hidden' id='file-input' name='defimage3' value='<?php echo $p3_loc?>'>
+                                                    </div><br>
+                                                    <div class="input-group">
+                                                        <div class="custom-file">
+                                                            <input id='file-input' name='image4' type="file" class="custom-file-input" id="inputGroupFile04">
+                                                            <label class="custom-file-label" for="inputGroupFile04">Choose Slide Image 4</label>
+                                                        </div>
+                                                        <input type='hidden' id='file-input' name='defimage4' value='<?php echo $p4_loc?>'>
+                                                    </div><br>
+                                                    <div class="input-group">
+                                                        <div class="custom-file">
+                                                            <input id='file-input' name='image5' type="file" class="custom-file-input" id="inputGroupFile04">
+                                                            <label class="custom-file-label" for="inputGroupFile04">Choose Slide Image 5</label>
+                                                        </div>
+                                                        <input type='hidden' id='file-input' name='defimage5' value='<?php echo $p5_loc?>'>
                                                     </div><br>
                                                     <div style="font-size:100% ">
                                                         <fieldset class="checkbox">
