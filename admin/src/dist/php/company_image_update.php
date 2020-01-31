@@ -23,7 +23,7 @@ else{
 		$run_query = mysqli_query($connection , $query1);
 		if($run_query){
 			echo "<script>alert ('Company Logo Updated!')</script>";
-			echo "<script>window.open('../../html/ccompany_edit.php?edit=$id','_self')</script>";
+			echo "<script>window.open('../../html/company_edit.php?edit=$id','_self')</script>";
 		}
 		else{
 			echo "<script>alert ('Oops! Something Went Wrong..  Contact Help!')</script>";
