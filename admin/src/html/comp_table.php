@@ -253,13 +253,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                         class="hide-menu">Administrator Data
                                     </span></a>
                             </li>
-                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="student_pdf.php"
-                                    aria-expanded="false"><i class="fa fa-file-pdf"></i><span
-                                        class="hide-menu">Student Data</span></a></li>
-                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="company_pdf.php"
-                                    aria-expanded="false"><i class="fa fa-file-pdf"></i><span
-                                        class="hide-menu">Company Data</span></a></li>
-
                             <li class="list-divider"></li>
                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="../dist/php/logout.php"
                                     aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span

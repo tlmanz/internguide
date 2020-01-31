@@ -246,28 +246,14 @@
 </li>
 </ul>
 </li>
+
 <li class="list-divider"></li>
-<li class="nav-small-cap"><span class="hide-menu">Report Generation</span></li>
-
-<li class="sidebar-item"> <a class="sidebar-link" href="admin_pdf.php"
-    aria-expanded="false"><i class="fa fa-file-pdf"></i><span
-    class="hide-menu">Administrator Data
-</span></a>
-</li>
-<li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="student_pdf.php"
-    aria-expanded="false"><i class="fa fa-file-pdf"></i><span
-    class="hide-menu">Student Data</span></a></li>
-    <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="company_pdf.php"
-        aria-expanded="false"><i class="fa fa-file-pdf"></i><span
-        class="hide-menu">Company Data</span></a></li>
-
-        <li class="list-divider"></li>
-        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="../dist/php/logout.php"
-            aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
-            class="hide-menu">Logout</span></a></li>
-        </ul>
-    </nav>
-    <!-- End Sidebar navigation -->
+<li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="../dist/php/logout.php"
+    aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
+    class="hide-menu">Logout</span></a></li>
+</ul>
+</nav>
+<!-- End Sidebar navigation -->
 </div>
 <!-- End Sidebar scroll-->
 </aside>
@@ -499,84 +485,84 @@
                                                                     <label class="col-md-2">Social</label>
                                                                     <div class="form-group">
                                                                         <a href=<?php echo $pinterest?>>
-                                                                           <i style="color:#e60023;" class="fab fa-pinterest-p fa-3x"></i>
-                                                                        </a>
-                                                                        <a style="margin-left:10% " href=<?php echo $facebook?>>
-                                                                           <i style="color:#3b5998;" class="fab fa-facebook-f fa-3x"></i>
-                                                                        </a>
-                                                                        <a style="margin-left:10% " href=<?php echo $twitter?>>
-                                                                           <i style="color:#00ACEE;" class="fab fa-twitter fa-3x"></i>
-                                                                        </a>
-                                                                        <a style="margin-left:10% " href=<?php echo $linkedin?>>
-                                                                           <i style="color:#0072b1;" class="fab fa-linkedin-in fa-3x"></i>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                            <br>
-                                            <a style='margin-left: 0%' href = 'comp_table.php' >
-                                                <button class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
-                                            </a>
-                                            <a style='margin-left: 60%' href = "company_edit.php?edit=<?php echo $edit_id?>" >
-                                                <button class="btn btn-rounded btn-info">&nbsp<i class='fa fa-sync-alt'></i>&nbspUpdate Details</button>
-                                            </a>     
-                                        </div>
+                                                                         <i style="color:#e60023;" class="fab fa-pinterest-p fa-3x"></i>
+                                                                     </a>
+                                                                     <a style="margin-left:10% " href=<?php echo $facebook?>>
+                                                                         <i style="color:#3b5998;" class="fab fa-facebook-f fa-3x"></i>
+                                                                     </a>
+                                                                     <a style="margin-left:10% " href=<?php echo $twitter?>>
+                                                                         <i style="color:#00ACEE;" class="fab fa-twitter fa-3x"></i>
+                                                                     </a>
+                                                                     <a style="margin-left:10% " href=<?php echo $linkedin?>>
+                                                                         <i style="color:#0072b1;" class="fab fa-linkedin-in fa-3x"></i>
+                                                                     </a>
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                         </form>
+                                         <br>
+                                         <a style='margin-left: 0%' href = 'comp_table.php' >
+                                            <button class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
+                                        </a>
+                                        <a style='margin-left: 60%' href = "company_edit.php?edit=<?php echo $edit_id?>" >
+                                            <button class="btn btn-rounded btn-info">&nbsp<i class='fa fa-sync-alt'></i>&nbspUpdate Details</button>
+                                        </a>     
                                     </div>
                                 </div>
                             </div>
                         </div>
-                            <!-- ============================================================== -->
-                            <!-- End Container fluid  -->
-                            <!-- ============================================================== -->
-
-                            <!-- ============================================================== -->
-                            <!-- footer -->
-                            <!-- ============================================================== -->
-                            <footer class="footer text-center text-muted">
-                                All Rights Reserved by Ward12. Designed and Developed by <a
-                                href="https://wrappixel.com">TeamX</a>.
-                            </footer>
-                            <!-- ============================================================== -->
-                            <!-- End footer -->
-                            <!-- ============================================================== -->
-                        </div>
-                        <!-- ============================================================== -->
-                        <!-- End Page wrapper  -->
-                        <!-- ============================================================== -->
                     </div>
                     <!-- ============================================================== -->
-                    <!-- End Wrapper -->
+                    <!-- End Container fluid  -->
                     <!-- ============================================================== -->
-                    <!-- End Wrapper -->
-                    <!-- ============================================================== -->
-                    <!-- All Jquery -->
-                    <!-- ============================================================== -->
-                    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-                    <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
-                    <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-                    <!-- apps -->
-                    <!-- apps -->
-                    <script src="../dist/js/app-style-switcher.js"></script>
-                    <script src="../dist/js/feather.min.js"></script>
-                    <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-                    <script src="../dist/js/sidebarmenu.js"></script>
-                    <!--Custom JavaScript -->
-                    <script src="../dist/js/custom.min.js"></script>
-                    <!--This page JavaScript -->
-                    <script src="../assets/extra-libs/c3/d3.min.js"></script>
-                    <script src="../assets/extra-libs/c3/c3.min.js"></script>
-                    <script src="../assets/libs/chartist/dist/chartist.min.js"></script>
-                    <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-                    <script src="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
-                    <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
-                    <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
-                    <script src="../assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
-                    <script src="../dist/js/pages/datatable/datatable-basic.init.js"></script>
-                    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-                </body>
 
-                </html>
+                    <!-- ============================================================== -->
+                    <!-- footer -->
+                    <!-- ============================================================== -->
+                    <footer class="footer text-center text-muted">
+                        All Rights Reserved by Ward12. Designed and Developed by <a
+                        href="https://wrappixel.com">TeamX</a>.
+                    </footer>
+                    <!-- ============================================================== -->
+                    <!-- End footer -->
+                    <!-- ============================================================== -->
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Page wrapper  -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Wrapper -->
+            <!-- ============================================================== -->
+            <!-- End Wrapper -->
+            <!-- ============================================================== -->
+            <!-- All Jquery -->
+            <!-- ============================================================== -->
+            <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+            <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+            <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+            <!-- apps -->
+            <!-- apps -->
+            <script src="../dist/js/app-style-switcher.js"></script>
+            <script src="../dist/js/feather.min.js"></script>
+            <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+            <script src="../dist/js/sidebarmenu.js"></script>
+            <!--Custom JavaScript -->
+            <script src="../dist/js/custom.min.js"></script>
+            <!--This page JavaScript -->
+            <script src="../assets/extra-libs/c3/d3.min.js"></script>
+            <script src="../assets/extra-libs/c3/c3.min.js"></script>
+            <script src="../assets/libs/chartist/dist/chartist.min.js"></script>
+            <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+            <script src="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
+            <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
+            <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
+            <script src="../assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
+            <script src="../dist/js/pages/datatable/datatable-basic.init.js"></script>
+            <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+        </body>
+
+        </html>
