@@ -3,10 +3,10 @@
 require_once (__DIR__.'../../admin/config/connect.php');
 session_start();
 
-// if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_SESSION["usertype"]) || $_SESSION["usertype"] !== 'company'){
-//     header("location: company_login.php");
-//     exit;
-//     }
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_SESSION["usertype"]) || $_SESSION["usertype"] !== 'company'){
+    header("location: company_login.php");
+    exit;
+    }
 
 //$c_user = $_GET['username'];  //$_GET[]
 $s_id = $_GET['sid'];
@@ -152,7 +152,7 @@ if ($result = mysqli_query($connection, $sql)) {
 							<div class="col-lg-6">
 								<div class="hero-text">
 									<h2 style="position: relative;top: -40px"><?php echo $name ?></h2>
-									<p style="font-size: 25px"><?php echo $userdes?></p>
+									<p style="font-size: 25px;color: #899494"><?php echo $userdes?></p>
 								</div>
 								<div class="hero-info">
 									<h2>General Info</h2>
