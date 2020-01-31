@@ -4,14 +4,10 @@ require_once __DIR__."/../../admin/config/connect.php";
 session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true && isset($_SESSION["usertype"]) && $_SESSION["usertype"] === 'student'){
     header("location: ../users/userprofile.php");
     exit;
 }
- 
-// Include config file
-require_once "../admin/config/connect.php";
- 
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = "";
