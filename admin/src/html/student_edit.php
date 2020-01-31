@@ -355,6 +355,25 @@
                                 width="150">
                                 <br><br>
                                 <h3>Profile Picture</h3>
+                                <div style='margin-left: auto; margin-right: auto;' class="col-sm-5 col-md-7">
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <form action='../dist/php/student_image_update.php' method='post' enctype='multipart/form-data'>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-outline-secondary" type="submit">Update Profile Image</button>
+                                                    </div>
+                                                    <div class="custom-file">
+                                                        <input type="file" name='profile' class="custom-file-input" id="inputGroupFile03">
+                                                        <input type="hidden" name='id' value='<?php echo $id ?>'>
+                                                        <input type="hidden" name='username' value='<?php echo $username?>'>
+                                                        <label class="custom-file-label" for="inputGroupFile03"></label>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <br>
                             <div style="text-align: center;">
@@ -389,7 +408,7 @@
                                                         <div class="form-group">
                                                             <label class="col-md-8">Email</label>
                                                             <input type="text" class="form-control text-center"
-                                                            placeholder="Company Name" value='<?php echo $email ?>' name="email" readonly>
+                                                            placeholder="Company Name" value='<?php echo $email ?>' name="email">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-5">
@@ -410,15 +429,15 @@
                                                     <div class="col-md-5">
                                                         <div class="form-group">
                                                             <label class="col-md-8">Date of Birth</label>
-                                                            <input type="text" class="form-control text-center" name='dob'
-                                                            placeholder="Date of Birth" value='<?php echo $dob ?>' reqired>
+                                                            <input type="date" class="form-control text-center" name='dob'
+                                                            placeholder="Date of Birth" min='1980-01-01' max='2005-01-01' value='<?php echo $dob ?>' reqired>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-5">
                                                         <div class="form-group">
                                                             <label class="col-md-8">Age</label>
-                                                            <input type="text" class="form-control text-center"
-                                                            placeholder="Age" name='age' value='<?php echo $age?>' required>
+                                                            <input type="number" class="form-control text-center"
+                                                            placeholder="Age" min='10' max='40' name='age' value='<?php echo $age?>' required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -585,30 +604,16 @@
                                         </div>
                                         <div class="input-group">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="inputGroupFile04">
+                                                <input type="file" class="custom-file-input" name='cv' id="inputGroupFile04">
                                                 <label class="custom-file-label" for="inputGroupFile04">Choose PDF</label>
                                             </div>
-                                            <input type='hidden' id='file-input' name='cv' value='<?php echo $cv?>'>
+                                            <input type="hidden" name='oldcv' value="<?php echo $cv ?>">
+                                            <input type="hidden" name='oldemail' value="<?php echo $email ?>">
                                         </div>
                                         <br>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input id='file-input' name='profile' type="file" class="custom-file-input" id="inputGroupFile04">
-                                                <label class="custom-file-label" for="inputGroupFile04">Choose Profile Picture</label>
-                                            </div>
-                                            <input type='hidden' id='file-input' name='defprofile' value='<?php echo $p_loc?>'>
-                                        </div>
                                     </div>
                                 </div>
                                 <br>
-                                <div style="font-size:100% ">
-                                    <fieldset class="checkbox text-center">
-                                        <label>
-                                            <input type='hidden' value='0' name='check'>
-                                            <input style='transform: scale(1.5);' type="checkbox" name='check' value="1" >&nbsp&nbsp&nbspTick This to Update Without Updating Profile Picture and CV
-                                        </label>
-                                    </fieldset>
-                                </div>
                                 <div class = 'footer'>
                                     <div style='text-align: center;'>
                                         <button type ='submit' class="btn btn-rounded btn-info"><i class='fa fa-sync-alt'></i>&nbspUpdate</button>

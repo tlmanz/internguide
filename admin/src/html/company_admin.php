@@ -330,7 +330,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
         </div>
         
         <div class="col-md-4 col-xl-3">
-            <a href="customer_admin.php">
+            <a href="comp_table.php">
             <div class="card bg-c-green order-card">
                 <div class="card-block">
                     <div>

@@ -595,7 +595,7 @@
                                                                  </form>
                                                                  <br>
                                                                  <a style='margin-left: 0%' href = 'stu_table.php' >
-                                                                    <button class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
+                                                                    <button type='button' class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
                                                                 </a>
                                                                 <a style='margin-left: 60%' href = "student_edit.php?edit=<?php echo $edit_id?>" >
                                                                     <button class="btn btn-rounded btn-info">&nbsp<i class='fa fa-sync-alt'></i>&nbspUpdate Details</button>
