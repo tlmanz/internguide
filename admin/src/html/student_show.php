@@ -344,6 +344,7 @@
                             $dob = $row_emp['dob'];
                             $age = $row_emp['age'];
                             $p_loc = "../assets/".$photo;
+                            $cv_loc = "../assets/".$cv;
                         }
                         ?>
                         <div class="row">
@@ -574,83 +575,95 @@
                                                                                 </div>
                                                                             </div>
                                                                             <div class="form-group row">
-                                                                                <label class="col-md-2"></label>
+                                                                                <label class="col-md-2">Curriculum Vitae</label>
                                                                                 <div class="col-md-10">
                                                                                     <div class="row">
-                                                                                        <div class="col-md-10">
-                                                                                            <label class="col-md-2">Social</label>
-                                                                                            <div class="form-group">
-                                                                                                <a href=<?php echo $web?>>
-                                                                                                 <i style="color:#ADC7DC;" class="fas fa-link fa-3x"></i>
-                                                                                             </a>
-                                                                                             <a style="margin-left:10% " href=<?php echo $linkedin?>>
-                                                                                                 <i style="color:#3b5998;" class="fab fa-linkedin-in fa-3x"></i>
-                                                                                             </a>
-                                                                                         </div>
+                                                                                        <div class="col-md-1">
+                                                                                            <a href=<?php echo $cv_loc?>>
+                                                                                             <i style="color:#ff0000;" class="fas fa-file-pdf fa-3x"></i>
+                                                                                         </a>
+                                                                                     </div>
+                                                                                 </div>
+                                                                             </div>
+                                                                         </div>
+                                                                         <div class="form-group row">
+                                                                            <label class="col-md-2"></label>
+                                                                            <div class="col-md-10">
+                                                                                <div class="row">
+                                                                                    <div class="col-md-10">
+                                                                                        <label class="col-md-2">Social</label>
+                                                                                        <div class="form-group">
+                                                                                            <a  href=<?php echo $web?>>
+                                                                                             <i style="color:#ADC7DC;" class="fas fa-link fa-3x"></i>
+                                                                                         </a>
+                                                                                         <a style="margin-left:10% " href=<?php echo $linkedin?>>
+                                                                                             <i style="color:#3b5998;" class="fab fa-linkedin-in fa-3x"></i>
+                                                                                         </a>
                                                                                      </div>
                                                                                  </div>
                                                                              </div>
                                                                          </div>
                                                                      </div>
-                                                                 </form>
-                                                                 <br>
-                                                                 <a style='margin-left: 0%' href = 'stu_table.php' >
-                                                                    <button type='button' class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
-                                                                </a>
-                                                                <a style='margin-left: 60%' href = "student_edit.php?edit=<?php echo $edit_id?>" >
-                                                                    <button class="btn btn-rounded btn-info">&nbsp<i class='fa fa-sync-alt'></i>&nbspUpdate Details</button>
-                                                                </a>  
-                                                            </div>
+                                                                 </div>
+                                                             </form>
+                                                             <br>
+                                                             <a style='margin-left: 0%' href = 'stu_table.php' >
+                                                                <button type='button' class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
+                                                            </a>
+                                                            <a style='margin-left: 60%' href = "student_edit.php?edit=<?php echo $edit_id?>" >
+                                                                <button class="btn btn-rounded btn-info">&nbsp<i class='fa fa-sync-alt'></i>&nbspUpdate Details</button>
+                                                            </a>  
                                                         </div>
                                                     </div>
-                                                    <!-- ============================================================== -->
-                                                    <!-- End Container fluid  -->
-                                                    <!-- ============================================================== -->
-
-                                                    <!-- ============================================================== -->
-                                                    <!-- footer -->
-                                                    <!-- ============================================================== -->
-                                                    <footer class="footer text-center text-muted">
-                                                        All Rights Reserved by Ward12. Designed and Developed by <a
-                                                        href="https://wrappixel.com">TeamX</a>.
-                                                    </footer>
-                                                    <!-- ============================================================== -->
-                                                    <!-- End footer -->
-                                                    <!-- ============================================================== -->
                                                 </div>
                                                 <!-- ============================================================== -->
-                                                <!-- End Page wrapper  -->
+                                                <!-- End Container fluid  -->
+                                                <!-- ============================================================== -->
+
+                                                <!-- ============================================================== -->
+                                                <!-- footer -->
+                                                <!-- ============================================================== -->
+                                                <footer class="footer text-center text-muted">
+                                                    All Rights Reserved by Ward12. Designed and Developed by <a
+                                                    href="https://wrappixel.com">TeamX</a>.
+                                                </footer>
+                                                <!-- ============================================================== -->
+                                                <!-- End footer -->
                                                 <!-- ============================================================== -->
                                             </div>
                                             <!-- ============================================================== -->
-                                            <!-- End Wrapper -->
+                                            <!-- End Page wrapper  -->
                                             <!-- ============================================================== -->
-                                            <!-- End Wrapper -->
-                                            <!-- ============================================================== -->
-                                            <!-- All Jquery -->
-                                            <!-- ============================================================== -->
-                                            <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
-                                            <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
-                                            <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-                                            <!-- apps -->
-                                            <!-- apps -->
-                                            <script src="../dist/js/app-style-switcher.js"></script>
-                                            <script src="../dist/js/feather.min.js"></script>
-                                            <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-                                            <script src="../dist/js/sidebarmenu.js"></script>
-                                            <!--Custom JavaScript -->
-                                            <script src="../dist/js/custom.min.js"></script>
-                                            <!--This page JavaScript -->
-                                            <script src="../assets/extra-libs/c3/d3.min.js"></script>
-                                            <script src="../assets/extra-libs/c3/c3.min.js"></script>
-                                            <script src="../assets/libs/chartist/dist/chartist.min.js"></script>
-                                            <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-                                            <script src="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
-                                            <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
-                                            <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
-                                            <script src="../assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
-                                            <script src="../dist/js/pages/datatable/datatable-basic.init.js"></script>
-                                            <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-                                        </body>
+                                        </div>
+                                        <!-- ============================================================== -->
+                                        <!-- End Wrapper -->
+                                        <!-- ============================================================== -->
+                                        <!-- End Wrapper -->
+                                        <!-- ============================================================== -->
+                                        <!-- All Jquery -->
+                                        <!-- ============================================================== -->
+                                        <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+                                        <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+                                        <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+                                        <!-- apps -->
+                                        <!-- apps -->
+                                        <script src="../dist/js/app-style-switcher.js"></script>
+                                        <script src="../dist/js/feather.min.js"></script>
+                                        <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+                                        <script src="../dist/js/sidebarmenu.js"></script>
+                                        <!--Custom JavaScript -->
+                                        <script src="../dist/js/custom.min.js"></script>
+                                        <!--This page JavaScript -->
+                                        <script src="../assets/extra-libs/c3/d3.min.js"></script>
+                                        <script src="../assets/extra-libs/c3/c3.min.js"></script>
+                                        <script src="../assets/libs/chartist/dist/chartist.min.js"></script>
+                                        <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+                                        <script src="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
+                                        <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
+                                        <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
+                                        <script src="../assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
+                                        <script src="../dist/js/pages/datatable/datatable-basic.init.js"></script>
+                                        <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+                                    </body>
 
-                                        </html>
+                                    </html>
