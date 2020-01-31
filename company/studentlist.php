@@ -51,7 +51,7 @@ session_start();
         </div>
     </div>
     <?php
-            // $get_admin = "select * from employee where id =            .$_SESSION['id']";
+            // $get_admin = "select * from employee where id = .$_SESSION['id'];
             $get_admin = "select * from employee where id = 1";
             $run_edit_admin = mysqli_query($connection,$get_admin);
             $row = mysqli_fetch_array($run_edit_admin);
@@ -168,119 +168,77 @@ session_start();
             <!-- End Sidebar scroll-->
         </aside>
         <div class="page-wrapper">
-            <div class="col-lg-6 text-md-center">
-								<figure class="hero-image">
-									<img src="<?php echo $loc1 ?>"  style="max-height:500px; max-width : 500px">
-								</figure>
-							</div>
+								
             <div class="page-breadcrumb">
                 <div class="row">
-                        <div class="hero-info">
-									<h2 style="font-size:300%; "selected><?php echo $row['ename'] ?></h2>
-								</div>
-                        <div class="d-flex align-items-center">
-                        </div>
-                        <div class="hero-info">
-									<p  style="font-size:150%; "selected><?php echo $row['description'] ?></p>
-								</div>
                 </div>
             </div>
             <div class="container-fluid">
-                <div class="hero-info">
-                    <h2 style="font-size:250%; "selected>General Info</h2>
-						<ul>
-							<li ><span> &nbsp Address - </span>&nbsp &nbsp &nbsp &nbsp &nbsp<?php echo $row['address'] ?></li>
-							<li><span> &nbsp E-mail - </span>&nbsp &nbsp &nbsp &nbsp &nbsp<?php echo $row['email'] ?></li>
-							<li><span>  &nbsp Phone -  </span>&nbsp &nbsp &nbsp &nbsp &nbsp<?php echo $row['phone'] ?></li>
-							</ul>
-                       
-
-                </div>
+                
                 <!-- *************************************************************** -->
                 <!-- Start Sales Charts Section -->
                 <!-- *************************************************************** -->
                 &nbsp
-                <h2  style="font-size:250%; "selected>About</h2>
+                <div class="container-fluid">
                 <div class="row">
-                        <ul class="resume-list">
-							<li>
-								<h1  style="font-size:200%; "selected>Introduction</h1>
-								<p  style="font-size:100%; "selected><?php echo $row['introduction'] ?></p>
-							</li>
-							<li>
-								<h1 style="font-size:200%; "selected>Vision</h1>
-								<p  style="font-size:150%; "selected>&nbsp &nbsp &nbsp <?php echo $row['vision'] ?></p>
-                            </li>
-                            <li>
-								<h1 style="font-size:200%; "selected>Mission</h1>
-								<p  style="font-size:150%; "selected>&nbsp &nbsp &nbsp <?php echo $row['mission'] ?></p>
-							</li>
-							<li>
-								<h1  style="font-size:200%; "selected>Current Working Areas</h1>
-                                <?php
-                                $count = 0;
-                                while($count < count($areas)){
-                                        echo " <p  style='font-size:150%; 'selected >&nbsp &nbsp &nbsp $areas[$count]</p>";
-                                        $count++;
-                                    }
-                                ?>
-							</li>
-                        </ul>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Student Table</h4>
+                                <h6 class="card-subtitle">This table contains all the Student which registered with this system</h6>
+                                <div class="table-responsive">
+                                    <table id="default_order" class="table table-striped table-bordered display no-wrap"
+                                        style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th style='text-align: center;'>ID</th>
+                                                <th style='text-align: center;'>Name</th>
+                                                <th style='text-align: center;'>E-Mail</th>
+                                                <th style='text-align: center;'>University</th>
+                                                <th style='text-align: center;'>Show</th>
+                                                <th style='text-align: center;'>Download CV</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php 
+                                                $sql = "select * from customer_account";
+                                                $runsql = mysqli_query($connection, $sql);
+                                                $count = 1;
+                                                
+                                                while($row = mysqli_fetch_array($runsql))
+                                                {   
+                                                    $sid = $row['cid']; //cid for employee table is id
+                                                    $firstname = $row['firstname'].' '.$row['lastname'];
+                                                    $email = $row['email'];
+                                                    $uni = "UOM";
+                                                    echo "
+                                                        <tr>
+                                                            <td><p style='text-align: center;'>$count</p></td>
+                                                            <td><p style='text-align: center;'>$firstname</p></td>
+                                                            <td><p style='text-align: center;'>$email</p></td>
+                                                            <td><p style='text-align: center;'>$uni</p></td>
+                                                            <td>
+                                                                <div style='text-align: center;' class='table-data-feature'>
+                                                                    <a href='../user/viewstuprofile.php?sid=$sid'>
+                                                                    <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
+                                                                        <i class='fas fa-list'></i>
+                                                                    </button>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    ";
+                                                    $count++;
+                                                }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                <div class="col-lg-6">
-                                        <div id="carouselExampleIndicators2" class="carousel slide"
-                                            data-ride="carousel">
-                                            <ol class="carousel-indicators">
-                                                <li data-target="#carouselExampleIndicators2" data-slide-to="0"
-                                                    class="active"></li>
-                                                <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
-                                                <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
-                                            </ol>
-                                            <div class="carousel-inner" role="listbox">
-                                                <div class="carousel-item active">
-                                                    <img class="img-fluid" src="<?php echo $loc2 ?>" style = "height : 500px; width : 500px; overflow : hidden;"
-                                                        alt="First slide">
-                                                </div>
-                                                <div class="carousel-item">
-                                                <img class="img-fluid" src="<?php echo $loc3 ?>" style = "height : 500px; width : 500px;overflow : hidden;"
-                                                        alt="Second slide">
-                                                </div>
-                                                <div class="carousel-item">
-                                                <img class="img-fluid" src="<?php echo $loc4 ?>" style = "height : 500px; width : 500px;overflow : hidden;"
-                                                        alt="Third slide">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                
-                         <div class="col-lg-6 col-md-1 ml-auto">
-                                        <div id="carouselExampleIndicators3" class="carousel slide"
-                                            data-ride="carousel">
-                                            <ol class="carousel-indicators">
-                                                <li data-target="#carouselExampleIndicators3" data-slide-to="0"
-                                                    class="active"></li>
-                                                <li data-target="#carouselExampleIndicators3" data-slide-to="1"></li>
-                                                <li data-target="#carouselExampleIndicators3" data-slide-to="2"></li>
-                                            </ol>
-                                            <div class="carousel-inner" role="listbox">
-                                                <div class="carousel-item active">
-                                                    <img class="img-fluid" src="<?php echo $loc5 ?>" style = "height : 500px; width : 500px; overflow : hidden;"
-                                                        alt="First slide">
-                                                </div>
-                                                <div class="carousel-item">
-                                                <img class="img-fluid" src="<?php echo $loc6 ?>" style = "height : 500px; width : 500px;overflow : hidden;"
-                                                        alt="Second slide">
-                                                </div>
-                                                <div class="carousel-item">
-                                                <img class="img-fluid" src="<?php echo $loc7 ?>" style = "height : 500px; width : 500px;overflow : hidden;"
-                                                        alt="Third slide">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                         </div>
-                </div>
+            </div>
             </div>
             <footer  class="footer text-center text-muted">
                 <div class="social-section">
