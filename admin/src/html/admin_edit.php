@@ -339,7 +339,7 @@
                         <div class="card-body">
                             <h2 class="card-title">Administrator Details</h2>
                             <div class= 'text-center'>
-                                <img src='<?php echo $p_loc ?>' alt='image' class="rounded-circle"
+                                <img src='<?php echo $p_loc ?>' alt='image' class="rounded-circle" height='150'
                                 width="150">
                                 <br><br>
                                 <h3>Profile Picture</h3>

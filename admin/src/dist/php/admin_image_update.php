@@ -22,8 +22,8 @@ else{
 		$query1 = "update admin set aphoto = '$imagepath' where id = '$id' ";
 		$run_query = mysqli_query($connection , $query1);
 		if($run_query){
-			echo "<script>alert ('Administrator Profile Updated!')</script>";
-			echo "<script>window.open('../../html/admin_table.php','_self')</script>";
+			echo "<script>alert ('Administrator Profile Picture Updated!')</script>";
+			echo "<script>window.open('../../html/admin_edit.php?edit=$id','_self')</script>";
 		}
 		else{
 			echo "<script>alert ('Oops! Something Went Wrong.. Contact Help!')</script>";
