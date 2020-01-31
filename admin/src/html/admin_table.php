@@ -330,10 +330,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                         <thead>
                                             <tr>
                                                 <th style='text-align: center;'>ID</th>
-                                                <th style='text-align: center;'>Name</th>
+                                                <th style='text-align: center;'>Username</th>
                                                 <th style='text-align: center;'>E-Mail</th>
-                                                <th style='text-align: center;'>University</th>
-                                                <th style='text-align: center;'>Age</th>
+                                                <th style='text-align: center;'>Contact No</th>
+                                                <th style='text-align: center;'>Account Creation Date</th>
                                                 <th style='text-align: center;'>Show</th>
                                                 <th style='text-align: center;'>Update</th>
                                                 <th style='text-align: center;'>Password Reset</th>
@@ -349,8 +349,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                     $sid = $row['id'];
                                                     $firstname = $row['username'];
                                                     $email = $row['email'];
-                                                    $uni = "UOM";
-                                                    $age = "10";
+                                                    $uni = $row['phone'];
+                                                    $age = $row["created_at"];
                                                     echo "
                                                         <tr>
                                                             <td><p style='text-align: center;'>$count</p></td>
@@ -394,10 +394,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                         <tfoot>
                                             <tr>
                                                 <th style='text-align: center;'>ID</th>
-                                                <th style='text-align: center;'>Name</th>
+                                                <th style='text-align: center;'>Username</th>
                                                 <th style='text-align: center;'>E-Mail</th>
-                                                <th style='text-align: center;'>University</th>
-                                                <th style='text-align: center;'>Age</th>
+                                                <th style='text-align: center;'>Contact No</th>
+                                                <th style='text-align: center;'>Account Creation Date</th>
                                                 <th style='text-align: center;'>Show</th>
                                                 <th style='text-align: center;'>Update</th>
                                                 <th style='text-align: center;'>Password Reset</th>

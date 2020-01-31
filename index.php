@@ -91,7 +91,7 @@
                                 <a href="admin/src/html/index.php" class="btn btn-custom btn-danger btn-shadow-v1 downloadcount123 font-tofino-medium">
                                     <i data-feather="download" class="data-icon mr-2 mb-1"></i>
                                     Access Admin</a>
-                                <a style='margin-left: 10%' href="" class="btn btn-custom btn-success btn-shadow-v1 downloadcount123 font-tofino-medium">
+                                <a style='margin-left: 10%' href='users/userprofile.php' class="btn btn-custom btn-success btn-shadow-v1 downloadcount123 font-tofino-medium">
                                     <i data-feather="download" class="data-icon mr-2 mb-1"></i>
                                     Access Student</a>
                                 <div class="pt-5 pb-5" style="text-align:center; ">
