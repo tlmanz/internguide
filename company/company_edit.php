@@ -2,7 +2,10 @@
 // Include config file
 require_once ('connect.php');
 session_start();
-
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_SESSION["usertype"]) || $_SESSION["usertype"] !== 'company'){
+    header("location: company_login.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -51,8 +54,8 @@ session_start();
         </div>
     </div>
     <?php
-            // $get_admin = "select * from employee where id =            .$_SESSION['id']";
-            $get_admin = "select * from employee where id = 1";
+            $s_id =  $_SESSION['id'];
+            $get_admin = "select * from employee where id ='$s_id'";
             $run_edit_admin = mysqli_query($connection,$get_admin);
             $row = mysqli_fetch_array($run_edit_admin);
 			$name = $row['ename'];
@@ -134,11 +137,11 @@ session_start();
                                         class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                                <a class="dropdown-item" href="company.php"><i data-feather="settings"
+                                <a class="dropdown-item" href="company_edit.php"><i data-feather="settings"
                                         class="svg-icon mr-2 ml-1"></i>
                                     Account Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="login.php"><i data-feather="power"
+                                <a class="dropdown-item" href="php/logout.php"><i data-feather="power"
                                         class="svg-icon mr-2 ml-1"></i>
                                     Logout</a>
                             </div>
@@ -172,9 +175,8 @@ session_start();
             <!-- Start First Cards -->
             <!-- *************************************************************** -->
             <?php
-                $edit_id = $_SESSION['id'];
-                //$edit_id = '2';
-                            $get_student = "select * from employee where id='$edit_id'"; //id is id for admin table
+                            $edit_id = $_SESSION['id'];
+                            $get_student = "select * from employee where id='$edit_id'";
                             $run_edit_student = mysqli_query($connection , $get_student);
                             $row_emp = mysqli_fetch_array($run_edit_student);
                             $id = $row_emp['id'];
@@ -241,7 +243,7 @@ session_start();
                                         </div>
                                         <br>
                                         <div style="text-align: center;">
-                                            <form action='company_new.php' method='post' enctype='multipart/form-data'>
+                                            <form action='company_edit.php' method='post' enctype='multipart/form-data'>
                                                 <div class="form-body">
                                                     <div class="form-group row">
                                                         <label class="col-md-2"></label>
@@ -493,7 +495,7 @@ session_start();
                                                         <fieldset class="checkbox">
                                                             <label>
                                                                 <input type='hidden' value='0' name='check'>
-                                                                <input style='transform: scale(1.5);' type="checkbox" name='check' value="1" >&nbsp&nbsp&nbspTick This to Update without Images
+                                                                <input style='transform: scale(1.5);' type="checkbox" name='check' value="1" >&nbsp &nbsp &nbsp Tick This to Update without Images
                                                             </label>
                                                         </fieldset>
                                                     </div>
@@ -502,9 +504,9 @@ session_start();
                                                             <a href = 'company_new.php' >
                                                                 <button type='' class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
                                                             </a>
-                                                            &nbsp&nbsp
+                                                            &nbsp &nbsp
                                                             <button type ='submit' class="btn btn-rounded btn-info"><i class='fa fa-sync-alt'></i>&nbspUpdate</button>
-                                                            &nbsp&nbsp
+                                                            &nbsp &nbsp
                                                             <button type="reset" class="btn btn-rounded btn-danger"><i class='fa fa-ban'></i>&nbspReset</button>
                                                         </div>
                                                     </div>

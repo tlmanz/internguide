@@ -2,6 +2,10 @@
 // Include config file
 require_once ('connect.php');
 session_start();
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_SESSION["usertype"]) || $_SESSION["usertype"] !== 'company'){
+    header("location: company_login.php");
+    exit;
+}
 
 ?>
 <!DOCTYPE html>
@@ -51,11 +55,13 @@ session_start();
         </div>
     </div>
     <?php
-            // $get_admin = "select * from employee where id = .$_SESSION['id'];
-            $get_admin = "select * from employee where id = 1";
+            
+            $s_id =  $_SESSION['id'];
+            $get_admin = "select * from employee where id ='$s_id'";
             $run_edit_admin = mysqli_query($connection,$get_admin);
             $row = mysqli_fetch_array($run_edit_admin);
-			$name = $row['ename'];
+            $name = $row['ename'];
+            $username = $row['username'];
             $id = $row['id'];
             $photo1 = $row['image'];
 			$loc1 = "../company/src/assets/".$photo1;
@@ -111,15 +117,15 @@ session_start();
                                 <img src="<?php echo $loc1 ?>"  style="max-height:500px; max-width : 100px" alt="user" class="rounded-circle"
                                     width="40">
                                 <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
-                                        class="text-dark"><?php echo $row['ename'] ?></span> <i data-feather="chevron-down"
+                                        class="text-dark"><?php echo $row['username'] ?></span> <i data-feather="chevron-down"
                                         class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                                <a class="dropdown-item" href="updat.php"><i data-feather="settings"
+                                <a class="dropdown-item" href="company_edit.php"><i data-feather="settings"
                                         class="svg-icon mr-2 ml-1"></i>
                                     Account Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="login.php"><i data-feather="power"
+                                <a class="dropdown-item" href="php/logout.php"><i data-feather="power"
                                         class="svg-icon mr-2 ml-1"></i>
                                     Logout</a>
                             </div>
@@ -207,7 +213,7 @@ session_start();
                                                                 <td><p style='text-align: center;'>$uni</p></td>
                                                                 <td>
                                                                     <div style='text-align: center;' class='table-data-feature'>
-                                                                        <a href='viewstuprofile.php?sid=$sid'>
+                                                                        <a href='../users/viewstuprofile.php?sid=$sid'>
                                                                         <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
                                                                             <i class='fas fa-list'></i>
                                                                         </button>

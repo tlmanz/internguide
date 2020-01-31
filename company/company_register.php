@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username_err = '<span style="color: red;">Please enter a username. <br /></span>';
     } else {
         // Prepare a select statement
-        $sql = "SELECT cid FROM customer_account WHERE username = ?";
+        $sql = "SELECT id FROM employee WHERE username = ?";
 
         if ($stmt = mysqli_prepare($connection, $sql)) {
             // Bind variables to the prepared statement as parameters
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email_err = '<span style="color: red;">Please enter an email. <br /></span>';
     } else {
         // Prepare a select statement
-        $sql = "SELECT cid FROM customer_account WHERE email = ?";
+        $sql = "SELECT id FROM employee WHERE email = ?";
 
         if ($stmt = mysqli_prepare($connection, $sql)) {
             // Bind variables to the prepared statement as parameters
@@ -97,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($email_err)) {
 
         // Prepare an insert statement
-        $sql = "INSERT INTO customer_account (username, email, password) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO employee (username, email, password) VALUES (?, ?, ?)";
 
 
         if ($stmt = mysqli_prepare($connection, $sql)) {
@@ -114,20 +114,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (mysqli_stmt_execute($stmt)) {
                 // Redirect to login page
                 $username = trim($_POST["username"]);
-                $sql = "SELECT * FROM customer_account WHERE username = '$username';";
+                $sql = "SELECT * FROM employee WHERE username = '$username';";
                 $result = mysqli_query($connection, $sql);
 
 
                 if (mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $userid = $row['id'];
-                        $user_name = $row['username'];
-                        $sql = "INSERT INTO profileimg (userid, status, filename) VALUES ('$userid',1,'no-pic');";
-                        mysqli_query($connection, $sql);
-                        $sqlprofile = "INSERT INTO userprofile (user, full_name, gender,age,address) VALUES ('$user_name','','',0,'');";
-                        mysqli_query($connection, $sqlprofile);
-                    }
-                    header("location: usr_login.php");
+                    // while ($row = mysqli_fetch_assoc($result)) {
+                    //     $userid = $row['id'];
+                    //     $user_name = $row['username'];
+                    //     $sql = "INSERT INTO profileimg (userid, status, filename) VALUES ('$userid',1,'no-pic');";
+                    //     mysqli_query($connection, $sql);
+                    //     $sqlprofile = "INSERT INTO userprofile (user, full_name, gender,age,address) VALUES ('$user_name','','',0,'');";
+                    //     mysqli_query($connection, $sqlprofile);
+                    // }
+                    header("location: company_login.php");
                 }
             } else {
                 echo '<span style="color: red;">Something went wrong. Please try again later. <br /></span>';
@@ -149,7 +149,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 
 <head>
-    <title>Student Sign Up</title>
+    <title>Company Sign Up</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
@@ -181,7 +181,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="login100-form validate-form">
                     <span class="login100-form-title">
-                        Student Registration
+                        Company Registration
                     </span>
 
                     <label>Username</label>
@@ -242,7 +242,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <input type="reset" class="login100-form-btn" value="Reset">
                     </div>
                     <br>
-                    <p>Already have an account? <a href="usr_login.php">Login here</a>.</p>
+                    <p>Already have an account? <a href="company_login.php">Login here</a>.</p>
                 </form>
             </div>
         </div>

@@ -76,7 +76,7 @@ include_once('php/login.php')
 							Username / Password?
 						</a>
 						<br>
-						<a class="txt2" href="usr_register.php">
+						<a class="txt2" href="company_register.php">
 							Create your Account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
