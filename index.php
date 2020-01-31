@@ -95,7 +95,7 @@
                                     <i data-feather="download" class="data-icon mr-2 mb-1"></i>
                                     Access Student</a>
                                 <div class="pt-5 pb-5" style="text-align:center; ">
-                                <a href="javascript:void(0)" class="btn btn-custom btn-info btn-shadow-v1 downloadcount123 font-tofino-medium">
+                                <a href="company/company_new.php" class="btn btn-custom btn-info btn-shadow-v1 downloadcount123 font-tofino-medium">
                                     <i data-feather="download" class="data-icon mr-2 mb-1"></i>
                                     Access Company</a>
                                 </div>

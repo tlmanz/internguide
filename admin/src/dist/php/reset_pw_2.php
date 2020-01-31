@@ -12,13 +12,18 @@ if ($new_password !== $confirm_new_password){
 }
 else{
 	$password = password_hash($new_password, PASSWORD_DEFAULT);
-	$query1 = "update employee set epassword='$password' where id=".$pw_id;
+	$query1 = "update employee set password='$password' where id=".$pw_id;
 	$run_pw_update = mysqli_query($connection , $query1);
 	if ($run_pw_update) {
 
 		echo "<script>alert ('Password Resetted Successfully!')</script>";
 		echo "<script>window.open('../../html/comp_table.php','_self')</script>";
 
+	}
+	else{
+		echo 'error';
+		echo $new_password;
+		echo $confirm_new_password;
 	}
 
 }
