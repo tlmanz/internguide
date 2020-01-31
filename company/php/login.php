@@ -4,10 +4,11 @@ require_once __DIR__."/../../admin/config/connect.php";
 session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true && isset($_SESSION["usertype"]) && $_SESSION["usertype"] === 'student'){
-    header("location: ../users/userprofile.php");
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true && isset($_SESSION["usertype"]) && $_SESSION["usertype"] === 'company'){
+    header("location:company_new.php");
     exit;
 }
+ 
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = "";
@@ -32,7 +33,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT cid, username, password, email FROM customer_account WHERE username = ?";
+        $sql = "SELECT id, username, password, email FROM employee WHERE username = ?";
         
         if($stmt = mysqli_prepare($connection, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -60,10 +61,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION['cid'] = $id;
                             $_SESSION['username'] = $username;
                             $_SESSION['email'] = $email;
-                            $_SESSION['usertype'] = 'student';                           
+                            $_SESSION['usertype'] = 'company';                           
                             
                             // Redirect user to welcome page
-                            header("location: userprofile.php");
+                            header("location:company_new.php");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = '<span style="color: red;">Password is invalid</span>';
