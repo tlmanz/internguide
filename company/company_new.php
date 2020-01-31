@@ -51,7 +51,8 @@ session_start();
         </div>
     </div>
     <?php
-            $get_admin = "select * from employee where id = .$_SESSION['id'];
+            // $get_admin = "select * from employee where id =            .$_SESSION['id']";
+            $get_admin = "select * from employee where id = 1";
             $run_edit_admin = mysqli_query($connection,$get_admin);
             $row = mysqli_fetch_array($run_edit_admin);
 			$name = $row['ename'];
@@ -152,10 +153,10 @@ session_start();
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="sidebar-item"> <a class="sidebar-link" href="index.html"
+                        <li class="sidebar-item"> <a class="sidebar-link" href="studentlist.php"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
                                     class="hide-menu">View Student List</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link" href="ticket-list.html"
+                        <li class="sidebar-item"> <a class="sidebar-link" href="studentsearch.php"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
                                     class="hide-menu">Search Students
                                 </span></a>

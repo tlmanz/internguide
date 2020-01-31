@@ -8,8 +8,9 @@ session_start();
 //     exit;
 //     }
 
-$user = $_SESSION['username'];  //$_GET[]
-$sql = "SELECT * from customer_account WHERE username = '$user';";
+//$c_user = $_GET['username'];  //$_GET[]
+$s_id = $_GET['sid']
+$sql = "SELECT * from customer_account WHERE cid = '$s_id';";
 if ($result = mysqli_query($connection, $sql)) {
 	$profileData = mysqli_fetch_assoc($result);
 	$userid = $profileData['cid'];
@@ -101,7 +102,7 @@ if ($result = mysqli_query($connection, $sql)) {
                             <!-- Logo icon -->
                            &nbsp&nbsp&nbsp  
 					<div class="text right header-buttons">
-						<a href='<?php echo $cvpath?>' class="btn btn-outline-success">Back to profile</a>
+						<a href='../company/company.php' class="btn btn-outline-success">Back to profile</a>
 						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  
 					</div>
                       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  
@@ -110,10 +111,7 @@ if ($result = mysqli_query($connection, $sql)) {
 						
 					</div>
 
-					<div class="col-md-5 text right header-buttons">
-						<a href='userrequest.php?user=$user' class="btn btn-outline-success">Request</a>
-					       <!-- request to user -->
-					</div>
+					
 					
                         
                         <!-- ============================================================== -->
@@ -147,12 +145,12 @@ if ($result = mysqli_query($connection, $sql)) {
                             <!-- ============================================================== -->
                             <!-- User profile and search -->
                             <?php
-                                $get_user = "select * from customer_account where cid=".$_SESSION['cid'];
+                                $get_user = "select * from customer_account where cid='$s_id'";
                                 $run_edit_user = mysqli_query($connection , $get_user);
                                     $row_user = mysqli_fetch_array($run_edit_user);
                                     $name = $row_user['firstname']." ".$row_user['lastname'];
                                     $user_photo = $row_user['cphoto'];
-                                    $loc = "../admin/src/assets/".$user_photo; 
+                                    $loc = $user_photo; 
                                                              
                             ?>
                         </ul>

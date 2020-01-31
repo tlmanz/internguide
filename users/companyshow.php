@@ -143,12 +143,7 @@ if ($result = mysqli_query($connection, $sql)) {
                         <!-- ============================================================== -->
                         <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
                             <!-- Notification -->
-                            <li class="nav-item d-none d-md-block" style="width:400px">
-                    <div class="col-md-7 text-md-right header-buttons">
-                        <a href='<?php echo $cvpath?>' class="site-btn">Download CV</a>
-                        
-                    </div>
-                    </li>
+                           
                             
                         </ul>
                         <!-- ============================================================== -->
@@ -319,7 +314,7 @@ if ($result = mysqli_query($connection, $sql)) {
                                                             <td><p style='text-align: center;'>$age</p></td>
                                                             <td>
                                                                 <div style='text-align: center;' class='table-data-feature'>
-                                                                    <a href='../company/company.php?id=$sid&username=$user'>
+                                                                    <a href='../company/company.php?id=$sid&userid=$userid'>
                                                                     <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
                                                                         <i class='fas fa-list'></i>
                                                                     </button>
