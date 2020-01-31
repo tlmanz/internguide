@@ -245,20 +245,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                     </li>
                                 </ul>
                             </li>
-                            <li class="list-divider"></li>
-                            <li class="nav-small-cap"><span class="hide-menu">Report Generation</span></li>
-
-                            <li class="sidebar-item"> <a class="sidebar-link" href="admin_pdf.php"
-                                    aria-expanded="false"><i class="fa fa-file-pdf"></i><span
-                                        class="hide-menu">Administrator Data
-                                    </span></a>
-                            </li>
-                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="student_pdf.php"
-                                    aria-expanded="false"><i class="fa fa-file-pdf"></i><span
-                                        class="hide-menu">Student Data</span></a></li>
-                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="company_pdf.php"
-                                    aria-expanded="false"><i class="fa fa-file-pdf"></i><span
-                                        class="hide-menu">Company Data</span></a></li>
 
                             <li class="list-divider"></li>
                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="../dist/php/logout.php"
@@ -329,10 +315,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                         <thead>
                                             <tr>
                                                 <th style='text-align: center;'>ID</th>
-                                                <th style='text-align: center;'>Name</th>
+                                                <th style='text-align: center;'>Username</th>
                                                 <th style='text-align: center;'>E-Mail</th>
-                                                <th style='text-align: center;'>University</th>
-                                                <th style='text-align: center;'>Age</th>
+                                                <th style='text-align: center;'>Contact No</th>
+                                                <th style='text-align: center;'>Date of Birth</th>
+                                                <th style='text-align: center;'>Gender</th>
                                                 <th style='text-align: center;'>Show</th>
                                                 <th style='text-align: center;'>Update</th>
                                                 <th style='text-align: center;'>Password Reset</th>
@@ -346,17 +333,28 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                 while($row = mysqli_fetch_array($runsql))
                                                 {   
                                                     $sid = $row['cid'];
-                                                    $firstname = $row['firstname'];
+                                                    $firstname = $row['username'];
                                                     $email = $row['email'];
-                                                    $uni = "UOM";
-                                                    $age = "10";
+                                                    $uni = $row['telephone'];
+                                                    $dob = $row['dob'];
+                                                    $gender = $row['gender'];
+                                                    if ($gender === 'f'){
+                                                        $gender = 'Female';
+                                                    }
+                                                    elseif($gender === 'm'){
+                                                        $gender = 'Male';
+                                                    }
+                                                    else{
+                                                        $gender ='Other';
+                                                    }
                                                     echo "
                                                         <tr>
                                                             <td><p style='text-align: center;'>$count</p></td>
                                                             <td><p style='text-align: center;'>$firstname</p></td>
                                                             <td><p style='text-align: center;'>$email</p></td>
                                                             <td><p style='text-align: center;'>$uni</p></td>
-                                                            <td><p style='text-align: center;'>$age</p></td>
+                                                            <td><p style='text-align: center;'>$dob</p></td>
+                                                            <td><p style='text-align: center;'>$gender</p></td>
                                                             <td>
                                                                 <div style='text-align: center;' class='table-data-feature'>
                                                                     <a href='student_show.php?edit=$sid'>
@@ -393,10 +391,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                         <tfoot>
                                             <tr>
                                                 <th style='text-align: center;'>ID</th>
-                                                <th style='text-align: center;'>Name</th>
+                                                <th style='text-align: center;'>Username</th>
                                                 <th style='text-align: center;'>E-Mail</th>
-                                                <th style='text-align: center;'>University</th>
-                                                <th style='text-align: center;'>Age</th>
+                                                <th style='text-align: center;'>Contact No</th>
+                                                <th style='text-align: center;'>Date of Birth</th>
+                                                <th style='text-align: center;'>Gender</th>
                                                 <th style='text-align: center;'>Show</th>
                                                 <th style='text-align: center;'>Update</th>
                                                 <th style='text-align: center;'>Password Reset</th>

@@ -245,28 +245,14 @@
 </li>
 </ul>
 </li>
+
 <li class="list-divider"></li>
-<li class="nav-small-cap"><span class="hide-menu">Report Generation</span></li>
-
-<li class="sidebar-item"> <a class="sidebar-link" href="admin_pdf.php"
-    aria-expanded="false"><i class="fa fa-file-pdf"></i><span
-    class="hide-menu">Administrator Data
-</span></a>
-</li>
-<li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="student_pdf.php"
-    aria-expanded="false"><i class="fa fa-file-pdf"></i><span
-    class="hide-menu">Student Data</span></a></li>
-    <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="company_pdf.php"
-        aria-expanded="false"><i class="fa fa-file-pdf"></i><span
-        class="hide-menu">Company Data</span></a></li>
-
-        <li class="list-divider"></li>
-        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="../dist/php/logout.php"
-            aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
-            class="hide-menu">Logout</span></a></li>
-        </ul>
-    </nav>
-    <!-- End Sidebar navigation -->
+<li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="../dist/php/logout.php"
+    aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
+    class="hide-menu">Logout</span></a></li>
+</ul>
+</nav>
+<!-- End Sidebar navigation -->
 </div>
 <!-- End Sidebar scroll-->
 </aside>
@@ -580,13 +566,13 @@
                                                                                     <div class="row">
                                                                                         <div class="col-md-1">
                                                                                             <a href=<?php echo $cv_loc?>>
-                                                                                             <i style="color:#ff0000;" class="fas fa-file-pdf fa-3x"></i>
-                                                                                         </a>
-                                                                                     </div>
-                                                                                 </div>
-                                                                             </div>
-                                                                         </div>
-                                                                         <div class="form-group row">
+                                                                                               <i style="color:#ff0000;" class="fas fa-file-pdf fa-3x"></i>
+                                                                                           </a>
+                                                                                       </div>
+                                                                                   </div>
+                                                                               </div>
+                                                                           </div>
+                                                                           <div class="form-group row">
                                                                             <label class="col-md-2"></label>
                                                                             <div class="col-md-10">
                                                                                 <div class="row">
@@ -594,20 +580,20 @@
                                                                                         <label class="col-md-2">Social</label>
                                                                                         <div class="form-group">
                                                                                             <a  href=<?php echo $web?>>
-                                                                                             <i style="color:#ADC7DC;" class="fas fa-link fa-3x"></i>
-                                                                                         </a>
-                                                                                         <a style="margin-left:10% " href=<?php echo $linkedin?>>
-                                                                                             <i style="color:#3b5998;" class="fab fa-linkedin-in fa-3x"></i>
-                                                                                         </a>
-                                                                                     </div>
-                                                                                 </div>
-                                                                             </div>
-                                                                         </div>
-                                                                     </div>
-                                                                 </div>
-                                                             </form>
-                                                             <br>
-                                                             <a style='margin-left: 0%' href = 'stu_table.php' >
+                                                                                               <i style="color:#ADC7DC;" class="fas fa-link fa-3x"></i>
+                                                                                           </a>
+                                                                                           <a style="margin-left:10% " href=<?php echo $linkedin?>>
+                                                                                               <i style="color:#3b5998;" class="fab fa-linkedin-in fa-3x"></i>
+                                                                                           </a>
+                                                                                       </div>
+                                                                                   </div>
+                                                                               </div>
+                                                                           </div>
+                                                                       </div>
+                                                                   </div>
+                                                               </form>
+                                                               <br>
+                                                               <a style='margin-left: 0%' href = 'stu_table.php' >
                                                                 <button type='button' class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
                                                             </a>
                                                             <a style='margin-left: 60%' href = "student_edit.php?edit=<?php echo $edit_id?>" >
