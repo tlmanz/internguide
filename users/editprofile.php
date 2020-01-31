@@ -104,7 +104,31 @@
                         <!-- toggle and nav items -->
                         <!-- ============================================================== -->
                         <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
+
+                            <?php
+                                $get_user = "select * from customer_account where cid=".$_SESSION['cid'];
+                                $run_edit_user = mysqli_query($connection , $get_user);
+                                    $row_user = mysqli_fetch_array($run_edit_user);
+                                    $name = $row_user['firstname']." ".$row_user['lastname'];
+                                    $user_photo = $row_user['cphoto'];
+                                    $loc = $user_photo; 
+                                                             
+                            ?>
+
+
                             <!-- Notification -->
+                            <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">
+                                <?php
+                                date_default_timezone_set('Asia/Colombo');
+                                if(date("H") < 12){
+                                    echo "Good Morning";
+                                }elseif(date("H") > 11 && date("H") < 18){
+                                    echo "Good Afternoon";
+                                }elseif(date("H") > 17){
+                                    echo "Good Evening";
+                                }
+                                ?>
+                            <?php echo $name ?>!</h3>
                             
                         </ul>
                         <!-- ============================================================== -->
@@ -117,15 +141,7 @@
                             
                             <!-- ============================================================== -->
                             <!-- User profile and search -->
-                            <?php
-                                $get_user = "select * from customer_account where cid=".$_SESSION['cid'];
-                                $run_edit_user = mysqli_query($connection , $get_user);
-                                    $row_user = mysqli_fetch_array($run_edit_user);
-                                    $name = $row_user['firstname']." ".$row_user['lastname'];
-                                    $user_photo = $row_user['cphoto'];
-                                    $loc = $user_photo; 
-                                                             
-                            ?>
+                           
                             <!-- ============================================================== -->
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
@@ -197,18 +213,7 @@
                 <div class="page-breadcrumb">
                     <div class="row">
                         <div class="col-7 align-self-center">
-                            <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">
-                                <?php
-                                date_default_timezone_set('Asia/Colombo');
-                                if(date("H") < 12){
-                                    echo "Good Morning";
-                                }elseif(date("H") > 11 && date("H") < 18){
-                                    echo "Good Afternoon";
-                                }elseif(date("H") > 17){
-                                    echo "Good Evening";
-                                }
-                                ?>
-                            <?php echo $name ?>!</h3>
+                            
                         </div>
                         <div class="col-5 align-self-center">
                             <div class="customize-input float-right">
@@ -491,7 +496,7 @@
                                                     <input id='file-input' name='profile' type="file" class="custom-file-input" id="inputGroupFile04">
                                                     <label class="custom-file-label" for="inputGroupFile04">Choose Profile Picture</label>
                                                 </div>
-                                                <input type='hidden' id='file-input' name='preImg' value='<?php echo $p_loc?>'>
+                                                <input type='hidden' id='file-input' name='preImg' value='<?php echo $photo?>'>
                                             </div>
                                         </div>
                                     </div>
