@@ -15,6 +15,8 @@
 	$linkedin = $_POST['linkedin'];
 	$web = $_POST['web'];
 	$desc1 = $_POST['description1'];
+	$dob = $_POST['dob'];
+	$age = $_POST['age'];
 
 	$password = password_hash($pass, PASSWORD_DEFAULT);
 	
@@ -39,12 +41,12 @@
 			die('Connect Error('.mysqli_connect_error().')'.mysqli_connect_error());
 		}else{
 
-		$INSERT = "INSERT INTO customer_account(username,firstname,lastname,nic,gender,field,address,telephone,email,password,linkedin,web,description1,cphoto,gpa) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		$INSERT = "INSERT INTO customer_account(username,firstname,lastname,nic,gender,field,address,telephone,email,password,linkedin,web,description1,cphoto,gpa,dob,age) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 
 		$stmt = $connection->prepare($INSERT);
 
-		$stmt->bind_param("ssssssssssssssd",$username,$firstname,$lastname,$nic,$gender,$field,$address,$phone,$email,$password,$linkedin,$web,	$desc1,$imagepath,$gpa);
+		$stmt->bind_param("ssssssssssssssdsi",$username,$firstname,$lastname,$nic,$gender,$field,$address,$phone,$email,$password,$linkedin,$web,$desc1,$imagepath,$gpa,$dob,$age);
 
 		$stmt->execute();
 				

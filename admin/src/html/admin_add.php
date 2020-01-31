@@ -373,7 +373,7 @@
                                                     <div class="row">
                                                         <div class="col-md-5">
                                                             <div class="form-group">
-                                                                <input id='text-input' type="text" name="email" class="form-control" placeholder="Unique Email Address" required="">
+                                                                <input id='text-input' type="email" name="email" class="form-control" placeholder="Unique Email Address" required="">
                                                             </div>
                                                         </div>
                                                     </div>

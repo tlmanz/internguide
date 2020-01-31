@@ -340,6 +340,8 @@
                 $photo = $row_emp['cphoto'];
                 $cv = $row_emp['cv'];
                 $created = $row_emp['created_at'];
+                $dob = $row_emp['dob'];
+                $age = $row_emp['age'];
                 $p_loc = "../assets/".$photo;
             }
             ?>
@@ -373,7 +375,7 @@
                                                         <div class="form-group">
                                                             <label class="col-md-6">Username</label>
                                                             <input type="text" class="form-control text-center"
-                                                            placeholder="Last Name" value='<?php echo $username?>' readonly>
+                                                            placeholder="Username" name='username' value='<?php echo $username?>' readonly>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -396,6 +398,27 @@
                                                             <a href='password_reset_student.php?edit=<?php echo $id ?>' class="form-control text-center">
                                                                 Click To Reset Password
                                                             </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-2"></label>
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-5">
+                                                        <div class="form-group">
+                                                            <label class="col-md-8">Date of Birth</label>
+                                                            <input type="text" class="form-control text-center" name='dob'
+                                                            placeholder="Date of Birth" value='<?php echo $dob ?>' reqired>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <div class="form-group">
+                                                            <label class="col-md-8">Age</label>
+                                                            <input type="text" class="form-control text-center"
+                                                            placeholder="Age" name='age' value='<?php echo $age?>' required>
                                                         </div>
                                                     </div>
                                                 </div>
