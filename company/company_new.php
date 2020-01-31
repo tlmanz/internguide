@@ -1,6 +1,8 @@
 <?php
 // Include config file
 require_once "connect.php";
+session_start();
+
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -53,7 +55,7 @@ require_once "connect.php";
             $run_edit_admin = mysqli_query($connection,$get_admin);
             $row = mysqli_fetch_array($run_edit_admin);
 			$name = $row['ename'];
-			$id_company = $row['id'];
+			$id = $row['id'];
 			$email = $row['email'];
 			$phone = $row['phone'];
 			$description = $row['description'];
@@ -274,18 +276,12 @@ require_once "connect.php";
                                                         alt="Third slide">
                                                 </div>
                                             </div>
-										</div>
-						 </div>
-				</div>
-			</div>
-			<?php $id_student =$_GET['id'];
-			?>
-            <footer  class="footer text-center text-muted">
-				<div class="text-md-center header-buttons">
-					<a class='site-btn' href="update.php?id =<?php echo $id_student?> & id =<?php echo $id_company?>">Request For Intern
-
-					</a>
+                                        </div>
+                                    </div>
+                         </div>
                 </div>
+            </div>
+            <footer  class="footer text-center text-muted">
                 <div class="social-section">
                         <div class="container-fluid">
                             <div class="row">
