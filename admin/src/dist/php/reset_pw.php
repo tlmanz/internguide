@@ -5,7 +5,8 @@ require_once (__DIR__.'/../../../config/connect.php');
 $new_password = $_POST['newpassword'];
 $confirm_new_password = $_POST['confirmpassword'];
 $pw_id = $_POST['id'];
-if ($pw_id === '2'){
+$myid = $_POST['myid'];
+if ($pw_id === '2' && $myid !== '2'){
 	echo "<script>alert ('Cant Change Super Admin Password!')</script>";
 	echo "<script>window.open('../../html/password_reset_admin.php?edit=$pw_id','_self')</script>";
 }

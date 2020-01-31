@@ -327,6 +327,7 @@
                 $username = $row_emp['username'];
                 $photo = $row_emp['aphoto'];
                 $p_loc = "../assets/".$photo;
+                $myid = $_SESSION['id'];
             }
             ?>
             <div class="row">
@@ -349,6 +350,7 @@
                                                 <div class="form-group">
                                                     <label>User ID</label>
                                                     <input type="text" class="form-control text-center" placeholder="col-md-12" value='<?php echo $id ?>' name='id' readonly>
+                                                    <input type="hidden" value='<?php echo $myid ?>' name='myid'>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 ml-auto">
