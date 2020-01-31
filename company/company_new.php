@@ -60,6 +60,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
     $run_edit_admin = mysqli_query($connection,$get_admin);
     $row = mysqli_fetch_array($run_edit_admin);
     $name = $row['ename'];
+    $username = $row['username'];
     $id = $row['id'];
     $email = $row['email'];
     $phone = $row['phone'];
@@ -138,7 +139,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                 <img src="<?php echo $loc1 ?>"  style="max-height:500px; max-width : 100px" alt="user" class="rounded-circle"
                                     width="40">
                                 <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
-                                        class="text-dark"><?php echo $row['ename'] ?></span> <i data-feather="chevron-down"
+                                        class="text-dark"><?php echo $username ?></span> <i data-feather="chevron-down"
                                         class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
