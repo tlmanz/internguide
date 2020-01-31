@@ -1,8 +1,8 @@
 <?php
 // Include config file
 require_once "connect.php";
- $id_company=trim($_GET['id']);
- $id_student=trim($_GET['userid']);
+session_start();
+
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -51,34 +51,14 @@ require_once "connect.php";
         </div>
     </div>
     <?php
-            $get_admin = "select * from employee where id = $id_company";
+            // $get_admin = "select * from employee where id = .$_SESSION['id'];
+            $get_admin = "select * from employee where id = 1";
             $run_edit_admin = mysqli_query($connection,$get_admin);
             $row = mysqli_fetch_array($run_edit_admin);
 			$name = $row['ename'];
-			$id_company = $row['id'];
-			$email = $row['email'];
-			$phone = $row['phone'];
-			$description = $row['description'];
-			$phone = $row['address'];
-			$introduction = $row['introduction'];
-			$vision = $row['vision'];
-			$mission = $row['mission'];
-			$photo1 = $row['image'];
-			$loc1 = "../company/src/assets/".$photo1;
-			$photo2 = $row['photo2'];
-			$loc2 = "../company/src/assets/".$photo2;  
-			$photo3 = $row['photo3'];
-			$loc3 = "../company/src/assets/".$photo3; 
-			$photo4 = $row['photo4'];
-            $loc4 = "../company/src/assets/".$photo4;
-            $photo5 = $row['photo5'];
-            $loc5 = "../company/src/assets/".$photo5; 
-            $photo6 = $row['photo6'];
-            $loc6 = "../company/src/assets/".$photo6; 
-            $photo7 = $row['photo7'];
-            $loc7 = "../company/src/assets/".$photo7;  
-            $field = $row['field'];      
-            $areas = (explode(",",$field));                         
+			$id = $row['id'];
+            $student = $row['student'];      
+            $areas = (explode(",",$student));                         
         ?>
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
@@ -152,10 +132,10 @@ require_once "connect.php";
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="sidebar-item"> <a class="sidebar-link" href="index.html"
+                        <li class="sidebar-item"> <a class="sidebar-link" href="studentlist.php"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
                                     class="hide-menu">View Student List</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link" href="ticket-list.html"
+                        <li class="sidebar-item"> <a class="sidebar-link" href="studentsearch.php"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
                                     class="hide-menu">Search Students
                                 </span></a>
@@ -167,125 +147,98 @@ require_once "connect.php";
             <!-- End Sidebar scroll-->
         </aside>
         <div class="page-wrapper">
-            <div class="col-lg-6 text-md-center">
-								<figure class="hero-image">
-									<img src="<?php echo $loc1 ?>"  style="max-height:500px; max-width : 500px">
-								</figure>
-							</div>
+								
             <div class="page-breadcrumb">
                 <div class="row">
-                        <div class="hero-info">
-									<h2 style="font-size:300%; "selected><?php echo $row['ename'] ?></h2>
-								</div>
-                        <div class="d-flex align-items-center">
-                        </div>
-                        <div class="hero-info">
-									<p  style="font-size:150%; "selected><?php echo $row['description'] ?></p>
-								</div>
                 </div>
             </div>
             <div class="container-fluid">
-                <div class="hero-info">
-                    <h2 style="font-size:250%; "selected>General Info</h2>
-						<ul>
-							<li ><span> &nbsp Address - </span>&nbsp &nbsp &nbsp &nbsp &nbsp<?php echo $row['address'] ?></li>
-							<li><span> &nbsp E-mail - </span>&nbsp &nbsp &nbsp &nbsp &nbsp<?php echo $row['email'] ?></li>
-							<li><span>  &nbsp Phone -  </span>&nbsp &nbsp &nbsp &nbsp &nbsp<?php echo $row['phone'] ?></li>
-							</ul>
-                       
-
-                </div>
+                
                 <!-- *************************************************************** -->
                 <!-- Start Sales Charts Section -->
                 <!-- *************************************************************** -->
                 &nbsp
-                <h2  style="font-size:250%; "selected>About</h2>
+                <div class="container-fluid">
                 <div class="row">
-                        <ul class="resume-list">
-							<li>
-								<h1  style="font-size:200%; "selected>Introduction</h1>
-								<p  style="font-size:100%; "selected><?php echo $row['introduction'] ?></p>
-							</li>
-							<li>
-								<h1 style="font-size:200%; "selected>Vision</h1>
-								<p  style="font-size:150%; "selected>&nbsp &nbsp &nbsp <?php echo $row['vision'] ?></p>
-                            </li>
-                            <li>
-								<h1 style="font-size:200%; "selected>Mission</h1>
-								<p  style="font-size:150%; "selected>&nbsp &nbsp &nbsp <?php echo $row['mission'] ?></p>
-							</li>
-							<li>
-								<h1  style="font-size:200%; "selected>Current Working Areas</h1>
-                                <?php
-                                $count = 0;
-                                while($count < count($areas)){
-                                        echo " <p  style='font-size:150%; 'selected >&nbsp &nbsp &nbsp $areas[$count]</p>";
-                                        $count++;
-                                    }
-                                ?>
-							</li>
-                        </ul>
-                </div>
-                <div class="row">
-                <div class="col-lg-6">
-                                        <div id="carouselExampleIndicators2" class="carousel slide"
-                                            data-ride="carousel">
-                                            <ol class="carousel-indicators">
-                                                <li data-target="#carouselExampleIndicators2" data-slide-to="0"
-                                                    class="active"></li>
-                                                <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
-                                                <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
-                                            </ol>
-                                            <div class="carousel-inner" role="listbox">
-                                                <div class="carousel-item active">
-                                                    <img class="img-fluid" src="<?php echo $loc2 ?>" style = "height : 500px; width : 500px; overflow : hidden;"
-                                                        alt="First slide">
-                                                </div>
-                                                <div class="carousel-item">
-                                                <img class="img-fluid" src="<?php echo $loc3 ?>" style = "height : 500px; width : 500px;overflow : hidden;"
-                                                        alt="Second slide">
-                                                </div>
-                                                <div class="carousel-item">
-                                                <img class="img-fluid" src="<?php echo $loc4 ?>" style = "height : 500px; width : 500px;overflow : hidden;"
-                                                        alt="Third slide">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Student Table</h4>
+                                <h6 class="card-subtitle">This table contains all the student who applied to this company</h6>
+                                <div class="table-responsive">
+                                    <table id="default_order" class="table table-striped table-bordered display no-wrap"
+                                        style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th style='text-align: center;'>ID</th>
+                                                <th style='text-align: center;'>Name</th>
+                                                <th style='text-align: center;'>E-Mail</th>
+                                                <th style='text-align: center;'>University</th>
+                                                <th style='text-align: center;'>Show</th>
+                                                <th style='text-align: center;'>Download CV</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php 
+                                                $sql = "select * from customer_account";
+                                                $runsql = mysqli_query($connection, $sql);
+                                                $count = 1;
+                                                
+                                                while($row = mysqli_fetch_array($runsql))
+                                                {   
+                                                    $count_1 = 0;
+                                                    while($count_1 < count($student))
+                                                    {
+                                                        
+                                                        if($student[$count_1] == $row['username']) {  
                 
-                         <div class="col-lg-6 col-md-1 ml-auto">
-                                        <div id="carouselExampleIndicators3" class="carousel slide"
-                                            data-ride="carousel">
-                                            <ol class="carousel-indicators">
-                                                <li data-target="#carouselExampleIndicators3" data-slide-to="0"
-                                                    class="active"></li>
-                                                <li data-target="#carouselExampleIndicators3" data-slide-to="1"></li>
-                                                <li data-target="#carouselExampleIndicators3" data-slide-to="2"></li>
-                                            </ol>
-                                            <div class="carousel-inner" role="listbox">
-                                                <div class="carousel-item active">
-                                                    <img class="img-fluid" src="<?php echo $loc5 ?>" style = "height : 500px; width : 500px; overflow : hidden;"
-                                                        alt="First slide">
-                                                </div>
-                                                <div class="carousel-item">
-                                                <img class="img-fluid" src="<?php echo $loc6 ?>" style = "height : 500px; width : 500px;overflow : hidden;"
-                                                        alt="Second slide">
-                                                </div>
-                                                <div class="carousel-item">
-                                                <img class="img-fluid" src="<?php echo $loc7 ?>" style = "height : 500px; width : 500px;overflow : hidden;"
-                                                        alt="Third slide">
-                                                </div>
-                                            </div>
-										</div>
-						 </div>
-				</div>
-			</div>
-            <footer  class="footer text-center text-muted">
-				<div class="text-md-center header-buttons">
-					<a class='site-btn' href="update.php?id_student=<?php echo $id_student ?> &id_company=<?php echo $id_company ?>">Request For Intern
-
-					</a>
+                                                            $sid = $row['cid']; //cid for employee table is id
+                                                            $firstname = $row['firstname'].' '.$row['lastname'];
+                                                            $email = $row['email'];
+                                                            $uni = "UOM";
+                                                            $cv = $row['cv'];
+                                                        echo "
+                                                            <tr>
+                                                                <td><p style='text-align: center;'>$count</p></td>
+                                                                <td><p style='text-align: center;'>$firstname</p></td>
+                                                                <td><p style='text-align: center;'>$email</p></td>
+                                                                <td><p style='text-align: center;'>$uni</p></td>
+                                                                <td>
+                                                                    <div style='text-align: center;' class='table-data-feature'>
+                                                                        <a href='../users/viewstuprofile.php?sid=$sid'>
+                                                                        <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
+                                                                            <i class='fas fa-list'></i>
+                                                                        </button>
+                                                                        </a>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div style='text-align: center;' class='table-data-feature'>
+                                                                        <a href='../admin/src/assets/studentCV/$cv'>
+                                                                        <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
+                                                                            <i class='fas fa-list'></i>
+                                                                        </button>
+                                                                        </a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        ";
+                                                        }
+                                                        $count_1++;
+                                                    }
+                                                    $count++;
+                                                }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            </div>
+            <footer  class="footer text-center text-muted">
                 <div class="social-section">
                         <div class="container-fluid">
                             <div class="row">
