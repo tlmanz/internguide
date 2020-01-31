@@ -3,23 +3,23 @@
 require_once "../admin/config/connect.php";
 session_start();
 
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_SESSION["usertype"]) || $_SESSION["usertype"] !== 'student'){
-    header("location: usr_login.php");
-    exit;
-    }
+// if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_SESSION["usertype"]) || $_SESSION["usertype"] !== 'company'){
+//     header("location: company_login.php");
+//     exit;
+//     }
 
-$user = $_SESSION['username'];
+$user = $_SESSION['username'];  //$_GET[]
 $sql = "SELECT * from customer_account WHERE username = '$user';";
 if ($result = mysqli_query($connection, $sql)) {
 	$profileData = mysqli_fetch_assoc($result);
 	$userid = $profileData['cid'];
 	$username = $profileData['firstname']." ".$profileData['lastname'];
-	$imageAdd = "../admin/src/assets/".$profileData['cphoto'];
-	$cvpath = "../admin/src/assets/" .$profileData['cv'];
+	$imageAdd = $profileData['cphoto'];
 	$useraddress = $profileData['address'];
 	$usermail = $profileData['email'];
     $phoneno = $profileData['telephone'];
     $userdes = $profileData['description1'];
+    $cvpath = $profileData['cv'];
 
 }
 ?>
@@ -54,6 +54,26 @@ if ($result = mysqli_query($connection, $sql)) {
 	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Tell the browser to be responsive to screen width -->
+       <!--  <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content=""> -->
+        <!-- Favicon icon -->
+        <link rel="icon" type="image/png" sizes="16x16" href="../admin/src/assets/images/favicon.png">
+        <link href="../admin/src/assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+        <title>Intern Guide - One Place for All Intern Needs</title>
+        <!-- Custom CSS -->
+        <link href="../admin/src/assets/extra-libs/c3/c3.min.css" rel="stylesheet">
+        <link href="../admin/src/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+        <link href="../admin/src/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+        <!-- Custom CSS -->
+        <!-- <link href="../dist/css/style.min.css" rel="stylesheet"> -->
+        <link href="../admin/src/dist/css/style.css" rel="stylesheet">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+
+
 </head>
 
 <body>
@@ -63,90 +83,86 @@ if ($result = mysqli_query($connection, $sql)) {
 	</div>
 
 	<div class="home-five-style">
-		<!-- Header section start -->
-
-		<header class="topbar" data-navbarbg="skin6">
-			<nav class="navbar top-navbar navbar-expand-md">
-
-				<!-- ============================================================== -->
-				<!-- End Logo -->
-				<!-- ============================================================== -->
-				<div class="navbar-collapse collapse" id="navbarSupportedContent">
-					<!-- ============================================================== -->
-					<!-- toggle and nav items -->
-					<!-- ============================================================== -->
-					<ul class="navbar-nav float-left mr-auto ml-3 pl-1">
-
-						<h3 class="page-title text-truncate text-dark font-weight-medium mb-1">
-                                <?php
-                                date_default_timezone_set('Asia/Colombo');
-                                if(date("H") < 12){
-                                    echo "Good Morning";
-                                }elseif(date("H") > 11 && date("H") < 18){
-                                    echo "Good Afternoon";
-                                }elseif(date("H") > 17){
-                                    echo "Good Evening";
-                                }
-                                ?>
-                            <?php echo $username ?>!</h3> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-
-                        <h1 style="font-size:120%; "selected ><?php
-                                        date_default_timezone_set('Asia/Colombo');
-                                        $mydate=getdate(date("U"));
-                                        echo "$mydate[weekday], $mydate[month] $mydate[mday], $mydate[year]";
-                                    ?></h1>
-
-					
-						<!-- Notification -->
-
-						<!-- End Notification -->
-						<!-- ============================================================== -->
-						<!-- create new -->
-						<!-- ============================================================== -->
 
 
-					</ul>
-					
+<div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+            data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+            <!-- ============================================================== -->
+            <!-- Topbar header - style you can find in pages.scss -->
+            <!-- ============================================================== -->
+            <header class="topbar" data-navbarbg="skin6">
 
-
-					<ul class="navbar-nav float-right">
-
-					<li class="nav-item d-none d-md-block" style="width:400px">
-					<div class="col-md-7 text-md-right header-buttons">
-						<a href='<?php echo $cvpath?>' class="site-btn"><span style="font-family: 'Josephin Sans',sans-serif";>Download CV</span></a>
+		        <nav class="navbar top-navbar navbar-expand-md">
+                    
+                        <!-- ============================================================== -->
+                        <!-- Logo -->
+                        <!-- ============================================================== -->
+                        
+                            <!-- Logo icon -->
+                           &nbsp&nbsp&nbsp  
+					<div class="text right header-buttons">
+						<a href='<?php echo $cvpath?>' class="btn btn-outline-success">Back to profile</a>
+						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  
+					</div>
+                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  
+					<div class="text right header-buttons">
+						<a href='<?php echo $cvpath?>' class="btn btn-outline-success">Download CV</a>
 						
 					</div>
-					</li>
 
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<img src='<?php echo $imageAdd?>' alt='user' class="rounded-circle" width="40">
-								<span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span class="text-dark"><?php echo $username?></span> <i data-feather="chevron-down" class="svg-icon"></i></span>
-							</a>
-							<div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-								<a class="dropdown-item" href="javascript:void(0)"><i data-feather="user" class="svg-icon mr-2 ml-1"></i>
-									My Profile</a>
-								<a class="dropdown-item" href="editprofile.php"><i data-feather="credit-card" class="svg-icon mr-2 ml-1"></i>
-									Edit profile</a>
+					<div class="col-md-5 text right header-buttons">
+						<a href='userrequest.php?user=$user' class="btn btn-outline-success">Request</a>
+					       <!-- request to user -->
+					</div>
+					
+                        
+                        <!-- ============================================================== -->
+                        <!-- End Logo -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- Toggle which is visible on mobile only -->
+                        <!-- ============================================================== -->
+                       
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                        <!-- ============================================================== -->
+                        <!-- toggle and nav items -->
+                        <!-- ============================================================== -->
+                        <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
+                            <!-- Notification -->
+                           
+                            
+                        </ul>
+                        <!-- ============================================================== -->
+                        <!-- Right side toggle and nav items -->
+                        <!-- ============================================================== -->
+                        <ul class="navbar-nav float-right">
+                            <!-- ============================================================== -->
+                            <!-- Search -->
+                            <!-- ============================================================== -->
+                            
+                            <!-- ============================================================== -->
+                            <!-- User profile and search -->
+                            <?php
+                                $get_user = "select * from customer_account where cid=".$_SESSION['cid'];
+                                $run_edit_user = mysqli_query($connection , $get_user);
+                                    $row_user = mysqli_fetch_array($run_edit_user);
+                                    $name = $row_user['firstname']." ".$row_user['lastname'];
+                                    $user_photo = $row_user['cphoto'];
+                                    $loc = "../admin/src/assets/".$user_photo; 
+                                                             
+                            ?>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+     
 
-									<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="companyshow.php"><i data-feather="power" class="svg-icon mr-2 ml-1"></i>
-									View company list</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="php/logout.php"><i data-feather="power" class="svg-icon mr-2 ml-1"></i>
-									Logout</a>
-							</div>
-						</li>
-						<!-- ============================================================== -->
-						<!-- User profile and search -->
-						<!-- ============================================================== -->
-					</ul>
-				</div>
-			</nav>
-		</header>
+		<!-- Header section start -->
 
-		</header>
-        
 		<section class="hero-section">
 
 			<div class="container-fluid">
@@ -166,10 +182,10 @@ if ($result = mysqli_query($connection, $sql)) {
 					<p><?php echo $userdes?></p>
 				</div>
 				<div class="social-links">
-					<a href=""><i class="fa fa-linkedin"></i></a>
-					<a href=""><i class="fa fa-instagram"></i></a>
-					<a href=""><i class="fa fa-facebook"></i></a>
-					<a href=""><i class="fa fa-twitter"></i></a>
+					<a href=""><i class="fab fa-linkedin"></i></a>
+					<a href=""><i class="fab fa-instagram"></i></a>
+					<a href=""><i class="fab fa-facebook"></i></a>
+					<a href=""><i class="fab fa-twitter"></i></a>
 				</div>
 			</div>
 		</section>
@@ -421,6 +437,14 @@ if ($result = mysqli_query($connection, $sql)) {
 	<script src="civic/js/magnific-popup.min.js"></script>
 	<script src="civic/js/circle-progress.min.js"></script>
 	<script src="civic/js/main.js"></script>
+
+ <script src="../admin/src/dist/js/feather.min.js"></script>
+        <script src="../admin/src/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+        <script src="../admin/src/dist/js/sidebarmenu.js"></script>
+        <!--Custom JavaScript -->
+        <script src="../admin/src/dist/js/custom.min.js"></script>
+
+
 </body>
 
 </html>

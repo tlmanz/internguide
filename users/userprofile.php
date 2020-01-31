@@ -14,8 +14,8 @@ if ($result = mysqli_query($connection, $sql)) {
 	$profileData = mysqli_fetch_assoc($result);
 	$userid = $profileData['cid'];
 	$username = $profileData['firstname']." ".$profileData['lastname'];
-	$imageAdd = "../admin/src/assets/".$profileData['cphoto'];
-	$cvpath = "../admin/src/assets/" .$profileData['cv'];
+	$imageAdd = $profileData['cphoto'];
+	$cvpath =  $profileData['cv'];
 	$useraddress = $profileData['address'];
 	$usermail = $profileData['email'];
     $phoneno = $profileData['telephone'];
@@ -47,6 +47,8 @@ if ($result = mysqli_query($connection, $sql)) {
 	<link rel="stylesheet" href="civic/css/owl.carousel.css" />
 	<link rel="stylesheet" href="civic/css/magnific-popup.css" />
 	<link rel="stylesheet" href="civic/css/style.css" />
+
+    <script src="https://kit.fontawesome.com/6d41dc11d3.js" crossorigin="anonymous"></script>
 
 
 	<!--[if lt IE 9]>
@@ -141,12 +143,18 @@ if ($result = mysqli_query($connection, $sql)) {
                         <!-- ============================================================== -->
                         <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
                             <!-- Notification -->
-                            <li class="nav-item d-none d-md-block" style="width:400px">
-					<div class="col-md-7 text-md-right header-buttons">
-						<a href='<?php echo $cvpath?>' class="site-btn">Download CV</a>
-						
-					</div>
-					</li>
+                            <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">
+                                <?php
+                                date_default_timezone_set('Asia/Colombo');
+                                if(date("H") < 12){
+                                    echo "Good Morning";
+                                }elseif(date("H") > 11 && date("H") < 18){
+                                    echo "Good Afternoon";
+                                }elseif(date("H") > 17){
+                                    echo "Good Evening";
+                                }
+                                ?>
+                            <?php echo $username ?>!</h3>
                             
                         </ul>
                         <!-- ============================================================== -->
@@ -241,18 +249,7 @@ if ($result = mysqli_query($connection, $sql)) {
                 <div class="page-breadcrumb">
                     <div class="row">
                         <div class="col-7 align-self-center">
-                            <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">
-                                <?php
-                                date_default_timezone_set('Asia/Colombo');
-                                if(date("H") < 12){
-                                    echo "Good Morning";
-                                }elseif(date("H") > 11 && date("H") < 18){
-                                    echo "Good Afternoon";
-                                }elseif(date("H") > 17){
-                                    echo "Good Evening";
-                                }
-                                ?>
-                            <?php echo $name ?>!</h3>
+                            
                         </div>
                         <div class="col-5 align-self-center">
                             <div class="customize-input float-right">
@@ -290,10 +287,10 @@ if ($result = mysqli_query($connection, $sql)) {
 					<p><?php echo $userdes?></p>
 				</div>
 				<div class="social-links">
-					<a href=""><i class="fa fa-linkedin"></i></a>
-					<a href=""><i class="fa fa-instagram"></i></a>
-					<a href=""><i class="fa fa-facebook"></i></a>
-					<a href=""><i class="fa fa-twitter"></i></a>
+					<a href=""><i class="fab fa-linkedin"></i></a>
+					<a href=""><i class="fab fa-instagram"></i></a>
+					<a href=""><i class="fab fa-facebook"></i></a>
+					<a href=""><i class="fab fa-twitter"></i></a>
 				</div>
 			</div>
 		</section>

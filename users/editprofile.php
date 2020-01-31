@@ -123,7 +123,7 @@
                                     $row_user = mysqli_fetch_array($run_edit_user);
                                     $name = $row_user['firstname']." ".$row_user['lastname'];
                                     $user_photo = $row_user['cphoto'];
-                                    $loc = "../admin/src/assets/".$user_photo; 
+                                    $loc = $user_photo; 
                                                              
                             ?>
                             <!-- ============================================================== -->
@@ -252,9 +252,9 @@
                             $web = $row_emp['web'];
                             $desc1 = $row_emp['description1'];
                             $photo = $row_emp['cphoto'];
-                            $cv = $row_emp['cv'];
+                            $cv_loc = $row_emp['cv'];
                             $created = $row_emp['created_at'];
-                            $p_loc = "../admin/src/assets/".$photo;
+                            //$p_loc = "../admin/src/assets/".$photo;
                             
                          }
                     ?>
@@ -264,7 +264,7 @@
                                 <div class="card-body">
                                     <h2 class="card-title">Student Details</h2>
                                     <div class= 'text-center'>
-                                        <img src='<?php echo $p_loc ?>' alt='image' class='rounded-circle' height='150'
+                                        <img src='<?php echo $loc ?>' alt='image' class='rounded-circle' height='150'
                                                 width="150">
                                         <br><br>
                                         <h3>Profile Picture</h3>
@@ -298,17 +298,27 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-md-2">Email</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-5">
-                                                            <div class="form-group">
-                                                                <input id='text-input' type="text" name="email" class="form-control" value="<?php echo $email ?>" readonly>
-                                                            </div>
+                                            <label class="col-md-2"></label>
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-5">
+                                                        <div class="form-group">
+                                                            <label class="col-md-8">Email</label>
+                                                            <input type="text" class="form-control text-center"
+                                                            placeholder="Company Name" value='<?php echo $email ?>' name="email" readonly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <div class="form-group">
+                                                            <label class="col-md-6">Password</label>
+                                                            <a href='password_reset_student.php?edit=<?php echo $id ?>' class="form-control text-center">
+                                                                Click To Reset Password
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
                                             <div class="form-group row">
                                                 <label class="col-md-2">Name</label>
                                                 <div class="col-md-10">
@@ -391,34 +401,45 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-md-2">Field of Study</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group mb-4">
-                                                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="field">
-                                                                    <option type='text' value="1" <?php if($field=="1") echo 'selected="selected"'; ?>>One</option>
-                                                                    <option type='text' value="2"<?php if($field=="2") echo 'selected="selected"'; ?>>Two</option>
-                                                                    <option type='text' value="3"<?php if($field=="3") echo 'selected="selected"'; ?>>Three</option>
-                                                                </select>
-                                                            </div>
+                                            <label class="col-md-2">Field of Study</label>
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group mb-4">
+                                                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="field">
+                                                                <option type='text' value="Electronic and Telecommunication Engineering" <?php if($field=="Electronic and Telecommunication Engineering") echo 'selected="selected"'; ?>>Electronic and Telecommunication Engineering</option>
+                                                                <option type='text' value="Computer Science and Engineering"<?php if($field=="Computer Science and Engineering") echo 'selected="selected"'; ?>>Computer Science and Engineering</option>
+                                                                <option type='text' value="Civil Engineering"<?php if($field=="Civil Engineering") echo 'selected="selected"'; ?>>Civil Engineering</option>
+                                                                <option type='text' value="Bio Medical Engineering" <?php if($field=="Bio Medical Engineering") echo 'selected="selected"'; ?>>Bio Medical Engineering</option>
+                                                                <option type='text' value="Electrical Engineering"<?php if($field=="Electrical Engineering") echo 'selected="selected"'; ?>>Electrical Engineering</option>
+                                                                <option type='text' value="Mechanical Engineering"<?php if($field=="Mechanical Engineering") echo 'selected="selected"'; ?>>Mechanical Engineering</option>
+                                                                <option type='text' value="Chemical and Process Engineering" <?php if($field=="Chemical and Process Engineering") echo 'selected="selected"'; ?>>Chemical and Process Engineering</option>
+                                                                <option type='text' value="Material Engineering"<?php if($field=="Material Engineering") echo 'selected="selected"'; ?>>Material Engineering</option>
+                                                                <option type='text' value="Textile Engineering"<?php if($field=="Textile Engineering") echo 'selected="selected"'; ?>>Textile Engineering</option>
+                                                                <option type='text' value="Earth Resource Engineering"<?php if($field=="Earth Resource Engineering") echo 'selected="selected"'; ?>>Earth Resource Engineering</option>
+                                                                <option type='text' value="Architecture" <?php if($field=="Architecture") echo 'selected="selected"'; ?>>Architecture</option>
+                                                                <option type='text' value="Business"<?php if($field=="Business") echo 'selected="selected"'; ?>>Business</option>
+                                                                <option type='text' value="Information Technology"<?php if($field=="Information Technology") echo 'selected="selected"'; ?>>Information Technology</option>
+                                                                <option type='text' value="Other"<?php if($field=="Other") echo 'selected="selected"'; ?>>Other</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
                                             <div class="form-group row">
-                                                <label class="col-md-2">GPA <br>(Up to Day)</label>
-                                                <div class="col-md-10">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <input id='text-input' type="number" class="form-control" name="gpa"
-                                                                    placeholder="GPA" min="0" max="4.2"value="<?php echo $gpa ?>" required>
-                                                            </div>
+                                            <label class="col-md-2">GPA <br>(Up to Day)</label>
+                                            <div class="col-md-10">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <input id='text-input' type="number" class="form-control" name="gpa"
+                                                            placeholder="GPA" step='0.0001' min="0" max="4.2"value="<?php echo $gpa ?>" required>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
                                             <div class="form-group row">
                                                 <label class="col-md-2">LinkedIn <br>URL</label>
                                                 <div class="col-md-10">
@@ -462,6 +483,7 @@
                                                     <input type="file" name='cv' class="custom-file-input" id="inputGroupFile04">
                                                     <label class="custom-file-label" for="inputGroupFile04">Choose PDF</label>
                                                 </div>
+                                                <input type='hidden' id='file-input' name='preCV' value='<?php echo $cv_loc?>'>
                                             </div>
                                             <br>
                                             <div class="input-group">
@@ -469,10 +491,31 @@
                                                     <input id='file-input' name='profile' type="file" class="custom-file-input" id="inputGroupFile04">
                                                     <label class="custom-file-label" for="inputGroupFile04">Choose Profile Picture</label>
                                                 </div>
+                                                <input type='hidden' id='file-input' name='preImg' value='<?php echo $p_loc?>'>
                                             </div>
                                         </div>
                                     </div>
                                     <br>
+                                    <div class="card-body">
+                                    <div style="font-size:100% ">
+                                    <fieldset class="checkbox text-center">
+                                        <label>
+                                            <input type='hidden' value='0' name='checkImage'>
+                                            <input style='transform: scale(1.5);' type="checkbox" name='checkImage' value="1" >&nbsp&nbsp&nbspTick This to Update Without Updating Profile Picture
+                                        </label>
+                                    </fieldset>
+                                    </div>
+
+                                    <div style="font-size:100% ">
+                                    <fieldset class="checkbox text-center">
+                                        <label>
+                                            <input type='hidden' value='0' name='checkCV'>
+                                            <input style='transform: scale(1.5);' type="checkbox" name='checkCV' value="1" >&nbsp&nbsp&nbsp&nbsp&nbspTick This to Update Without Updating CV
+                                        </label>
+                                    </fieldset>
+                                    </div>
+                                </div>
+
                                     <div class = 'footer'>
                                         <div style='text-align: center;'>
                                             <button type ='submit' class="btn btn-rounded btn-info"><i class='fa fa-sync-alt'></i>&nbspUpdate</button>
