@@ -186,12 +186,12 @@ if ($result = mysqli_query($connection, $sql)) {
 							<div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
 								<a class="dropdown-item" href="javascript:void(0)"><i data-feather="user" class="svg-icon mr-2 ml-1"></i>
 									My Profile</a>
-								<a class="dropdown-item" href="editprofile.php"><i data-feather="credit-card" class="svg-icon mr-2 ml-1"></i>
-									Edit profile</a>
+								<a class="dropdown-item" href="editprofile.php">&nbsp<i class="fas fa-wrench"></i>
+									&nbsp&nbsp&nbspEdit profile</a></i>
 
 									<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="companyshow.php"><i data-feather="power" class="svg-icon mr-2 ml-1"></i>
-									View company list</a>
+								<a class="dropdown-item" href="companyshow.php">&nbsp<i class="fas fa-eye"></i>
+									&nbsp&nbsp&nbspView company list</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="php/logout.php"><i data-feather="power" class="svg-icon mr-2 ml-1"></i>
 									Logout</a>
@@ -285,7 +285,7 @@ if ($result = mysqli_query($connection, $sql)) {
 				<img src='<?php echo $p_loc ?>' alt="image" class="img-fluid rounded" width="350">
 				<div class="hero-text " >
 					<h2><?php echo $username ?></h2>
-					<p style = "font-size: 20px"><?php echo $userdes?></p>
+					<p style = "font-size: 20px;color:#b6bfbf" align="justify"><?php echo $userdes?></p>
 				</div>
 				<div class="social-links">
 					<a href=""><i class="fab fa-linkedin"></i></a>
