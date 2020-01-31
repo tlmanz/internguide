@@ -51,8 +51,7 @@ session_start();
         </div>
     </div>
     <?php
-             //$s_id = $_GET['edit'];
-            $s_id = '1';
+            $s_id = $_SESSION['id'];
             $get_admin = "select * from employee where id ='$s_id'";
             $run_edit_admin = mysqli_query($connection,$get_admin);
             $row = mysqli_fetch_array($run_edit_admin);
@@ -66,19 +65,19 @@ session_start();
 			$vision = $row['vision'];
 			$mission = $row['mission'];
 			$photo1 = $row['image'];
-			$loc1 = "../company/src/assets/".$photo1;
+			$loc1 = "src/assets/".$photo1;
 			$photo2 = $row['photo2'];
-			$loc2 = "../company/src/assets/".$photo2;  
+			$loc2 = "src/assets/".$photo2;  
 			$photo3 = $row['photo3'];
-			$loc3 = "../company/src/assets/".$photo3; 
+			$loc3 = "src/assets/".$photo3; 
 			$photo4 = $row['photo4'];
-            $loc4 = "../company/src/assets/".$photo4;
+            $loc4 = "src/assets/".$photo4;
             $photo5 = $row['photo5'];
-            $loc5 = "../company/src/assets/".$photo5; 
+            $loc5 = "src/assets/".$photo5; 
             $photo6 = $row['photo6'];
-            $loc6 = "../company/src/assets/".$photo6; 
+            $loc6 = "src/assets/".$photo6; 
             $photo7 = $row['photo7'];
-            $loc7 = "../company/src/assets/".$photo7;  
+            $loc7 = "src/assets/".$photo7;  
             $field = $row['field'];      
             $areas = (explode(",",$field));  
             $_SESSION["loggedin"] = true;

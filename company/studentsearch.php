@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once (__DIR__.'/../../../config/connect.php');
+require_once ('connect.php');
 session_start();
 
 ?>
@@ -207,7 +207,7 @@ session_start();
                                                                 <td><p style='text-align: center;'>$uni</p></td>
                                                                 <td>
                                                                     <div style='text-align: center;' class='table-data-feature'>
-                                                                        <a href='../users/viewstuprofile.php?sid=$sid'>
+                                                                        <a href='viewstuprofile.php?sid=$sid'>
                                                                         <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
                                                                             <i class='fas fa-list'></i>
                                                                         </button>

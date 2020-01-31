@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once (__DIR__.'/../../../config/connect.php');
+require_once ('connect.php');
 session_start();
 
 ?>
@@ -178,8 +178,8 @@ session_start();
                             $run_edit_student = mysqli_query($connection , $get_student);
                             $row_emp = mysqli_fetch_array($run_edit_student);
                             $id = $row_emp['id'];
-                            $username = $row_emp['username'];
                             $firstname = $row_emp['ename'];
+                            $username = $row_emp['username'];
                             $field = $row_emp['field'];
                             $address = $row_emp['address'];
                             $phone = $row_emp['phone'];
@@ -222,7 +222,7 @@ session_start();
                                             <div style='margin-left: auto; margin-right: auto;' class="col-sm-5 col-md-7">
                                                 <div class="card">
                                                     <div class="card-body text-center">
-                                                        <form action='../dist/php/company_image_update.php' method='post' enctype='multipart/form-data'>
+                                                        <form action='company_image_update.php' method='post' enctype='multipart/form-data'>
                                                             <div class="input-group">
                                                                 <div class="input-group-prepend">
                                                                     <button class="btn btn-outline-secondary" type="submit">Update Logo</button>
@@ -241,7 +241,7 @@ session_start();
                                         </div>
                                         <br>
                                         <div style="text-align: center;">
-                                            <form action='/company/company_update.php' method='post' enctype='multipart/form-data'>
+                                            <form action='company_new.php' method='post' enctype='multipart/form-data'>
                                                 <div class="form-body">
                                                     <div class="form-group row">
                                                         <label class="col-md-2"></label>
@@ -402,7 +402,7 @@ session_start();
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
                                                                         <input type="tel" class="form-control"
-                                                                        placeholder="URL.." value="<?php echo $linkedin ?>" name='linkedin' required>
+                                                                        placeholder="URL.." value="<?php echo $linkedin ?>" name='linkedin'>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -415,7 +415,7 @@ session_start();
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
                                                                         <input type="tel" class="form-control"
-                                                                        placeholder="URL.." value="<?php echo $pinterest ?>" name='pin' required>
+                                                                        placeholder="URL.." value="<?php echo $pinterest ?>" name='pin'>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -428,7 +428,7 @@ session_start();
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
                                                                         <input type="tel" class="form-control"
-                                                                        placeholder="URL.." value="<?php echo $twitter ?>" name='twitter' required>
+                                                                        placeholder="URL.." value="<?php echo $twitter ?>" name='twitter'>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -441,7 +441,7 @@ session_start();
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
                                                                         <input type="tel" class="form-control"
-                                                                        placeholder="URL.." value="<?php echo $facebook ?>" name='facebook' required>
+                                                                        placeholder="URL.." value="<?php echo $facebook ?>" name='facebook'>
                                                                     </div>
                                                                 </div>
                                                             </div>

@@ -1,5 +1,5 @@
 <?php
-require_once (__DIR__.'/../../../config/connect.php');
+require_once ('connect.php');
 $id_student =trim($_GET['id_student']);
 $id_company = trim($_GET['id_company']);
 
