@@ -19,7 +19,8 @@ $student_name = $student_name_list['username'];
 
 
 $student_list = $student_name.",".$student_list;
+//$set_list = array_unique($student_list);
 //$student_list = array_push($student_list,$student_name);
-$update="UPDATE employee SET student='$student_list' WHERE id='$id_company'";
+$update="UPDATE employee SET student='$set_list' WHERE id='$id_company'";
 $run_querry=mysqli_query($connection, $update);
 ?>

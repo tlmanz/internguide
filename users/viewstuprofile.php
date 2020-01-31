@@ -9,8 +9,8 @@ session_start();
 //     }
 
 //$c_user = $_GET['username'];  //$_GET[]
-$s_id = $_GET['sid']
-$sql = "SELECT * from customer_account WHERE cid = '$s_id';";
+$s_id = $_GET['sid'];
+$sql = "SELECT * from customer_account WHERE cid = '$s_id'";
 if ($result = mysqli_query($connection, $sql)) {
 	$profileData = mysqli_fetch_assoc($result);
 	$userid = $profileData['cid'];
