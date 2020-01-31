@@ -18,7 +18,17 @@ $username = $_POST['username'];
 $dob = $_POST['dob'];
 $age = $_POST['age'];
 $oldcv = $_POST['oldcv'];
+$oldemail = $_POST['oldemail'];
 		// $cv = $POST['cv'];
+$emailnum = 0;
+
+if($email !== $oldemail ){
+	$emailnum = mysqli_num_rows(mysqli_query($connection, "SELECT * FROM `customer_account` WHERE ( `email` = '".$_POST['email']."' )"));
+}
+else{
+	$emailnum = 0;
+}
+
 if(!isset($_FILES['cv']) || $_FILES['cv']['error']== UPLOAD_ERR_NO_FILE){
 	$cvpath = $oldcv;
 }
@@ -38,9 +48,14 @@ else{
 
 //$emailnum = mysqli_num_rows(mysqli_query($connection, "SELECT * FROM `customer_account` WHERE ( `email` = '".$_POST['email']."' )"));
 $phonenum = preg_match('/^[0-9]{10}+$/', $phone);
-
-if($phonenum < 1){
-	echo "<script>alert ('Please Enter a Valid Phone Number')</script>";
+if ($phonenum < 1 && $emailnum > 0){
+	$error = 'Email Exists. Choose a Unique One!.. Check Your Contact Number Again!..';
+}
+elseif ($emailnum > 0){
+	$error = 'Email Exists. Choose a Unique One!';
+}
+if($phonenum < 1 || $emailnum > 0){
+	echo "<script>alert ('$error')</script>";
 	echo "<script>window.open('../../html/student_edit.php?edit=$cid','_self')</script>";
 }		// echo "outside";
 else{

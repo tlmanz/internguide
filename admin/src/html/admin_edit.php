@@ -449,7 +449,7 @@
                                 <div class = 'footer'>
                                     <div style='text-align: center;'>
                                         <a href = 'admin_admin.php' >
-                                            <button class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
+                                            <button type='button' class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
                                         </a>
                                         &nbsp&nbsp
                                         <button type ='submit' class="btn btn-rounded btn-info"><i class='fa fa-paper-plane'></i>&nbspSubmit</button>

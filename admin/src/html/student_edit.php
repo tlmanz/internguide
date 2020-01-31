@@ -408,7 +408,7 @@
                                                         <div class="form-group">
                                                             <label class="col-md-8">Email</label>
                                                             <input type="text" class="form-control text-center"
-                                                            placeholder="Company Name" value='<?php echo $email ?>' name="email" readonly>
+                                                            placeholder="Company Name" value='<?php echo $email ?>' name="email">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-5">
@@ -608,6 +608,7 @@
                                                 <label class="custom-file-label" for="inputGroupFile04">Choose PDF</label>
                                             </div>
                                             <input type="hidden" name='oldcv' value="<?php echo $cv ?>">
+                                            <input type="hidden" name='oldemail' value="<?php echo $email ?>">
                                         </div>
                                         <br>
                                     </div>
