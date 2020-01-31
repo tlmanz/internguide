@@ -2,7 +2,7 @@
 // Include config file
 require_once "connect.php";
 session_start();
-
+$id=trim($_GET["edit"]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +39,7 @@ session_start();
 	</div>
 	<div class="home-two-style">
 		<?php
-            $get_admin = "select * from employee where id = 1"; //.$_SESSION['id'];
+            $get_admin = "select * from employee where id = $id"; //.$_SESSION['id'];
             $run_edit_admin = mysqli_query($connection,$get_admin);
             $row = mysqli_fetch_array($run_edit_admin);
 			$name = $row['ename'];
