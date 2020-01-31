@@ -319,7 +319,7 @@ if ($result = mysqli_query($connection, $sql)) {
                                                             <td><p style='text-align: center;'>$age</p></td>
                                                             <td>
                                                                 <div style='text-align: center;' class='table-data-feature'>
-                                                                    <a href='company_show.php?edit=$sid'>
+                                                                    <a href='../company/company.php?id=$sid&username=$user'>
                                                                     <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
                                                                         <i class='fas fa-list'></i>
                                                                     </button>

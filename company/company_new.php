@@ -51,7 +51,7 @@ session_start();
         </div>
     </div>
     <?php
-            $get_admin = "select * from employee where id = 1"; //.$_SESSION['id'];
+            $get_admin = "select * from employee where id = .$_SESSION['id'];
             $run_edit_admin = mysqli_query($connection,$get_admin);
             $row = mysqli_fetch_array($run_edit_admin);
 			$name = $row['ename'];
