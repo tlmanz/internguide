@@ -146,7 +146,7 @@
                             class="svg-icon"></i></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                            <a class="dropdown-item" href="javascript:void(0)"><i data-feather="user"
+                            <a class="dropdown-item" href="admin_show.php?edit=<?php echo $_SESSION['id'] ?>"><i data-feather="user"
                                 class="svg-icon mr-2 ml-1"></i>
                             My Profile</a>
 
@@ -434,6 +434,7 @@
                                                                         <label class="col-md-8">Email</label>
                                                                         <input type="text" class="form-control text-center"
                                                                         placeholder="Company Name" value='<?php echo $email ?>' name="email" required>
+                                                                        <input type="hidden" name='oldemail' value='<?php echo $email?>'>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-5">

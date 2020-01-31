@@ -211,6 +211,7 @@ session_start();
                                                     $firstname = $row['firstname'].' '.$row['lastname'];
                                                     $email = $row['email'];
                                                     $uni = "UOM";
+                                                    $cv = $row['cv'];
                                                     echo "
                                                         <tr>
                                                             <td><p style='text-align: center;'>$count</p></td>
@@ -219,7 +220,16 @@ session_start();
                                                             <td><p style='text-align: center;'>$uni</p></td>
                                                             <td>
                                                                 <div style='text-align: center;' class='table-data-feature'>
-                                                                    <a href='../user/viewstuprofile.php?sid=$sid'>
+                                                                    <a href='../users/viewstuprofile.php?sid=$sid'>
+                                                                    <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
+                                                                        <i class='fas fa-list'></i>
+                                                                    </button>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div style='text-align: center;' class='table-data-feature'>
+                                                                    <a href='../admin/src/assets/studentCV/$cv'>
                                                                     <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
                                                                         <i class='fas fa-list'></i>
                                                                     </button>
