@@ -75,12 +75,6 @@ $imageFileType5 = strtolower(pathinfo($s5photo,PATHINFO_EXTENSION));
 $s5path = "companyImages/slider/".$newfilename5;
 $defs5path = $_POST['defimage5'];
 
-$temp6 = explode(".", $_FILES["image6"]["name"]);
-$newfilename6 = round(microtime(true)) .$id.'slide5'.'.' . end($temp6);
-$s6photo = $s_loc.$newfilename5;
-$imageFileType5 = strtolower(pathinfo($s6photo,PATHINFO_EXTENSION));
-$s6path = "companyImages/slider/".$newfilename6;
-$defs6path = $_POST['defimage6'];
 
 
 if ($phonenum < 1 && $emailnum > 0){
@@ -94,7 +88,7 @@ elseif($phonenum < 1){
 }
 if($phonenum < 1 || $emailnum > 0){
 	echo "<script>alert ('$error')</script>";
-	//echo "<script>window.open('company_edit.php?edit=$id','_self')</script>";
+	echo "<script>window.open('company_edit.php?edit=$id','_self')</script>";
 }
 else{
 	if($status !== '0'){
@@ -104,7 +98,7 @@ else{
 				die('Connect Error('.mysqli_connect_error().')'.mysqli_connect_error());
 			}else{
 
-				$query1 = "update employee set ename='$name',description='$description',email='$email',phone='$phone',address='$address',field='$field',introduction='$introduction',vision='$vision',mission='$mission',photo2='$defs1path',photo3='$defs2path',photo4='$defs3path',photo5='$defs4path',photo6='$defs5path',photo7='$defs6path',pin='$pin',linkedin='$linkedin',facebook='$facebook',twitter='$twitter' where id = '$id' ";
+				$query1 = "update employee set ename='$name',description='$description',email='$email',phone='$phone',address='$address',field='$field',introduction='$introduction',vision='$vision',mission='$mission',photo2='$defs1path',photo3='$defs2path',photo4='$defs3path',photo5='$defs4path',photo6='$defs5path',pin='$pin',linkedin='$linkedin',facebook='$facebook',twitter='$twitter' where id = '$id' ";
 				$run_query = mysqli_query($connection , $query1);
 				if($run_query){
 					echo "<script>alert ('Company Profile Updated!')</script>";
@@ -124,14 +118,14 @@ else{
 		}
 	}
 	else{
-		if($imageFileType1 != "jpg" && $imageFileType1 != "png" && $imageFileType1 != "jpeg" && $imageFileType1 != "gif" && $imageFileType1 != "JPG" && $imageFileType1 != "JPEG"&& $imageFileType1 != "PNG" && $imageFileType2 != "jpg" && $imageFileType2 != "png" && $imageFileType2 != "jpeg" && $imageFileType2 != "gif" && $imageFileType2 != "JPG" && $imageFileType2 != "JPEG"&& $imageFileType2 != "PNG" && $imageFileType3 != "jpg" && $imageFileType3 != "png" && $imageFileType3 != "jpeg" && $imageFileType3 != "gif" && $imageFileType3 != "JPG" && $imageFileType3 != "JPEG" && $imageFileType3 != "PNG"  && $imageFileType4 != "jpg" && $imageFileType4 != "png" && $imageFileType4 != "jpeg" && $imageFileType4 != "gif" && $imageFileType4 != "JPG" && $imageFileType4 != "JPEG"&& $imageFileType4 != "PNG" && $imageFileType5 != "jpg" && $imageFileType5 != "png" && $imageFileType5 != "jpeg" && $imageFileType5 != "gif" && $imageFileType5 != "JPG" && $imageFileType5 != "JPEG"&& $imageFileType5 != "PNG" && $imageFileType6 != "jpg" && $imageFileType6 != "png" && $imageFileType6 != "jpeg" && $imageFileType6 != "gif" && $imageFileType6 != "JPG" && $imageFileType6 != "JPEG"&& $imageFileType6 != "PNG" ) {
+		if($imageFileType1 != "jpg" && $imageFileType1 != "png" && $imageFileType1 != "jpeg" && $imageFileType1 != "gif" && $imageFileType1 != "JPG" && $imageFileType1 != "JPEG"&& $imageFileType1 != "PNG" && $imageFileType2 != "jpg" && $imageFileType2 != "png" && $imageFileType2 != "jpeg" && $imageFileType2 != "gif" && $imageFileType2 != "JPG" && $imageFileType2 != "JPEG"&& $imageFileType2 != "PNG" && $imageFileType3 != "jpg" && $imageFileType3 != "png" && $imageFileType3 != "jpeg" && $imageFileType3 != "gif" && $imageFileType3 != "JPG" && $imageFileType3 != "JPEG" && $imageFileType3 != "PNG"  && $imageFileType4 != "jpg" && $imageFileType4 != "png" && $imageFileType4 != "jpeg" && $imageFileType4 != "gif" && $imageFileType4 != "JPG" && $imageFileType4 != "JPEG"&& $imageFileType4 != "PNG" && $imageFileType5 != "jpg" && $imageFileType5 != "png" && $imageFileType5 != "jpeg" && $imageFileType5 != "gif" && $imageFileType5 != "JPG" && $imageFileType5 != "JPEG"&& $imageFileType5 != "PNG") {
 
 			echo "<script>alert ('Sorry, only JPG, JPEG, PNG & GIF files are allowed. Select Again!')</script>";
-			//echo "<script>window.open('company_edit.php?edit=$id','_self')</script>";
+			echo "<script>window.open('company_edit.php?edit=$id','_self')</script>";
 
 		}else{
 
-			if (move_uploaded_file($_FILES["image1"]["tmp_name"], $s1photo) && move_uploaded_file($_FILES["image2"]["tmp_name"], $s2photo) && move_uploaded_file($_FILES["image3"]["tmp_name"], $s3photo) && move_uploaded_file($_FILES["image4"]["tmp_name"], $s4photo)&& move_uploaded_file($_FILES["image5"]["tmp_name"], $s5photo)&& move_uploaded_file($_FILES["image6"]["tmp_name"], $s6photo)) {
+			if (move_uploaded_file($_FILES["image1"]["tmp_name"], $s1photo) && move_uploaded_file($_FILES["image2"]["tmp_name"], $s2photo) && move_uploaded_file($_FILES["image3"]["tmp_name"], $s3photo) && move_uploaded_file($_FILES["image4"]["tmp_name"], $s4photo)&& move_uploaded_file($_FILES["image5"]["tmp_name"], $s5photo)) {
 
 				if (!empty($name) && !empty($phone) && !empty($email)) {
 
@@ -139,7 +133,7 @@ else{
 						die('Connect Error('.mysqli_connect_error().')'.mysqli_connect_error());
 					}else{
 
-						$query1 = "update employee set ename='$name',description='$description',email='$email',phone='$phone',address='$address',field='$field',introduction='$introduction',vision='$vision',mission='$mission',photo2='$s1path',photo3='$s2path',photo4='$s3path',photo5='$s4path',photo6='$s5path',photo7='$s6path',pin='$pin',linkedin='$linkedin',facebook='$facebook',twitter='$twitter' where id = '$id' ";
+						$query1 = "update employee set ename='$name',description='$description',email='$email',phone='$phone',address='$address',field='$field',introduction='$introduction',vision='$vision',mission='$mission',photo2='$s1path',photo3='$s2path',photo4='$s3path',photo5='$s4path',photo6='$s5path',pin='$pin',linkedin='$linkedin',facebook='$facebook',twitter='$twitter' where id = '$id' ";
 						$run_query = mysqli_query($connection , $query1);
 						if($run_query){
 							echo "<script>alert ('Company Profile Updated!')</script>";
