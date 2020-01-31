@@ -19,13 +19,6 @@ $introduction = $_POST['intro'];
 $status = $_POST['check'];
 
 	// Logo For Company
-$p_loc = __DIR__."/../../assets/companyImages/";
-$temp = explode(".", $_FILES["logo"]["name"]);
-$newfilename = round(microtime(true)) .$id.'logo'.'.' . end($temp);
-$lphoto = $p_loc.$newfilename;
-$imageFileType = strtolower(pathinfo($lphoto,PATHINFO_EXTENSION));
-$logopath = "companyImages/".$newfilename;
-$deflogopath = $_POST['deflogo'];
 	//////////////////////////////////////////////////////////////////////////
 
 	// Slider Image 1 /////////////////////////////////////////////////////////////
@@ -63,7 +56,7 @@ if($status !== '0'){
 			die('Connect Error('.mysqli_connect_error().')'.mysqli_connect_error());
 		}else{
 
-			$query1 = "update employee set ename='$name',description='$description',email='$email',phone='$phone',address='$address',field='$field',introduction='$introduction',vision='$vision',mission='$mission',image='$deflogopath',photo2='$defs1path',photo3='$defs2path',photo4='$defs3path',pin='$pin',linkedin='$linkedin',facebook='$facebook',twitter='$twitter' where id = '$id' ";
+			$query1 = "update employee set ename='$name',description='$description',email='$email',phone='$phone',address='$address',field='$field',introduction='$introduction',vision='$vision',mission='$mission',photo2='$defs1path',photo3='$defs2path',photo4='$defs3path',pin='$pin',linkedin='$linkedin',facebook='$facebook',twitter='$twitter' where id = '$id' ";
 			$run_query = mysqli_query($connection , $query1);
 			if($run_query){
 				echo "<script>alert ('Company Profile Updated!')</script>";
@@ -83,14 +76,14 @@ if($status !== '0'){
 	}
 }
 else{
-	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "JPG" && $imageFileType != "JPEG"&& $imageFileType != "PNG" && $imageFileType1 != "jpg" && $imageFileType1 != "png" && $imageFileType1 != "jpeg" && $imageFileType1 != "gif" && $imageFileType1 != "JPG" && $imageFileType1 != "JPEG"&& $imageFileType1 != "PNG" && $imageFileType2 != "jpg" && $imageFileType2 != "png" && $imageFileType2 != "jpeg" && $imageFileType2 != "gif" && $imageFileType2 != "JPG" && $imageFileType2 != "JPEG"&& $imageFileType2 != "PNG" && $imageFileType3 != "jpg" && $imageFileType3 != "png" && $imageFileType3 != "jpeg" && $imageFileType3 != "gif" && $imageFileType3 != "JPG" && $imageFileType3 != "JPEG"&& $imageFileType3 != "PNG") {
+	if($imageFileType1 != "jpg" && $imageFileType1 != "png" && $imageFileType1 != "jpeg" && $imageFileType1 != "gif" && $imageFileType1 != "JPG" && $imageFileType1 != "JPEG"&& $imageFileType1 != "PNG" && $imageFileType2 != "jpg" && $imageFileType2 != "png" && $imageFileType2 != "jpeg" && $imageFileType2 != "gif" && $imageFileType2 != "JPG" && $imageFileType2 != "JPEG"&& $imageFileType2 != "PNG" && $imageFileType3 != "jpg" && $imageFileType3 != "png" && $imageFileType3 != "jpeg" && $imageFileType3 != "gif" && $imageFileType3 != "JPG" && $imageFileType3 != "JPEG"&& $imageFileType3 != "PNG") {
 
 		echo "<script>alert ('Sorry, only JPG, JPEG, PNG & GIF files are allowed. Select Again!')</script>";
 		echo "<script>window.open('../../html/company_edit.php?edit=$id','_self')</script>";
 
 	}else{
 
-		if (move_uploaded_file($_FILES["logo"]["tmp_name"], $lphoto) && move_uploaded_file($_FILES["image1"]["tmp_name"], $s1photo) && move_uploaded_file($_FILES["image2"]["tmp_name"], $s2photo) && move_uploaded_file($_FILES["image3"]["tmp_name"], $s3photo)) {
+		if (move_uploaded_file($_FILES["image1"]["tmp_name"], $s1photo) && move_uploaded_file($_FILES["image2"]["tmp_name"], $s2photo) && move_uploaded_file($_FILES["image3"]["tmp_name"], $s3photo)) {
 
 			if (!empty($name) && !empty($phone) && !empty($email)) {
 
@@ -98,7 +91,7 @@ else{
 					die('Connect Error('.mysqli_connect_error().')'.mysqli_connect_error());
 				}else{
 
-					$query1 = "update employee set ename='$name',description='$description',email='$email',phone='$phone',address='$address',field='$field',introduction='$introduction',vision='$vision',mission='$mission',image='$logopath',photo2='$s1path',photo3='$s2path',photo4='$s3path',pin='$pin',linkedin='$linkedin',facebook='$facebook',twitter='$twitter' where id = '$id' ";
+					$query1 = "update employee set ename='$name',description='$description',email='$email',phone='$phone',address='$address',field='$field',introduction='$introduction',vision='$vision',mission='$mission',photo2='$s1path',photo3='$s2path',photo4='$s3path',pin='$pin',linkedin='$linkedin',facebook='$facebook',twitter='$twitter' where id = '$id' ";
 					$run_query = mysqli_query($connection , $query1);
 					if($run_query){
 						echo "<script>alert ('Company Profile Updated!')</script>";

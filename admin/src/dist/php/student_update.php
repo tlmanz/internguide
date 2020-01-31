@@ -14,51 +14,61 @@ $gpa = $_POST['gpa'];
 $linkedin = $_POST['linkedin'];
 $web = $_POST['web'];
 $desc1 = $_POST['description1'];
-$status = $_POST['check'];
 $username = $_POST['username'];
 $dob = $_POST['dob'];
 $age = $_POST['age'];
+$oldcv = $_POST['oldcv'];
+$oldemail = $_POST['oldemail'];
 		// $cv = $POST['cv'];
-$p_loc = __DIR__."/../../assets/userImages/";
-$temp = explode(".", $_FILES["profile"]["name"]);
-$newfilename = $username. '.' . end($temp);
-$cphoto = $p_loc.$newfilename;
-$imageFileType = strtolower(pathinfo($cphoto,PATHINFO_EXTENSION));
-$imagepath = "userImages/".$newfilename;
-$defimagepath = $_POST['defprofile'];
-		// echo "outside";
-if($status !== '0'){
-	$query1 = "update customer_account set firstname='$firstname',lastname='$lastname', nic = '$nic', gender = '$gender', field = '$field', address='$address',telephone='$phone',email='$email', gpa = '$gpa', linkedin = '$linkedin', web = '$web', description1 = '$desc1', dob = '$dob', age = '$age' where cid = '$cid' ";
-	$run_query = mysqli_query($connection , $query1);
-	if($run_query){
-		echo "<script>alert ('Profile Updated Successfully Without Updating Profile Picture and Your CV!')</script>";
-		echo "<script>window.open('../../html/student_show.php?edit=$cid','_self')</script>";
-	}
+$emailnum = 0;
+
+if($email !== $oldemail ){
+	$emailnum = mysqli_num_rows(mysqli_query($connection, "SELECT * FROM `customer_account` WHERE ( `email` = '".$_POST['email']."' )"));
 }
 else{
-	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "JPG" && $imageFileType != "JPEG"&& $imageFileType != "PNG"){
-		echo "<script>alert ('Sorry, only JPG, JPEG, PNG & GIF files are allowed. Select Again!')</script>";
+	$emailnum = 0;
+}
+
+if(!isset($_FILES['cv']) || $_FILES['cv']['error']== UPLOAD_ERR_NO_FILE){
+	$cvpath = $oldcv;
+}
+else{
+	$cv_loc = __DIR__."/../../assets/studentCV/";
+	$tempcv = explode(".", $_FILES["cv"]["name"]);
+	$cvfilename = $username. '.' . end($tempcv);
+	$cvname = $cv_loc.$cvfilename;
+	$cvFileType = strtolower(pathinfo($cvname,PATHINFO_EXTENSION));
+	$cvpath = "studentCV/".$cvfilename;
+	move_uploaded_file($_FILES["cv"]["tmp_name"], $cvname);
+	if($cvFileType !="pdf" && $cvFileType !="PDF"){
+		echo "<script>alert ('Sorry, only PDF files are allowed')</script>";
 		echo "<script>window.open('../../html/student_edit.php?edit=$cid','_self')</script>";
 	}
-	else{
-		if (move_uploaded_file($_FILES["profile"]["tmp_name"], $cphoto)) {
-		// echo "insert";
+}
 
-			$query1 = "update customer_account set firstname='$firstname',lastname='$lastname', nic = '$nic', gender = '$gender', field = '$field', address='$address',telephone='$phone',email='$email', gpa = '$gpa', linkedin = '$linkedin', web = '$web', description1 = '$desc1', cphoto = '$imagepath', dob = '$dob', age = '$age where cid = '$cid' ";
-			$run_query = mysqli_query($connection , $query1);
-			if($run_query){
-				echo "<script>alert ('Profile Updated Successfully!')</script>";
-				echo "<script>window.open('../../html/student_show.php?edit=$cid','_self')</script>";
-			}
-			else{
-				echo "<script>alert ('Oops! Something Went Wrong.. Contact Help!')</script>";
-				echo "<script>window.open('../../html/help.php','_self')</script>";
-			}
-		}
-		else{
-			echo "<script>alert ('Oops! Something Went Wrong.. Contact Help!')</script>";
-			echo "<script>window.open('../../html/help.php','_self')</script>";
-		}
+//$emailnum = mysqli_num_rows(mysqli_query($connection, "SELECT * FROM `customer_account` WHERE ( `email` = '".$_POST['email']."' )"));
+$phonenum = preg_match('/^[0-9]{10}+$/', $phone);
+if ($phonenum < 1 && $emailnum > 0){
+	$error = 'Email Exists. Choose a Unique One!.. Check Your Contact Number Again!..';
+}
+elseif ($emailnum > 0){
+	$error = 'Email Exists. Choose a Unique One!';
+}
+if($phonenum < 1 || $emailnum > 0){
+	echo "<script>alert ('$error')</script>";
+	echo "<script>window.open('../../html/student_edit.php?edit=$cid','_self')</script>";
+}		// echo "outside";
+else{
+		// echo "insert";
+	$query1 = "update customer_account set firstname='$firstname',lastname='$lastname', nic = '$nic', gender = '$gender', field = '$field', address='$address',telephone='$phone',email='$email', gpa = '$gpa', linkedin = '$linkedin', web = '$web', description1 = '$desc1', dob = '$dob', age = '$age', cv = '$cvpath' where cid = '$cid' ";
+	$run_query = mysqli_query($connection , $query1);
+	if($run_query){
+		echo "<script>alert ('Profile Updated Successfully!')</script>";
+		echo "<script>window.open('../../html/student_show.php?edit=$cid','_self')</script>";
+	}
+	else{
+		echo "<script>alert ('Oops! Something Went Wrong.. Contact Help!')</script>";
+		echo "<script>window.open('../../html/help.php','_self')</script>";
 	}
 }
 

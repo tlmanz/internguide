@@ -371,14 +371,14 @@
                                                     <div class="col-md-5">
                                                         <div class="form-group">
                                                             <label class="col-md-8">Password</label>
-                                                            <input type="text" class="form-control text-center"
+                                                            <input type="password" class="form-control text-center"
                                                             placeholder="Password" name='password' required="" >
                                                         </div>
                                                     </div>
                                                     <div class="col-md-5">
                                                         <div class="form-group">
                                                             <label class="col-md-10">Confirm Password</label>
-                                                            <input type="text" class="form-control text-center"
+                                                            <input type="password" class="form-control text-center"
                                                             placeholder="Confirm Password" name='confpassword' required="">
                                                         </div>
                                                     </div>
@@ -414,7 +414,7 @@
                                                         <div class="form-group">
                                                             <label class="col-md-8">Date of Birth</label>
                                                             <input type="date" class="form-control text-center"
-                                                            placeholder="First Name" name='dob' required="" >
+                                                            placeholder="First Name" min='1980-01-01' max='2005-01-01' name='dob' required="" >
                                                         </div>
                                                     </div>
                                                     <div class="col-md-5">
@@ -569,7 +569,7 @@
                                         </div>
                                         <div class="input-group">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="inputGroupFile04" name='pdf' required="">
+                                                <input type="file" class="custom-file-input" id="inputGroupFile04" name='cv' required="">
                                                 <label class="custom-file-label" for="inputGroupFile04">Upload Your CV</label>
                                             </div>
                                         </div>

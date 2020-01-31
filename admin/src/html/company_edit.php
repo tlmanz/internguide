@@ -359,6 +359,25 @@
                                             width="150">
                                             <br><br>
                                             <h3>Logo</h3>
+                                            <div style='margin-left: auto; margin-right: auto;' class="col-sm-5 col-md-7">
+                                                <div class="card">
+                                                    <div class="card-body text-center">
+                                                        <form action='../dist/php/company_image_update.php' method='post' enctype='multipart/form-data'>
+                                                            <div class="input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <button class="btn btn-outline-secondary" type="submit">Update Logo</button>
+                                                                </div>
+                                                                <div class="custom-file">
+                                                                    <input type="file" name='logo' class="custom-file-input" id="inputGroupFile03">
+                                                                    <input type="hidden" name='id' value='<?php echo $id ?>'>
+                                                                    <input type="hidden" name='username' value='<?php echo $username?>'>
+                                                                    <label class="custom-file-label" for="inputGroupFile03"></label>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <br>
                                         <div style="text-align: center;">
@@ -567,13 +586,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="input-group">
-                                                        <div class="custom-file">
-                                                            <input id='file-input' name='logo' type="file" class="custom-file-input" id="inputGroupFile04">
-                                                            <label class="custom-file-label" for="inputGroupFile04">Choose Company Logo</label>
-                                                        </div>
-                                                        <input type='hidden' id='file-input' name='deflogo' value='<?php echo $p_loc?>'>
-                                                    </div><br>
                                                     <div class="input-group">
                                                         <div class="custom-file">
                                                             <input id='file-input' name='image1' type="file" class="custom-file-input" id="inputGroupFile04">
