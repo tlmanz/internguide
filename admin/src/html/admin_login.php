@@ -75,7 +75,7 @@
 							Username / Password?
 						</a>
 						<br>
-						<a class="txt10" href="index.php">
+						<a class="txt10" href="../../../index.php">
 							<i class="fa fa-home m-l-7" aria-hidden="true"></i>
 							Go Home
 						</a>

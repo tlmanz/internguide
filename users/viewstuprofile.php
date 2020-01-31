@@ -1,6 +1,6 @@
 <?php
 
-require_once (__DIR__.'/../../../config/connect.php');
+require_once (__DIR__.'../../admin/config/connect.php');
 session_start();
 
 // if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_SESSION["usertype"]) || $_SESSION["usertype"] !== 'company'){
@@ -107,9 +107,9 @@ if ($result = mysqli_query($connection, $sql)) {
                            &nbsp&nbsp&nbsp  
 					<div class="text right header-buttons">
 						<a href='../company/company_new.php' class="btn btn-outline-success">Back to profile</a>
-						&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  
+						
 					</div>
-                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  
+                     
 					<div class="text right header-buttons">
 						<a href='<?php echo $cv_loc?>' class="btn btn-outline-success">Download CV</a>
 						
