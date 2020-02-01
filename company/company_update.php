@@ -19,6 +19,7 @@ $facebook = $_POST['facebook'];
 $introduction = $_POST['intro'];
 $status = $_POST['check'];
 $oldemail = $_POST['oldemail'];
+$username = $_POST['username'];
 
 $emailnum = 0;
 
@@ -36,7 +37,7 @@ $error = '';
 	// Slider Image 1 /////////////////////////////////////////////////////////////
 $s_loc = "../admin/src/assets/companyImages/slider/";
 $temp1 = explode(".", $_FILES["image1"]["name"]);
-$newfilename1 = round(microtime(true)) .$id.'slide1'.'.' . end($temp1);
+$newfilename1 = $username.'slide1'.'.' . end($temp1);
 $s1photo = $s_loc.$newfilename1;
 $imageFileType1 = strtolower(pathinfo($s1photo,PATHINFO_EXTENSION));
 $s1path = "companyImages/slider/".$newfilename1;
@@ -45,7 +46,7 @@ $defs1path = $_POST['defimage1'];
 
 	// Slider Image 2 /////////////////////////////////////////////////////////////
 $temp2 = explode(".", $_FILES["image2"]["name"]);
-$newfilename2 = round(microtime(true)) .$id.'slide2'.'.' . end($temp2);
+$newfilename2 = $username.'slide2'.'.' . end($temp2);
 $s2photo = $s_loc.$newfilename2;
 $imageFileType2 = strtolower(pathinfo($s2photo,PATHINFO_EXTENSION));
 $s2path = "companyImages/slider/".$newfilename2;
@@ -54,7 +55,7 @@ $defs2path = $_POST['defimage2'];
 
 	// Slider Image 3 /////////////////////////////////////////////////////////////
 $temp3 = explode(".", $_FILES["image3"]["name"]);
-$newfilename3 = round(microtime(true)) .$id.'slide3'.'.' . end($temp3);
+$newfilename3 = $username.'slide3'.'.' . end($temp3);
 $s3photo = $s_loc.$newfilename3;
 $imageFileType3 = strtolower(pathinfo($s3photo,PATHINFO_EXTENSION));
 $s3path = "companyImages/slider/".$newfilename3;
@@ -62,7 +63,7 @@ $defs3path = $_POST['defimage3'];
 	/////////////////////////////////////////////////////////////////////////////
 	// Slider Image 4 /////////////////////////////////////////////////////////////
 $temp4 = explode(".", $_FILES["image4"]["name"]);
-$newfilename4 = round(microtime(true)) .$id.'slide4'.'.' . end($temp4);
+$newfilename4 = $username.'slide4'.'.' . end($temp4);
 $s4photo = $s_loc.$newfilename4;
 $imageFileType4 = strtolower(pathinfo($s4photo,PATHINFO_EXTENSION));
 $s4path = "companyImages/slider/".$newfilename4;
@@ -70,7 +71,7 @@ $defs4path = $_POST['defimage4'];
 	/////////////////////////////////////////////////////////////////////////////
 	// Slider Image 5 /////////////////////////////////////////////////////////////
 $temp5 = explode(".", $_FILES["image5"]["name"]);
-$newfilename5 = round(microtime(true)) .$id.'slide5'.'.' . end($temp5);
+$newfilename5 = $username.'slide5'.'.' . end($temp5);
 $s5photo = $s_loc.$newfilename5;
 $imageFileType5 = strtolower(pathinfo($s5photo,PATHINFO_EXTENSION));
 $s5path = "companyImages/slider/".$newfilename5;

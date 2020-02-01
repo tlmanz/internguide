@@ -324,7 +324,6 @@
                             $photo4 = $row_emp['photo4'];
                             $photo5 = $row_emp['photo5'];
                             $photo6 = $row_emp['photo6'];
-                            $photo7 = $row_emp['photo7'];
                             $pinterest = $row_emp['pin'];
                             $linkedin = $row_emp['linkedin'];
                             $facebook = $row_emp['facebook'];
@@ -339,7 +338,6 @@
                             $p3_loc = "../assets/".$photo4;
                             $p4_loc = "../assets/".$photo5;
                             $p5_loc = "../assets/".$photo6;
-                            $p6_loc = "../assets/".$photo7;
                         }
                         ?>
                         <div class="row">
@@ -391,7 +389,7 @@
                                                                     <div class="form-group">
                                                                         <label class="col-md-6">Username</label>
                                                                         <input type="text" class="form-control text-center"
-                                                                        placeholder="Username" value='<?php echo $username?>' readonly>
+                                                                        placeholder="Username" name='username' value='<?php echo $username?>' readonly>
                                                                     </div>
                                                                 </div>
                                                             </div>

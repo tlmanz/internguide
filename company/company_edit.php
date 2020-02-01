@@ -264,7 +264,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                     <div class="form-group">
                                                                         <label class="col-md-6">Username</label>
                                                                         <input type="text" class="form-control text-center"
-                                                                        placeholder="Username" value='<?php echo $username?>' readonly>
+                                                                        placeholder="Username" name='username' value='<?php echo $username?>' readonly>
                                                                     </div>
                                                                 </div>
                                                             </div>
