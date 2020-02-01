@@ -12,7 +12,7 @@ require_once ('../company/connect.php');
 	<meta name="keywords" content="resume, civic, onepage, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->   
-	<link href="../admin/assets/images/logo-icon.png" rel="shortcut icon"/>
+	<link href="../admin/src/assets/images/logo-icon.png" rel="shortcut icon"/>
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet">
@@ -32,7 +32,7 @@ require_once ('../company/connect.php');
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../admin/assets/images/logo-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../admin/src/assets/images/logo-icon.png">
     <title></title>
     <!-- Custom CSS -->
     <link href="assets/extra-libs/c3/c3.min.css" rel="stylesheet">
@@ -96,7 +96,9 @@ require_once ('../company/connect.php');
                                 <img src="../admin/src/assets/images/logo-icon.png" class="light-logo" />
                             </b>
                             <span class="logo-text">
-                                InternGuid
+                            <img src="../admin/src/assets/images/logo-text.png"  class="dark-logo" />
+                                <!-- Light Logo icon -->
+                                <img src="../admin/src/assets/images/logo-text.png"  class="light-logo" />
                             </span>
                         </a>
                     </div>
