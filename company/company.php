@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once (__DIR__.'/../../../config/connect.php');
+require_once ('connect.php');
  $id_company=trim($_GET['id']);
  $id_student=trim($_GET['userid']);
 ?>
@@ -122,14 +122,14 @@ require_once (__DIR__.'/../../../config/connect.php');
                     <ul class="navbar-nav float-right">
                         <li class="nav-item dropdown">
                             
-                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
+                            <!-- <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                                 <img src="<?php echo $loc1 ?>"  style="max-height:500px; max-width : 100px" alt="user" class="rounded-circle"
                                     width="40">
                                 <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
-                                        class="text-dark"><?php echo $row['ename'] ?></span> <i data-feather="chevron-down"
+                                        class="text-dark"><?php echo $row['username'] ?></span> <i data-feather="chevron-down"
                                         class="svg-icon"></i></span>
-                            </a>
+                            </a> -->
                             
                         </li>
                     </ul>
@@ -142,14 +142,14 @@ require_once (__DIR__.'/../../../config/connect.php');
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="sidebar-item"> <a class="sidebar-link" href="index.html"
+                        <!-- <li class="sidebar-item"> <a class="sidebar-link" href="index.html"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
                                     class="hide-menu">View Student List</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link" href="ticket-list.html"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
                                     class="hide-menu">Search Students
                                 </span></a>
-                        </li>
+                        </li> -->
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -261,6 +261,10 @@ require_once (__DIR__.'/../../../config/connect.php');
                                                 <img class="img-fluid" src="<?php echo $loc6 ?>" style = "height : 500px; width : 500px;overflow : hidden;"
                                                         alt="Second slide">
                                                 </div>
+                                                <div class="carousel-item">
+                                                <img class="img-fluid" src="<?php echo $loc4 ?>" style = "height : 500px; width : 500px;overflow : hidden;"
+                                                        alt="Third slide">
+                                                 </div>
                                             </div>
 										</div>
 						 </div>

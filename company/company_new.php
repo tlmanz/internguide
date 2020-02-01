@@ -279,6 +279,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
             <img class="img-fluid" src="<?php echo $loc6 ?>" style = "height : 500px; width : 500px;overflow : hidden;"
             alt="Second slide">
         </div>
+        <div class="carousel-item">
+                <img class="img-fluid" src="<?php echo $loc4 ?>" style = "height : 500px; width : 500px;overflow : hidden;"
+                alt="Third slide">
+        </div>
 </div>
 </div>
 </div>

@@ -80,8 +80,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
             $loc5 = "../company/src/assets/".$photo5; 
             $photo6 = $row['photo6'];
             $loc6 = "../company/src/assets/".$photo6; 
-            $photo7 = $row['photo7'];
-            $loc7 = "../company/src/assets/".$photo7;  
             $field = $row['field'];      
             $areas = (explode(",",$field));                         
         ?>
