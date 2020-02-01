@@ -93,12 +93,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                             class="ti-menu ti-close"></i></a>
                     <div class="navbar-brand">
                         <!-- Logo icon -->
-                        <a href="index.html">
+                        <a href="#">
                             <b class="logo-icon">
                                 <!-- Dark Logo icon -->
-                                <img src="../admin/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                                <img src="../admin/assets/images/logo-icon.png"  class="dark-logo" />
                                 <!-- Light Logo icon -->
-                                <img src="../admin/assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                                <img src="../admin/assets/images/logo-icon.png"  class="light-logo" />
                             </b>
                             <span class="logo-text">
                                 InternGuid
@@ -231,7 +231,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                             </td>
                                                             <td>
                                                                 <div style='text-align: center;' class='table-data-feature'>
-                                                                    <a href='../admin/src/assets/studentCV/$cv'>
+                                                                    <a href='../admin/src/assets/$cv'>
                                                                     <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
                                                                         <i class='fas fa-download'></i>
                                                                     </button>
