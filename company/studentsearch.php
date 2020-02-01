@@ -81,9 +81,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                         <a href="#">
                             <b class="logo-icon">
                                 <!-- Dark Logo icon -->
-                                <img src="../admin/assets/images/logo-icon.png"  class="dark-logo" />
+                                <img src="../admin/src/assets/images/logo-icon.png"  class="dark-logo" />
                                 <!-- Light Logo icon -->
-                                <img src="../admin/assets/images/logo-icon.png" class="light-logo" />
+                                <img src="../admin/src/assets/images/logo-icon.png" class="light-logo" />
                             </b>
                             <span class="logo-text">
                                 InternGuid
