@@ -91,9 +91,9 @@ require_once ('../company/connect.php');
                         <a href="#">
                             <b class="logo-icon">
                                 <!-- Dark Logo icon -->
-                                <img src="../admin/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                                <img src="../admin/assets/images/logo-icon.png" class="dark-logo" />
                                 <!-- Light Logo icon -->
-                                <img src="../admin/assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                                <img src="../admin/assets/images/logo-icon.png" class="light-logo" />
                             </b>
                             <span class="logo-text">
                                 InternGuid
