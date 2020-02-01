@@ -106,7 +106,7 @@ if ($result = mysqli_query($connection, $sql)) {
                         <!-- ============================================================== -->
                         <div class="navbar-brand">
                             <!-- Logo icon -->
-                            <a href="index.php">
+                            <a href="userprofile.php">
                                 <b class="logo-icon">
                                     <!-- Dark Logo icon -->
                                     <img src="../admin/src/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
@@ -180,6 +180,8 @@ if ($result = mysqli_query($connection, $sql)) {
                                     <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="companyshow.php">&nbsp<i class="far fa-eye"></i>&nbsp&nbsp
                                     View company list</a>
+                                    <a class="dropdown-item" href="accepted_show.php">&nbsp<i class="far fa-eye"></i>&nbsp&nbsp
+                                    Accepted List</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="php/logout.php"><i data-feather="power" class="svg-icon mr-2 ml-1"></i>
                                     Logout</a>
@@ -220,6 +222,9 @@ if ($result = mysqli_query($connection, $sql)) {
                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="companyshow.php"
                                     aria-expanded="false"><i class="far fa-eye"></i><span
                                     class="hide-menu">View Company List </span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="accepted_show.php"
+                            aria-expanded="false"><i class="fas fa-eye fa-1.5x"></i><span
+                            class="hide-menu">Accepted List</span></a></li>
                             <li class="list-divider"></li>
                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="php/logout.php"
                                     aria-expanded="false"><i class="fas fa-sign-out-alt"></i><span
@@ -293,6 +298,7 @@ if ($result = mysqli_query($connection, $sql)) {
                                                 <th style='text-align: center;'>ID</th>
                                                 <th style='text-align: center;'>Name</th>
                                                 <th style='text-align: center;'>E-Mail</th>
+                                            	<th style='text-align: center;'>Contact No</th>
                                                 <th style='text-align: center;'>Main Field</th>
                                                 <th style='text-align: center;'>Show</th>
                                             </tr>
@@ -308,8 +314,9 @@ if ($result = mysqli_query($connection, $sql)) {
                                                     $cid = $row['id']; 
                                                     $firstname = $row['ename'];
                                                     $email = $row['email'];
-                                                    $Main_field = $row['mainfield'];
+                                                    $mainfield = $row['mainfield'];
                                                     $phone = $row['phone'];
+                                                
                                                     
                                                     echo "
                                                         <tr>
@@ -317,6 +324,7 @@ if ($result = mysqli_query($connection, $sql)) {
                                                             <td><p style='text-align: center;'>$firstname</p></td>
                                                             <td><p style='text-align: center;'>$email</p></td>
                                                             <td><p style='text-align: center;'>$phone</p></td>
+                                                            <td><p style='text-align: center;'>$mainfield</p></td>
                                                             
                                                             <td>
                                                                 <div style='text-align: center;' class='table-data-feature'>
@@ -347,9 +355,8 @@ if ($result = mysqli_query($connection, $sql)) {
         <div class="container text-center">
             <div class="copyright">
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;<script>
-                    document.write(new Date().getFullYear());
-                </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                All Rights Reserved by Ward12. Designed and Developed by <a
+                        href="https://wrappixel.com">TeamX</a>.
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </div>
         </div>

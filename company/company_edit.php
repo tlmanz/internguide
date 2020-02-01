@@ -468,8 +468,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                     </div>
                                                     <div class = 'footer'>
                                                         <div style='text-align: center;'>
-                                                            <a href = 'company_admin.php' >
-                                                                <button type='button' class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
+                                                            <a href = 'company_new.php' >
+                                                                <button type='button' class="btn btn-rounded btn-success"><i class='fa fa-home'></i>&nbspHome</button>
                                                             </a>
                                                             &nbsp&nbsp
                                                             <button type ='submit' class="btn btn-rounded btn-info"><i class='fa fa-sync-alt'></i>&nbspUpdate</button>
@@ -493,7 +493,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                         <!-- ============================================================== -->
                         <footer class="footer text-center text-muted">
                             All Rights Reserved by Ward12. Designed and Developed by <a
-                            href="https://wrappixel.com">TeamX</a>.
+                            href="#">TeamX</a>.
                         </footer>
                         <!-- ============================================================== -->
                         <!-- End footer -->

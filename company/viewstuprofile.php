@@ -3,10 +3,10 @@
 require_once ('connect.php');
 session_start();
 
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_SESSION["usertype"]) || $_SESSION["usertype"] !== 'company'){
-    header("location: company_login.php");
-    exit;
-    }
+// if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_SESSION["usertype"]) || $_SESSION["usertype"] !== 'company'){
+//     header("location: company_login.php");
+//     exit;
+//     }
 
 //$c_user = $_GET['username'];  //$_GET[]
 $s_id = $_GET['sid'];

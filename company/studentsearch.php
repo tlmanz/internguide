@@ -209,6 +209,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                             $email = $row['email'];
                                                             $uni = $row['telephone'];
                                                             $cv = $row['cv'];
+                                                            $uname = $row['username'];
                                                         echo "
                                                             <tr>
                                                                 <td><p style='text-align: center;'>$count</p></td>
@@ -227,8 +228,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                 <td>
                                                                     <div style='text-align: center;' class='table-data-feature'>
                                                                         <a href='accept.php?id=$sid&uname=$username'>
-                                                                        <button class='btn btn-success btn-circle' data-toggle='tooltip' data-placement='top' title='Accept'>
-                                                                            <i class='fas fa-check'></i>
+                                                                        <button class='btn btn-success btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
+                                                                            <i class='far fa-check-circle'></i>
                                                                         </button>
                                                                         </a>
                                                                     </div>
@@ -236,7 +237,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                 <td>
                                                                     <div style='text-align: center;' class='table-data-feature'>
                                                                         <a href='../admin/src/assets/$cv'>
-                                                                        <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Download CV'>
+                                                                        <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
                                                                             <i class='fas fa-download'></i>
                                                                         </button>
                                                                         </a>
