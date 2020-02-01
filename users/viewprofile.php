@@ -127,14 +127,14 @@ if ($result = mysqli_query($connection, $sql)) {
                                 <?php
                                 date_default_timezone_set('Asia/Colombo');
                                 if(date("H") < 12){
-                                    echo "Good Morning";
+                                    echo "Good Morning!";
                                 }elseif(date("H") > 11 && date("H") < 18){
-                                    echo "Good Afternoon";
+                                    echo "Good Afternoon!";
                                 }elseif(date("H") > 17){
-                                    echo "Good Evening";
+                                    echo "Good Evening!";
                                 }
                                 ?>
-                            <?php echo $username ?>!</h3>
+                            <!-- <?php echo $username ?>! --></h3>
 						<a href="../company/company_new.php" class="site-btn">Back to Home page</a>
 						<a href="<?php echo $cv_loc?>" class="site-btn">Download CV</a>
 					</div>
