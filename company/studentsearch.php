@@ -78,12 +78,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                             class="ti-menu ti-close"></i></a>
                     <div class="navbar-brand">
                         <!-- Logo icon -->
-                        <a href="index.html">
+                        <a href="#">
                             <b class="logo-icon">
                                 <!-- Dark Logo icon -->
-                                <img src="../admin/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                                <img src="../admin/src/assets/images/logo-icon.png"  class="dark-logo" />
                                 <!-- Light Logo icon -->
-                                <img src="../admin/assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                                <img src="../admin/src/assets/images/logo-icon.png" class="light-logo" />
                             </b>
                             <span class="logo-text">
                                 InternGuid
@@ -145,7 +145,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                     class="hide-menu">Search Student</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link" href="studentsearch.php"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
-                                    class="hide-menu">Applied Students List
+                                    class="hide-menu">Applied Students
                                 </span></a>
                         </li>
                     </ul>

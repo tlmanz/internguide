@@ -11,6 +11,7 @@ $vision = $_POST['vision'];
 $mission = $_POST['mission'];
 $description = $_POST['description'];
 $field = $_POST['field'];
+$mainfield = $_POST['mainfield'];
 $linkedin = $_POST['linkedin'];
 $pin = $_POST['pin'];
 $twitter = $_POST['twitter'];
@@ -98,7 +99,7 @@ else{
 				die('Connect Error('.mysqli_connect_error().')'.mysqli_connect_error());
 			}else{
 
-				$query1 = "update employee set ename='$name',description='$description',email='$email',phone='$phone',address='$address',field='$field',introduction='$introduction',vision='$vision',mission='$mission',photo2='$defs1path',photo3='$defs2path',photo4='$defs3path',photo5='$defs4path',photo6='$defs5path',pin='$pin',linkedin='$linkedin',facebook='$facebook',twitter='$twitter' where id = '$id' ";
+				$query1 = "update employee set ename='$name',description='$description',email='$email',phone='$phone',address='$address',mainfield='$mainfield',field='$field',introduction='$introduction',vision='$vision',mission='$mission',photo2='$defs1path',photo3='$defs2path',photo4='$defs3path',photo5='$defs4path',photo6='$defs5path',pin='$pin',linkedin='$linkedin',facebook='$facebook',twitter='$twitter' where id = '$id' ";
 				$run_query = mysqli_query($connection , $query1);
 				if($run_query){
 					echo "<script>alert ('Company Profile Updated!')</script>";
@@ -133,7 +134,7 @@ else{
 						die('Connect Error('.mysqli_connect_error().')'.mysqli_connect_error());
 					}else{
 
-						$query1 = "update employee set ename='$name',description='$description',email='$email',phone='$phone',address='$address',field='$field',introduction='$introduction',vision='$vision',mission='$mission',photo2='$s1path',photo3='$s2path',photo4='$s3path',photo5='$s4path',photo6='$s5path',pin='$pin',linkedin='$linkedin',facebook='$facebook',twitter='$twitter' where id = '$id' ";
+						$query1 = "update employee set ename='$name',description='$description',email='$email',phone='$phone',address='$address',mainfield='$mainfield',field='$field',introduction='$introduction',vision='$vision',mission='$mission',photo2='$s1path',photo3='$s2path',photo4='$s3path',photo5='$s4path',photo6='$s5path',pin='$pin',linkedin='$linkedin',facebook='$facebook',twitter='$twitter' where id = '$id' ";
 						$run_query = mysqli_query($connection , $query1);
 						if($run_query){
 							echo "<script>alert ('Company Profile Updated!')</script>";
