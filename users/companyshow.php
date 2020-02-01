@@ -28,7 +28,7 @@ if ($result = mysqli_query($connection, $sql)) {
 <html lang="en">
 
 <head>
-    <title>Civic - CV Resume</title>
+    <title>Internguide - Company List</title>
     <meta charset="UTF-8">
     <meta name="description" content="Civic - CV Resume">
     <meta name="keywords" content="resume, civic, onepage, creative, html">

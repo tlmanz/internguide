@@ -33,7 +33,7 @@ if ($result = mysqli_query($connection, $sql)) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Civic - CV Resume</title>
+	<title>Internguide</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Civic - CV Resume">
 	<meta name="keywords" content="resume, civic, onepage, creative, html">

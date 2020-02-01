@@ -51,6 +51,8 @@ if ($phonenum < 1 && $emailnum > 0){
 }
 elseif ($emailnum > 0){
 	$error = 'Email Exists. Choose a Unique One!';
+}elseif ($phonenum<1){
+	$error = 'Check your contact number';
 }
 if($phonenum < 1 || $emailnum > 0){
 	echo "<script>alert ('$error')</script>";
