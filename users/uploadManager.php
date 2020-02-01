@@ -42,7 +42,7 @@ else{
 	move_uploaded_file($_FILES["cv"]["tmp_name"], $cvname);
 	if($cvFileType !="pdf" && $cvFileType !="PDF"){
 		echo "<script>alert ('Sorry, only PDF files are allowed')</script>";
-		echo "<script>window.open('../../html/student_edit.php?edit=$cid','_self')</script>";
+		echo "<script>window.open('editprofile.php','_self')</script>";
 	}
 }
 $phonenum = preg_match('/^[0-9]{10}+$/', $phone);
@@ -54,7 +54,7 @@ elseif ($emailnum > 0){
 }
 if($phonenum < 1 || $emailnum > 0){
 	echo "<script>alert ('$error')</script>";
-	echo "<script>window.open('../../html/student_edit.php?edit=$cid','_self')</script>";
+	echo "<script>window.open('editprofile.php','_self')</script>";
 }		// echo "outside";
 else{
 		// echo "insert";
