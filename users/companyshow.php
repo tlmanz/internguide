@@ -293,8 +293,7 @@ if ($result = mysqli_query($connection, $sql)) {
                                                 <th style='text-align: center;'>ID</th>
                                                 <th style='text-align: center;'>Name</th>
                                                 <th style='text-align: center;'>E-Mail</th>
-                                                <th style='text-align: center;'>University</th>
-                                                <th style='text-align: center;'>Age</th>
+                                                <th style='text-align: center;'>Main Field</th>
                                                 <th style='text-align: center;'>Show</th>
                                             </tr>
                                         </thead>
@@ -306,21 +305,21 @@ if ($result = mysqli_query($connection, $sql)) {
                                                 
                                                 while($row = mysqli_fetch_array($runsql))
                                                 {   
-                                                    $sid = $row['id']; //cid for employee table is id
+                                                    $cid = $row['id']; 
                                                     $firstname = $row['ename'];
                                                     $email = $row['email'];
-                                                    $uni = "UOM";
-                                                    $age = "10";
+                                                    $Main_field = $row['mainfield'];
+                                                    
                                                     echo "
                                                         <tr>
                                                             <td><p style='text-align: center;'>$count</p></td>
                                                             <td><p style='text-align: center;'>$firstname</p></td>
                                                             <td><p style='text-align: center;'>$email</p></td>
-                                                            <td><p style='text-align: center;'>$uni</p></td>
-                                                            <td><p style='text-align: center;'>$age</p></td>
+                                                            <td><p style='text-align: center;'>$phone</p></td>
+                                                            
                                                             <td>
                                                                 <div style='text-align: center;' class='table-data-feature'>
-                                                                    <a href='../company/company.php?id=$sid&userid=$userid'>
+                                                                    <a href='../company/company.php?id=$cid&userid=$userid'>
                                                                     <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
                                                                         <i class='fas fa-list'></i>
                                                                     </button>
