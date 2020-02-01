@@ -186,8 +186,8 @@
                         <ul id="sidebarnav">
                             
                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="userprofile.php"
-                                    aria-expanded="false"><i data-feather="sidebar" class="feather-icon"></i><span
-                                        class="hide-menu">View profile
+                                    aria-expanded="false"><i data-feather="user" class="feather-icon"></i><span
+                                        class="hide-menu">My profile
                                     </span></a>
                             </li>
                             <li class="list-divider"></li>
