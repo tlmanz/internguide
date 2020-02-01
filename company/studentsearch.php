@@ -145,7 +145,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                     class="hide-menu">Search Student</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link" href="studentsearch.php"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
-                                    class="hide-menu">Applied Students List
+                                    class="hide-menu">Applied Students
                                 </span></a>
                         </li>
                     </ul>
