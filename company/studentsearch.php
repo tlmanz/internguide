@@ -64,7 +64,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
             $username = $row['username'];
             $id = $row['id'];
             $photo1 = $row['image'];
-			$loc1 = "../company/src/assets/".$photo1;
+			$loc1 = "../admin/src/assets/".$photo1;
             $student = $row['student'];      
             $student_array = (explode(",",$student));                         
         ?>
@@ -78,7 +78,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                             class="ti-menu ti-close"></i></a>
                     <div class="navbar-brand">
                         <!-- Logo icon -->
-                        <a href="#">
+                        <a href="company_new.php">
                             <b class="logo-icon">
                                 <!-- Dark Logo icon -->
                                 <img src="../admin/src/assets/images/logo-icon.png"  class="dark-logo" />
@@ -186,6 +186,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                 <th style='text-align: center;'>E-Mail</th>
                                                 <th style='text-align: center;'>Contact Number</th>
                                                 <th style='text-align: center;'>Show</th>
+                                                <th style='text-align: center;'>Accept</th>
                                                 <th style='text-align: center;'>Download CV</th>
                                             </tr>
                                         </thead>
@@ -225,8 +226,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                 </td>
                                                                 <td>
                                                                     <div style='text-align: center;' class='table-data-feature'>
+                                                                        <a href='accept.php?id=$sid&uname=$username'>
+                                                                        <button class='btn btn-success btn-circle' data-toggle='tooltip' data-placement='top' title='Accept'>
+                                                                            <i class='fas fa-check'></i>
+                                                                        </button>
+                                                                        </a>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div style='text-align: center;' class='table-data-feature'>
                                                                         <a href='../admin/src/assets/$cv'>
-                                                                        <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
+                                                                        <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Download CV'>
                                                                             <i class='fas fa-download'></i>
                                                                         </button>
                                                                         </a>
