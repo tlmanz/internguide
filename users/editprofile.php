@@ -559,7 +559,7 @@
                 <!-- ============================================================== -->
                 <footer class="footer text-center text-muted">
                     All Rights Reserved by Ward12. Designed and Developed by <a
-                        href="https://wrappixel.com">TeamX</a>.
+                href="#">TeamX</a>.
                 </footer>
                 <!-- ============================================================== -->
                 <!-- End footer -->
