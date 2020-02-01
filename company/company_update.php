@@ -102,7 +102,7 @@ else{
 				$run_query = mysqli_query($connection , $query1);
 				if($run_query){
 					echo "<script>alert ('Company Profile Updated!')</script>";
-					echo "<script>window.open('company_new.php?edit=$id','_self')</script>";
+					echo "<script>window.open('company_new.php','_self')</script>";
 				}
 				else{
 					echo "<script>alert ('Oops! Something Went Wrong.. Contact Help!')</script>";

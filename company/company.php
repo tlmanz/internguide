@@ -272,7 +272,7 @@ require_once ('../company/connect.php');
 			</div>
             <footer  class="footer text-center text-muted">
 				<div class="text-md-center header-buttons">
-					<a class='site-btn' href="update.php?id_student=<?php echo $id_student ?> &id_company=<?php echo $id_company ?>">Request For Intern
+					<a class='site-btn' href="update.php?id_student=<?php echo $id_student ?>&id_company=<?php echo $id_company ?>">Request For Intern
 
 					</a>
                 </div>
