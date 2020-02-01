@@ -312,7 +312,7 @@
                             $id = $row_emp['id'];
                             $username = $row_emp['username'];
                             $firstname = $row_emp['ename'];
-                            $field = $row_emp['field'];
+                            $main_field = $row_emp['mainfield'];
                             $address = $row_emp['address'];
                             $phone = $row_emp['phone'];
                             $email = $row_emp['email'];
@@ -332,6 +332,7 @@
                             $created = $row_emp['created_at'];
                             $vision = $row_emp['vision'];
                             $mission = $row_emp['mission'];
+                            $field = $row_emp['field'];
                             $p_loc = "../assets/".$photo;
                             $p1_loc = "../assets/".$photo2;
                             $p2_loc = "../assets/".$photo3;
@@ -501,12 +502,12 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-md-2">Field of Study</label>
+                                                        <label class="col-md-2">Main Field</label>
                                                         <div class="col-md-10">
                                                             <div class="row">
                                                                 <div class="col-md-10">
                                                                     <div class="form-group mb-4">
-                                                                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="field">
+                                                                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="mainfield">
                                                                             <option type='text' value="Electronic and Telecommunication" >Electronic and Telecommunication Engineering</option>
                                                                             <option type='text' value="Computer Science and Engineering">Computer Science and Engineering</option>
                                                                             <option type='text' value="Civil Engineering">Bio Medical Engineering</option>
@@ -522,6 +523,18 @@
                                                                             <option type='text' value="Information Technology">Information Technology</option>
                                                                             <option type='text' value="Other">Other</option>
                                                                         </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-2">Sub Fields</label>
+                                                        <div class="col-md-10">
+                                                            <div class="row">
+                                                                <div class="col-md-10">
+                                                                    <div class="form-group">
+                                                                        <textarea type='text' class="form-control" rows="3" placeholder="Type Working areas as robotics,electronic,java,etc,etc,..."  name='field' required><?php echo $field ?></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>

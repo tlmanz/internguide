@@ -104,6 +104,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                             <img src="../admin/src/assets/images/logo-text.png"  class="dark-logo" />
                                 <!-- Light Logo icon -->
                                 <img src="../admin/src/assets/images/logo-text.png"  class="light-logo" />
+
+                                
                             </span>
                         </a>
                     </div>

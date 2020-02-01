@@ -314,6 +314,7 @@
                             $username = $row_emp['username'];
                             $firstname = $row_emp['ename'];
                             $field = $row_emp['field'];
+                            $mainfield = $row_emp['mainfield'];
                             $address = $row_emp['address'];
                             $phone = $row_emp['phone'];
                             $email = $row_emp['email'];
@@ -422,7 +423,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
-                                                                        <textarea type='text' name='' id='' class="form-control" rows="3" placeholder="Address..." readonly><?php echo $address ?></textarea>
+                                                                        <textarea type='text'  class="form-control" rows="3" placeholder="Address..." readonly><?php echo $address ?></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -434,7 +435,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
-                                                                        <textarea type='text' name='' id='' class="form-control" rows="3" placeholder="Vision" readonly><?php echo $vision ?></textarea>
+                                                                        <textarea type='text'  class="form-control" rows="3" placeholder="Vision" readonly><?php echo $vision ?></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -446,7 +447,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
-                                                                        <textarea type='text' name='' id='' class="form-control" rows="3" placeholder="Mission" readonly><?php echo $mission ?></textarea>
+                                                                        <textarea type='text'  class="form-control" rows="3" placeholder="Mission" readonly><?php echo $mission ?></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -458,20 +459,33 @@
                                                             <div class="row">
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
-                                                                        <textarea type='text' name='' id='' class="form-control" rows="3" placeholder="Description" readonly><?php echo $desc1 ?></textarea>
+                                                                        <textarea type='text' class="form-control" rows="3" placeholder="Description" readonly><?php echo $desc1 ?></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-md-2">Working Field</label>
+                                                        <label class="col-md-2">Main Field</label>
                                                         <div class="col-md-10">
                                                             <div class="row">
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
                                                                         <input type="text" class="form-control"
-                                                                        placeholder="xxxxxxxxxV" value='<?php echo $field ?>' readonly>
+                                                                        placeholder="Main Field" value='<?php echo $mainfield ?>' readonly>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-2">Working Fields</label>
+                                                        <div class="col-md-10">
+                                                            <div class="row">
+                                                                <div class="col-md-10">
+                                                                    <div class="form-group">
+                                                                        <input type="text" class="form-control"
+                                                                        placeholder="Working Fields" value='<?php echo $field ?>' readonly>
                                                                     </div>
                                                                 </div>
                                                             </div>
