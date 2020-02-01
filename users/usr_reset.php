@@ -1,11 +1,11 @@
 <?php
-include_once('php/login.php')
+include_once('php/reset.php')
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>User Login</title>
+	<title>Password Reset</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->	
@@ -36,7 +36,7 @@ include_once('php/login.php')
 
 				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="login100-form validate-form">
 					<span class="login100-form-title">
-						Student Login
+						Student Password Reset
 					</span>
 					<label>Username</label>
 					<div class="wrap-input100 validate-input <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
@@ -46,9 +46,9 @@ include_once('php/login.php')
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
 					</div>
-					<label>Password</label>
-					<div class="wrap-input100 validate-input <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-						<input class="input100" type="password" name="password" placeholder="Password">
+					<label>Email</label>
+					<div class="wrap-input100 validate-input <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
+						<input class="input100" type="email" name="email" placeholder="Confirm Email">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -59,28 +59,22 @@ include_once('php/login.php')
 							<?php echo $username_err; ?>
 						</span>
 						<span class="help-block">
-							<?php echo $password_err; ?>
+							<?php echo $email_err; ?>
 						</span>
 					</div>
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Login
+							Reset Password
 						</button>
 					</div>
 
 					<div class="text-center p-t-12">
-						<span class="txt1">
-							Forgot
-						</span>
-						<a class="txt2" href="usr_reset.php">
-							Username / Password?
-						</a>
-						<br>
+
 						<a class="txt2" href="usr_register.php">
 							Create your Account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
-						<br>
+						<br><br>
 						<a class="txt10" href="../index.php">
 							<i class="fa fa-home m-l-7" aria-hidden="true"></i>
 							Go Home

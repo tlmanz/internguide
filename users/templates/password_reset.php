@@ -1,5 +1,5 @@
 <?php
-include_once('php/login.php')
+include_once('php/reset.php')
 
 ?>
 <!DOCTYPE html>
@@ -59,7 +59,7 @@ include_once('php/login.php')
 							<?php echo $username_err; ?>
 						</span>
 						<span class="help-block">
-							<?php echo $password_err; ?>
+							<?php echo $email_err; ?>
 						</span>
 					</div>
 					<div class="container-login100-form-btn">
@@ -72,7 +72,7 @@ include_once('php/login.php')
 						<span class="txt1">
 							Forgot
 						</span>
-						<a class="txt2" href="usr_reset.php">
+						<a class="txt2" href="reset-password.php">
 							Username / Password?
 						</a>
 						<br>

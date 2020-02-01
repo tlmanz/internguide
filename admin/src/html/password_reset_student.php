@@ -128,7 +128,7 @@
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <?php
-                        $get_admin = "select * from admin where id=".$_SESSION['id'];
+                        $get_admin = "select * from admin where id=1";
                         $run_edit_admin = mysqli_query($connection , $get_admin);
                         $row_admin = mysqli_fetch_array($run_edit_admin);
                         $name = $row_admin['name'];
