@@ -580,7 +580,7 @@
                                                                                         <label class="col-md-2">Social</label>
                                                                                         <div class="form-group">
                                                                                             <a  href=<?php echo $web?>>
-                                                                                               <i style="color:#ADC7DC;" class="fas fa-link fa-3x"></i>
+                                                                                               <i style="color:#ADC7DC;" class="fas fa-globe fa-3x"></i>
                                                                                            </a>
                                                                                            <a style="margin-left:10% " href=<?php echo $linkedin?>>
                                                                                                <i style="color:#3b5998;" class="fab fa-linkedin-in fa-3x"></i>

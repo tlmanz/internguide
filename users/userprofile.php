@@ -186,7 +186,7 @@ if ($result = mysqli_query($connection, $sql)) {
 							<div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
 								<a class="dropdown-item" href="javascript:void(0)"><i data-feather="user" class="svg-icon mr-2 ml-1"></i>
 									My Profile</a>
-								<a class="dropdown-item" href="editprofile.php">&nbsp<i class="fas fa-wrench"></i>
+								<a class="dropdown-item" href="editprofile.php">&nbsp<i class="fas fa-user-edit"></i>
 									&nbsp&nbsp&nbspEdit profile</a></i>
 
 									<div class="dropdown-divider"></div>
@@ -218,13 +218,13 @@ if ($result = mysqli_query($connection, $sql)) {
                         <ul id="sidebarnav">
                             
                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="editprofile.php"
-                                    aria-expanded="false"><i data-feather="sidebar" class="feather-icon"></i><span
+                                    aria-expanded="false"><i class="fas fa-user-edit"></i><span
                                         class="hide-menu">Edit profile
                                     </span></a>
                             </li>
                             <li class="list-divider"></li>
                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="companyshow.php"
-                                    aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
+                                    aria-expanded="false"><i class="fas fa-list fa-1.5x"></i><span
                                     class="hide-menu">View Company List </span></a></li>
                             <li class="list-divider"></li>
                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="php/logout.php"
