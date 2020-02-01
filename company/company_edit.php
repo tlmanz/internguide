@@ -97,12 +97,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                             class="ti-menu ti-close"></i></a>
                     <div class="navbar-brand">
                         <!-- Logo icon -->
-                        <a href="index.html">
+                        <a href="#">
                             <b class="logo-icon">
                                 <!-- Dark Logo icon -->
-                                <img src="../admin/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                                <img src="../admin/src/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
                                 <!-- Light Logo icon -->
-                                <img src="../admin/assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                                <img src="../admin/src/assets/images/logo-icon.png" alt="homepage" class="light-logo" />
                             </b>
                             <span class="logo-text">
                             <img src="../admin/src/assets/images/logo-text.png"  class="dark-logo" />
