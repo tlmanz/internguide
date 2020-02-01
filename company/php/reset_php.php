@@ -12,7 +12,7 @@ if ($new_password !== $confirm_new_password){
 }
 else{
 	$password = password_hash($new_password, PASSWORD_DEFAULT);
-	$query1 = "update customer_account set password='$password' where cid=".$pw_id;
+	$query1 = "update employee set password='$password' where id=".$pw_id;
 	$run_pw_update = mysqli_query($connection , $query1);
 	if ($run_pw_update) {
 

@@ -12,21 +12,21 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
 
 <head>
     <meta charset="UTF-8">
-	<meta name="keywords" content="resume, civic, onepage, creative, html">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Favicon -->   
-	<link href="../admin/src/assets/images/logo-icon.png" rel="shortcut icon"/>
+    <meta name="keywords" content="resume, civic, onepage, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->   
+    <link href="../admin/src/assets/images/logo-icon.png" rel="shortcut icon"/>
 
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet">
 
-	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/flaticon.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.css"/>
-	<link rel="stylesheet" href="css/magnific-popup.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/flaticon.css"/>
+    <link rel="stylesheet" href="css/owl.carousel.css"/>
+    <link rel="stylesheet" href="css/magnific-popup.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
     <script src="https://kit.fontawesome.com/6d41dc11d3.js" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -58,23 +58,23 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
             $get_admin = "select * from employee where id ='$s_id'";
             $run_edit_admin = mysqli_query($connection,$get_admin);
             $row = mysqli_fetch_array($run_edit_admin);
-			$name = $row['ename'];
+            $name = $row['ename'];
             $id_company = $row['id'];
             $username = $row['username'];
-			$email = $row['email'];
-			$phone = $row['phone'];
-			$description = $row['description'];
-			$phone = $row['address'];
-			$introduction = $row['introduction'];
-			$vision = $row['vision'];
-			$mission = $row['mission'];
-			$photo1 = $row['image'];
-			$loc1 = "../admin/src/assets/".$photo1;
-			$photo2 = $row['photo2'];
-			$loc2 = "../admin/src/assets/".$photo2;  
-			$photo3 = $row['photo3'];
-			$loc3 = "../admin/src/assets/".$photo3; 
-			$photo4 = $row['photo4'];
+            $email = $row['email'];
+            $phone = $row['phone'];
+            $description = $row['description'];
+            $phone = $row['address'];
+            $introduction = $row['introduction'];
+            $vision = $row['vision'];
+            $mission = $row['mission'];
+            $photo1 = $row['image'];
+            $loc1 = "../admin/src/assets/".$photo1;
+            $photo2 = $row['photo2'];
+            $loc2 = "../admin/src/assets/".$photo2;  
+            $photo3 = $row['photo3'];
+            $loc3 = "../admin/src/assets/".$photo3; 
+            $photo4 = $row['photo4'];
             $loc4 = "../admin/src/assets/".$photo4;
             $photo5 = $row['photo5'];
             $loc5 = "../admin/src/assets/".$photo5; 
@@ -175,6 +175,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
             </div>
             <!-- End Sidebar scroll-->
         </aside>
+        <div class="page-wrapper">
         <div class="container-fluid">
             <!-- *************************************************************** -->
             <!-- Start First Cards -->
@@ -264,7 +265,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                     <div class="form-group">
                                                                         <label class="col-md-6">Username</label>
                                                                         <input type="text" class="form-control text-center"
-                                                                        placeholder="Username" value='<?php echo $username?>' readonly>
+                                                                        placeholder="Username" name='username' value='<?php echo $username?>' readonly>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -375,7 +376,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-md-2">Field of Study</label>
+                                                        <label class="col-md-2">Main Field</label>
                                                         <div class="col-md-10">
                                                             <div class="row">
                                                                 <div class="col-md-10">
@@ -402,25 +403,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
-                                                        <label class="col-md-2">Working Areas</label>
+                                                        <label class="col-md-2">Sub Fields</label>
                                                         <div class="col-md-10">
                                                             <div class="row">
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
-                                                                        <textarea type='text' class="form-control" rows="3" placeholder="Type working areas as robotics,electronics,java,etc,etc.."  name='field' required><?php echo $field ?></textarea>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-md-2">WebSite</label>
-                                                        <div class="col-md-10">
-                                                            <div class="row">
-                                                                <div class="col-md-10">
-                                                                    <div class="form-group">
-                                                                        <input type="tel" class="form-control"
-                                                                        placeholder="URL.." value="<?php echo $pinterest ?>" name='pin' >
+                                                                        <textarea type='text' class="form-control" rows="3" placeholder="Type Working areas as robotics,electronic,java,etc,etc,..."  name='field' required><?php echo $field ?></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -433,7 +421,20 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
                                                                         <input type="tel" class="form-control"
-                                                                        placeholder="URL.." value="<?php echo $linkedin ?>" name='linkedin' >
+                                                                        placeholder="URL.." value="<?php echo $linkedin ?>" name='linkedin' required>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-2">Pinterest</label>
+                                                        <div class="col-md-10">
+                                                            <div class="row">
+                                                                <div class="col-md-10">
+                                                                    <div class="form-group">
+                                                                        <input type="tel" class="form-control"
+                                                                        placeholder="URL.." value="<?php echo $pinterest ?>" name='pin' required>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -446,7 +447,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
                                                                         <input type="tel" class="form-control"
-                                                                        placeholder="URL.." value="<?php echo $twitter ?>" name='twitter' >
+                                                                        placeholder="URL.." value="<?php echo $twitter ?>" name='twitter' required>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -459,58 +460,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
                                                                         <input type="tel" class="form-control"
-                                                                        placeholder="URL.." value="<?php echo $facebook ?>" name='facebook' >
+                                                                        placeholder="URL.." value="<?php echo $facebook ?>" name='facebook' required>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="input-group">
-                                                        <div class="custom-file">
-                                                            <input id='file-input' name='image1' type="file" class="custom-file-input" id="inputGroupFile04">
-                                                            <label class="custom-file-label" for="inputGroupFile04">Choose Slide Image 1</label>
-                                                        </div>
-                                                        <input type='hidden' id='file-input' name='defimage1' value='<?php echo $p1_loc?>'>
-                                                    </div><br>
-                                                    <div class="input-group">
-                                                        <div class="custom-file">
-                                                            <input id='file-input' name='image2' type="file" class="custom-file-input" id="inputGroupFile04">
-                                                            <label class="custom-file-label" for="inputGroupFile04">Choose Slide Image 2</label>
-                                                        </div>
-                                                        <input type='hidden' id='file-input' name='defimage2' value='<?php echo $p2_loc?>' >
-                                                    </div><br>
-                                                    <div class="input-group">
-                                                        <div class="custom-file">
-                                                            <input id='file-input' name='image3' type="file" class="custom-file-input" id="inputGroupFile04">
-                                                            <label class="custom-file-label" for="inputGroupFile04">Choose Slide Image 3</label>
-                                                        </div>
-                                                        <input type='hidden' id='file-input' name='defimage3' value='<?php echo $p3_loc?>'>
-                                                    </div><br>
-                                                    <div class="input-group">
-                                                        <div class="custom-file">
-                                                            <input id='file-input' name='image4' type="file" class="custom-file-input" id="inputGroupFile04">
-                                                            <label class="custom-file-label" for="inputGroupFile04">Choose Slide Image 4</label>
-                                                        </div>
-                                                        <input type='hidden' id='file-input' name='defimage4' value='<?php echo $p4_loc?>'>
-                                                    </div><br>
-                                                    <div class="input-group">
-                                                        <div class="custom-file">
-                                                            <input id='file-input' name='image5' type="file" class="custom-file-input" id="inputGroupFile04">
-                                                            <label class="custom-file-label" for="inputGroupFile04">Choose Slide Image 5</label>
-                                                        </div>
-                                                        <input type='hidden' id='file-input' name='defimage5' value='<?php echo $p5_loc?>'>
-                                                    </div><br>
-                                                    <div style="font-size:100% ">
-                                                        <fieldset class="checkbox">
-                                                            <label>
-                                                                <input type='hidden' value='0' name='check'>
-                                                                <input style='transform: scale(1.5);' type="checkbox" name='check' value="1" >&nbsp&nbsp&nbspTick This to Update without Images
-                                                            </label>
-                                                        </fieldset>
-                                                    </div>
                                                     <div class = 'footer'>
                                                         <div style='text-align: center;'>
-                                                            <a href = 'company_new.php' >
+                                                            <a href = 'company_admin.php' >
                                                                 <button type='button' class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
                                                             </a>
                                                             &nbsp&nbsp
@@ -526,7 +484,25 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                 </div>
                             </div>
                         </div>
-    </div>
+                        <!-- ============================================================== -->
+                        <!-- End Container fluid  -->
+                        <!-- ============================================================== -->
+
+                        <!-- ============================================================== -->
+                        <!-- footer -->
+                        <!-- ============================================================== -->
+                        <footer class="footer text-center text-muted">
+                            All Rights Reserved by Ward12. Designed and Developed by <a
+                            href="https://wrappixel.com">TeamX</a>.
+                        </footer>
+                        <!-- ============================================================== -->
+                        <!-- End footer -->
+                        <!-- ============================================================== -->
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- End Page wrapper  -->
+                    <!-- ============================================================== -->
+                </div>
     <script src="assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
     <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>

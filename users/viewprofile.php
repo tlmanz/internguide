@@ -118,7 +118,6 @@ if ($result = mysqli_query($connection, $sql)) {
                                     <!-- dark Logo text -->
                                     <img src="../admin/src/assets/images/logo-text.png" alt="homepage" class="dark-logo" />
                                     <!-- Light Logo text -->
-                                    <img src="../admin/src/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
                                 </span>
 						</div>
 					</div>

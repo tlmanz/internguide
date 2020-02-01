@@ -496,7 +496,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-md-2">Pinterest</label>
+                                            <label class="col-md-2">Website</label>
                                             <div class="col-md-10">
                                                 <div class="row">
                                                     <div class="col-md-10">
@@ -538,24 +538,6 @@
                                             <div class="custom-file">
                                                 <input id='file-input' name='logo' type="file" class="custom-file-input" id="inputGroupFile04">
                                                 <label class="custom-file-label" for="inputGroupFile04">Choose Company Logo</label>
-                                            </div>
-                                        </div><br>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input id='file-input' name='image1' type="file" class="custom-file-input" id="inputGroupFile04">
-                                                <label class="custom-file-label" for="inputGroupFile04">Choose Slide Image 1</label>
-                                            </div>
-                                        </div><br>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input id='file-input' name='image2' type="file" class="custom-file-input" id="inputGroupFile04">
-                                                <label class="custom-file-label" for="inputGroupFile04">Choose Slide Image 2</label>
-                                            </div>
-                                        </div><br>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input id='file-input' name='image3' type="file" class="custom-file-input" id="inputGroupFile04">
-                                                <label class="custom-file-label" for="inputGroupFile04">Choose Slide Image 3</label>
                                             </div>
                                         </div><br>
                                         <div class = 'footer'>

@@ -71,16 +71,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
     $mission = $row['mission'];
     $photo1 = $row['image'];
     $loc1 = "../admin/src/assets/".$photo1;
-    $photo2 = $row['photo2'];
-    $loc2 = "../admin/src/assets/".$photo2;  
-    $photo3 = $row['photo3'];
-    $loc3 = "../admin/src/assets/".$photo3; 
-    $photo4 = $row['photo4'];
-    $loc4 = "../admin/src/assets/".$photo4;
-    $photo5 = $row['photo5'];
-    $loc5 = "../admin/src/assets/".$photo5; 
-    $photo6 = $row['photo6'];
-    $loc6 = "../admin/src/assets/".$photo6;  
     $field = $row['field'];      
     $areas = (explode(",",$field));  
     $_SESSION["loggedin"] = true;
@@ -235,59 +225,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
         ?>
     </li>
 </ul>
-</div>
-<div class="row">
-    <div class="col-lg-6">
-        <div id="carouselExampleIndicators2" class="carousel slide"
-        data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators2" data-slide-to="0"
-            class="active"></li>
-            <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-                <img class="img-fluid" src="<?php echo $loc2 ?>" style = "height : 500px; width : 500px; overflow : hidden;"
-                alt="First slide">
-            </div>
-            <div class="carousel-item">
-                <img class="img-fluid" src="<?php echo $loc3 ?>" style = "height : 500px; width : 500px;overflow : hidden;"
-                alt="Second slide">
-            </div>
-            <div class="carousel-item">
-                <img class="img-fluid" src="<?php echo $loc4 ?>" style = "height : 500px; width : 500px;overflow : hidden;"
-                alt="Third slide">
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="col-lg-6 col-md-1 ml-auto">
-    <div id="carouselExampleIndicators3" class="carousel slide"
-    data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators3" data-slide-to="0"
-        class="active"></li>
-        <li data-target="#carouselExampleIndicators3" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators3" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active">
-            <img class="img-fluid" src="<?php echo $loc5 ?>" style = "height : 500px; width : 500px; overflow : hidden;"
-            alt="First slide">
-        </div>
-        <div class="carousel-item">
-            <img class="img-fluid" src="<?php echo $loc6 ?>" style = "height : 500px; width : 500px;overflow : hidden;"
-            alt="Second slide">
-        </div>
-        <div class="carousel-item">
-                <img class="img-fluid" src="<?php echo $loc4 ?>" style = "height : 500px; width : 500px;overflow : hidden;"
-                alt="Third slide">
-        </div>
-</div>
-</div>
-</div>
 </div>
 </div>
 <footer  class="footer text-center text-muted">

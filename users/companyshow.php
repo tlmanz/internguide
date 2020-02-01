@@ -309,6 +309,7 @@ if ($result = mysqli_query($connection, $sql)) {
                                                     $firstname = $row['ename'];
                                                     $email = $row['email'];
                                                     $Main_field = $row['mainfield'];
+                                                    $phone = $row['phone'];
                                                     
                                                     echo "
                                                         <tr>

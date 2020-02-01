@@ -69,17 +69,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
             $mission = $row['mission'];
             $username = $row['username'];
 			$photo1 = $row['image'];
-			$loc1 = "../company/src/assets/".$photo1;
-			$photo2 = $row['photo2'];
-			$loc2 = "../company/src/assets/".$photo2;  
-			$photo3 = $row['photo3'];
-			$loc3 = "../company/src/assets/".$photo3; 
-			$photo4 = $row['photo4'];
-            $loc4 = "../company/src/assets/".$photo4;
-            $photo5 = $row['photo5'];
-            $loc5 = "../company/src/assets/".$photo5; 
-            $photo6 = $row['photo6'];
-            $loc6 = "../company/src/assets/".$photo6; 
+			$loc1 = "../admin/src/assets/".$photo1;
             $field = $row['field'];      
             $areas = (explode(",",$field));                         
         ?>
@@ -93,7 +83,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                             class="ti-menu ti-close"></i></a>
                     <div class="navbar-brand">
                         <!-- Logo icon -->
-                        <a href="#">
+                        <a href="company_new.php">
                             <b class="logo-icon">
                                 <!-- Dark Logo icon -->
                                 <img src="../admin/src/assets/images/logo-icon.png"  class="dark-logo" />
