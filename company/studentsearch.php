@@ -181,7 +181,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                 <th style='text-align: center;'>ID</th>
                                                 <th style='text-align: center;'>Name</th>
                                                 <th style='text-align: center;'>E-Mail</th>
-                                                <th style='text-align: center;'>University</th>
+                                                <th style='text-align: center;'>Contact Number</th>
                                                 <th style='text-align: center;'>Show</th>
                                                 <th style='text-align: center;'>Download CV</th>
                                             </tr>
@@ -203,7 +203,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                             $sid = $row['cid']; //cid for employee table is id
                                                             $firstname = $row['firstname'].' '.$row['lastname'];
                                                             $email = $row['email'];
-                                                            $uni = "UOM";
+                                                            $uni = $row['telephone'];
                                                             $cv = $row['cv'];
                                                         echo "
                                                             <tr>
@@ -215,7 +215,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                     <div style='text-align: center;' class='table-data-feature'>
                                                                         <a href='../users/viewprofile.php?sid=$sid'>
                                                                         <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
-                                                                            <i class='fas fa-list'></i>
+                                                                            <i class='fas fa-eye'></i>
                                                                         </button>
                                                                         </a>
                                                                     </div>
@@ -224,7 +224,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                     <div style='text-align: center;' class='table-data-feature'>
                                                                         <a href='../admin/src/assets/studentCV/$cv'>
                                                                         <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
-                                                                            <i class='fas fa-list'></i>
+                                                                            <i class='fas fa-download'></i>
                                                                         </button>
                                                                         </a>
                                                                     </div>
