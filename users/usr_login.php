@@ -72,7 +72,7 @@ include_once('php/login.php')
 						<span class="txt1">
 							Forgot
 						</span>
-						<a class="txt2" href="loginPWReset.php">
+						<a class="txt2" href="usr_reset.php">
 							Username / Password?
 						</a>
 						<br>

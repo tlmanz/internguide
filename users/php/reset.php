@@ -1,99 +1,82 @@
 <?php
-require_once "../../admin/config/connect.php";
-
+require_once __DIR__."/../../admin/config/connect.php";
+/// Initialize the session
+session_start();
+ 
+// Check if the user is already logged in, if yes then redirect him to welcome page
+// Define variables and initialize with empty values
+$username = $emailpost = "";
 $username_err = $email_err = "";
-$username = trim($_POST['username']);
-$email = trim($_POST['email']);
-
-$sql = "SELECT cid FROM customer_account WHERE email = ?";
-
-        if ($stmt = mysqli_prepare($connection, $sql)) {
+ 
+// Processing form data when form is submitted
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+ 
+    // Check if username is empty
+    if(empty(trim($_POST["username"]))){
+        $username_err = '<span style="color: red;">Please enter username.</span>';
+    } else{
+        $username = trim($_POST["username"]);
+    }
+    
+    // Check if password is empty
+    if(empty(trim($_POST["email"]))){
+        $email_err = '<span style="color: red;">Please enter your email.</span>';
+    } else{
+        $emailpost = trim($_POST["email"]);
+    }
+    
+    // Validate credentials
+    if(empty($username_err) && empty($password_err)){
+        // Prepare a select statement
+        $sql = "SELECT cid, username, email FROM customer_account WHERE username = ?";
+        
+        if($stmt = mysqli_prepare($connection, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "s", $param_email);
-
+            mysqli_stmt_bind_param($stmt, "s", $param_username);
+            
             // Set parameters
-            $param_email = trim($_POST["email"]);
-
+            $param_username = $username;
+            
             // Attempt to execute the prepared statement
-            if (mysqli_stmt_execute($stmt)) {
-                /* store result */
+            if(mysqli_stmt_execute($stmt)){
+                // Store result
                 mysqli_stmt_store_result($stmt);
-
-                if (mysqli_stmt_num_rows($stmt) == 1) {
-                    $sql1 = "SELECT cid FROM customer_account WHERE username = ?";
-
-                            if ($stmt1 = mysqli_prepare($connection, $sql1)) {
-                                // Bind variables to the prepared statement as parameters
-                                mysqli_stmt_bind_param($stmt1, "s", $param_username);
-
-                                // Set parameters
-                                $param_username = trim($_POST["username"]);
-
-                                // Attempt to execute the prepared statement
-                                if (mysqli_stmt_execute($stmt1)) {
-                                    /* store result */
-                                    mysqli_stmt_store_result($stmt1);
-
-                                    if (mysqli_stmt_num_rows($stmt1) == 1) {
-                                     echo "<script>alert ('Email & Username is correct. You can reset your password')</script>";
-                                     echo "<script>window.open('resetpw.php?user=$username','_self')</script>";
-                                }else{
-                                    echo "<script>alert ('Username is not correct!')</script>";
-                                }
-                            }
+                
+                // Check if username exists, if yes then verify password
+                if(mysqli_stmt_num_rows($stmt) == 1){                    
+                    // Bind result variables
+                    mysqli_stmt_bind_result($stmt, $id, $username, $email);
+                    if(mysqli_stmt_fetch($stmt)){
+                        $email = trim($email);
+                        if($emailpost === $email){
+                            session_start();
+                            $_SESSION['reset'] = true;
+                            $_SESSION['id'] = $id;
+                            $_SESSION['username'] = $username;
+                            $_SESSION['email'] = $email;
+                            $_SESSION['usertype'] = 'student';                           
+                            header("location: reset_student.php");
                         }
-            }else{
-                echo "<script>alert ('Email is not correct!')</script>";
+                         else{
+                            // Display an error message if password is not valid
+                            $email_err = '<span style="color: red;">email is invalid</span>';
+                        }
+                        
+                    }
+                } else{
+                    // Display an error message if username doesn't exist
+                    $username_err = '<span style="color: red;">Username not found</span>';
+                }
+            } else{
+                echo '<span style="color: red;"> Oops! Something went wrong. Please try again later.</span>';
             }
         }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// if ($stmt = mysqli_prepare($connection,$query)){
-
-//     mysqli_stmt_bind_param($stmt, "s", $param_username);
-//     $param_username = $username;
-
-//     if (mysqli_stmt_execute($stmt)){
-
-//         mysqli_stmt_store_result($stmt);
-//         if (mysqli_stmt_num_rows($stmt) != 1){
-//             $username_err = '<span style="color: red;">Username not found</span>';
-//             echo "<script>alert ('Username is not correct. You can reset your password')</script>";
-//         }
         
-//     }
-
-// }
-// $query1 = "SELECT email FROM customer_account WHERE email = ?";
-// if ($stmt1 = mysqli_prepare($connection,$query1)){
-
-//     mysqli_stmt_bind_param($stmt1, "s", $param_email);
-//     $param_email = $email;
-
-//     if (mysqli_stmt_execute($stmt)){
-
-//         mysqli_stmt_store_result($stmt);
-//         if (mysqli_stmt_num_rows($stmt) != 1){
-//             $email_err = '<span style="color: red;">emailnot found</span>';
-//             echo "<script>alert ('Email is not correct. You can reset your password')</script>";
-//         }
-//     }
-
-// }
-// if(empty($username_err) && empty($email_err)){
-//     echo "<script>alert ('Email & Username is correct. You can reset your password')</script>";
-//     echo "<script>window.open('resetpw.php?user=$username','_self')</script>";
-// }
+        // Close statement
+        mysqli_stmt_close($stmt);
+    }
+    
+    // Close connection
+    mysqli_close($connection);
+}
+?>
