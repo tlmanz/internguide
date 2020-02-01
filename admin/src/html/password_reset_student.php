@@ -349,14 +349,14 @@
                                             <div class="col-md-6 m-auto">
                                                 <div class="form-group">
                                                     <label>New Password</label>
-                                                    <input type="password" class="form-control text-center" placeholder="Enter a New Password" name='newpassword'>
+                                                    <input type="password" class="form-control text-center" placeholder="Enter a New Password" name='newpassword' required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 ml-auto">
                                                 <div class="form-group">
                                                     <label>Confirm New Password</label>
                                                     <input type="password" class="form-control text-center"
-                                                    placeholder="Confirm the New Password" name='confirmpassword'>
+                                                    placeholder="Confirm the New Password" name='confirmpassword' required="">
                                                 </div>
                                             </div>
                                         </div>
