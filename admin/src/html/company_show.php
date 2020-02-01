@@ -485,7 +485,7 @@
                                                                     <label class="col-md-2">Social</label>
                                                                     <div class="form-group">
                                                                         <a href=<?php echo $pinterest?>>
-                                                                         <i style="color:#e60023;" class="fab fa-pinterest-p fa-3x"></i>
+                                                                         <i style="color:#e60023;" class="fa fa-globe fa-3x"></i>
                                                                      </a>
                                                                      <a style="margin-left:10% " href=<?php echo $facebook?>>
                                                                          <i style="color:#3b5998;" class="fab fa-facebook-f fa-3x"></i>

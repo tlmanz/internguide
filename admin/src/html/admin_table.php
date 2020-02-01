@@ -311,7 +311,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                 <h4 class="card-title">Administrator Table</h4>
                                 <h6 class="card-subtitle">This table contains all the Administrators who registered with this system</h6>
                                 <div class="table-responsive">
-                                    <table id="default_order" class="table table-striped table-bordered display no-wrap"
+                                    <table data-order='[[ 0, "asc" ]]' id="default_order" class="table table-striped table-bordered display no-wrap"
                                         style="width:100%">
                                         <thead>
                                             <tr>
@@ -339,7 +339,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                     $age = $row["created_at"];
                                                     echo "
                                                         <tr>
-                                                            <td><p style='text-align: center;'>$count</p></td>
+                                                            <td><p style='text-align: center;'>$sid</p></td>
                                                             <td><p style='text-align: center;'>$firstname</p></td>
                                                             <td><p style='text-align: center;'>$email</p></td>
                                                             <td><p style='text-align: center;'>$uni</p></td>
@@ -348,7 +348,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                 <div style='text-align: center;' class='table-data-feature'>
                                                                     <a href='admin_show.php?edit=$sid'>
                                                                     <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
-                                                                        <i class='fas fa-list'></i>
+                                                                        <i class='fas fa-eye'></i>
                                                                     </button>
                                                                     </a>
                                                                 </div>
