@@ -70,17 +70,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
     $vision = $row['vision'];
     $mission = $row['mission'];
     $photo1 = $row['image'];
-    $loc1 = "src/assets/".$photo1;
+    $loc1 = "../company/src/assets/".$photo1;
     $photo2 = $row['photo2'];
-    $loc2 = "src/assets/".$photo2;  
+    $loc2 = "../company/src/assets/".$photo2;  
     $photo3 = $row['photo3'];
-    $loc3 = "src/assets/".$photo3; 
+    $loc3 = "../company/src/assets/".$photo3; 
     $photo4 = $row['photo4'];
-    $loc4 = "src/assets/".$photo4;
+    $loc4 = "../company/src/assets/".$photo4;
     $photo5 = $row['photo5'];
-    $loc5 = "src/assets/".$photo5; 
+    $loc5 = "../company/src/assets/".$photo5; 
     $photo6 = $row['photo6'];
-    $loc6 = "src/assets/".$photo6;  
+    $loc6 = "../company/src/assets/".$photo6;  
     $field = $row['field'];      
     $areas = (explode(",",$field));  
     $_SESSION["loggedin"] = true;
@@ -278,6 +278,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
         <div class="carousel-item">
             <img class="img-fluid" src="<?php echo $loc6 ?>" style = "height : 500px; width : 500px;overflow : hidden;"
             alt="Second slide">
+        </div>
+        <div class="carousel-item">
+                <img class="img-fluid" src="<?php echo $loc4 ?>" style = "height : 500px; width : 500px;overflow : hidden;"
+                alt="Third slide">
         </div>
 </div>
 </div>

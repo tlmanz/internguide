@@ -59,7 +59,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
             $run_edit_admin = mysqli_query($connection,$get_admin);
             $row = mysqli_fetch_array($run_edit_admin);
 			$name = $row['ename'];
-			$id = $row['id'];
+            $id_company = $row['id'];
+            $username = $row['username'];
 			$email = $row['email'];
 			$phone = $row['phone'];
 			$description = $row['description'];
@@ -68,9 +69,23 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
 			$vision = $row['vision'];
 			$mission = $row['mission'];
 			$photo1 = $row['image'];
-			$loc1 = "../company/src/assets/".$photo1; 
+			$loc1 = "src/assets/".$photo1;
+			$photo2 = $row['photo2'];
+			$loc2 = "src/assets/".$photo2;  
+			$photo3 = $row['photo3'];
+			$loc3 = "src/assets/".$photo3; 
+			$photo4 = $row['photo4'];
+            $loc4 = "src/assets/".$photo4;
+            $photo5 = $row['photo5'];
+            $loc5 = "src/assets/".$photo5; 
+            $photo6 = $row['photo6'];
+            $loc6 = "src/assets/".$photo6;   
             $field = $row['field'];      
-            $areas = (explode(",",$field));                         
+            $areas = (explode(",",$field));
+            $_SESSION["loggedin"] = true;
+            $_SESSION["id"] = $s_id;
+            $_SESSION["username"] = $name;
+            $_SESSION["usertype"] = "company";                           
         ?>
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
@@ -121,7 +136,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                 <img src="<?php echo $loc1 ?>"  style="max-height:500px; max-width : 100px" alt="user" class="rounded-circle"
                                     width="40">
                                 <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
-                                        class="text-dark"><?php echo $row['ename'] ?></span> <i data-feather="chevron-down"
+                                        class="text-dark"><?php echo $row['username'] ?></span> <i data-feather="chevron-down"
                                         class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
@@ -168,14 +183,20 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                             $run_edit_student = mysqli_query($connection , $get_student);
                             $row_emp = mysqli_fetch_array($run_edit_student);
                             $id = $row_emp['id'];
-                            $firstname = $row_emp['ename'];
                             $username = $row_emp['username'];
+                            $firstname = $row_emp['ename'];
                             $field = $row_emp['field'];
                             $address = $row_emp['address'];
                             $phone = $row_emp['phone'];
                             $email = $row_emp['email'];
                             $intro = $row_emp['introduction'];
                             $desc1 = $row_emp['description'];
+                            $photo = $row_emp['image'];
+                            $photo2 = $row_emp['photo2'];
+                            $photo3 = $row_emp['photo3'];
+                            $photo4 = $row_emp['photo4'];
+                            $photo5 = $row_emp['photo5'];
+                            $photo6 = $row_emp['photo6'];
                             $pinterest = $row_emp['pin'];
                             $linkedin = $row_emp['linkedin'];
                             $facebook = $row_emp['facebook'];
@@ -183,18 +204,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                             $created = $row_emp['created_at'];
                             $vision = $row_emp['vision'];
                             $mission = $row_emp['mission'];
-                            $photo1 = $row_emp['image'];
-                            $p_loc = "../company/src/assets/".$photo1;
-                            $photo2 = $row_emp['photo2'];
-                            $p1_loc = "../company/src/assets/".$photo2;  
-                            $photo3 = $row_emp['photo3'];
-                            $p2_loc = "../company/src/assets/".$photo3; 
-                            $photo4 = $row_emp['photo4'];
-                            $p3_loc = "../company/src/assets/".$photo4;
-                            $photo5 = $row_emp['photo5'];
-                            $p4_loc = "../company/src/assets/".$photo5; 
-                            $photo6 = $row_emp['photo6'];
-                            $p5_loc = "../company/src/assets/".$photo6; 
+                            $p_loc = "src/assets/".$photo;
+                            $p1_loc = "src/assets/".$photo2;
+                            $p2_loc = "src/assets/".$photo3;
+                            $p3_loc = "src/assets/".$photo4;
+                            $p4_loc = "src/assets/".$photo5;
+                            $p5_loc = "src/assets/".$photo6;
+ 
                         
                         ?>
                         <div class="row">
@@ -229,7 +245,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                         </div>
                                         <br>
                                         <div style="text-align: center;">
-                                            <form action='company_new.php' method='post' enctype='multipart/form-data'>
+                                            <form action='company_update.php' method='post' enctype='multipart/form-data'>
                                                 <div class="form-body">
                                                     <div class="form-group row">
                                                         <label class="col-md-2"></label>
@@ -390,7 +406,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
                                                                         <input type="tel" class="form-control"
-                                                                        placeholder="URL.." value="<?php echo $linkedin ?>" name='linkedin'>
+                                                                        placeholder="URL.." value="<?php echo $linkedin ?>" name='linkedin' >
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -403,7 +419,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
                                                                         <input type="tel" class="form-control"
-                                                                        placeholder="URL.." value="<?php echo $pinterest ?>" name='pin'>
+                                                                        placeholder="URL.." value="<?php echo $pinterest ?>" name='pin' >
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -416,7 +432,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
                                                                         <input type="tel" class="form-control"
-                                                                        placeholder="URL.." value="<?php echo $twitter ?>" name='twitter'>
+                                                                        placeholder="URL.." value="<?php echo $twitter ?>" name='twitter' >
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -429,7 +445,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
                                                                         <input type="tel" class="form-control"
-                                                                        placeholder="URL.." value="<?php echo $facebook ?>" name='facebook'>
+                                                                        placeholder="URL.." value="<?php echo $facebook ?>" name='facebook' >
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -474,18 +490,18 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                         <fieldset class="checkbox">
                                                             <label>
                                                                 <input type='hidden' value='0' name='check'>
-                                                                <input style='transform: scale(1.5);' type="checkbox" name='check' value="1" >&nbsp &nbsp &nbsp Tick This to Update without Images
+                                                                <input style='transform: scale(1.5);' type="checkbox" name='check' value="1" >&nbsp&nbsp&nbspTick This to Update without Images
                                                             </label>
                                                         </fieldset>
                                                     </div>
                                                     <div class = 'footer'>
                                                         <div style='text-align: center;'>
                                                             <a href = 'company_new.php' >
-                                                                <button type='' class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
+                                                                <button type='button' class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
                                                             </a>
-                                                            &nbsp &nbsp
+                                                            &nbsp&nbsp
                                                             <button type ='submit' class="btn btn-rounded btn-info"><i class='fa fa-sync-alt'></i>&nbspUpdate</button>
-                                                            &nbsp &nbsp
+                                                            &nbsp&nbsp
                                                             <button type="reset" class="btn btn-rounded btn-danger"><i class='fa fa-ban'></i>&nbspReset</button>
                                                         </div>
                                                     </div>

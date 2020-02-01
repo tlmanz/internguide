@@ -213,7 +213,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                 <td><p style='text-align: center;'>$uni</p></td>
                                                                 <td>
                                                                     <div style='text-align: center;' class='table-data-feature'>
-                                                                        <a href='../users/viewstuprofile.php?sid=$sid'>
+                                                                        <a href='../users/viewprofile.php?sid=$sid'>
                                                                         <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
                                                                             <i class='fas fa-list'></i>
                                                                         </button>

@@ -80,8 +80,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
             $loc5 = "../company/src/assets/".$photo5; 
             $photo6 = $row['photo6'];
             $loc6 = "../company/src/assets/".$photo6; 
-            $photo7 = $row['photo7'];
-            $loc7 = "../company/src/assets/".$photo7;  
             $field = $row['field'];      
             $areas = (explode(",",$field));                         
         ?>
@@ -224,7 +222,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                             <td><p style='text-align: center;'>$uni</p></td>
                                                             <td>
                                                                 <div style='text-align: center;' class='table-data-feature'>
-                                                                    <a href='../users/viewstuprofile.php?sid=$sid'>
+                                                                    <a href='../users/viewprofile.php?sid=$sid'>
                                                                     <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
                                                                         <i class='fas fa-list'></i>
                                                                     </button>
