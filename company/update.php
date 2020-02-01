@@ -33,6 +33,6 @@ if($count == count($username)){
 }
 else{
    echo "<script>alert ('You have already registered!')</script>";
-   echo "<script>window.open('../users/company.php','_self')</script>";
+   echo "<script>window.open('../users/companyshow.php','_self')</script>";
 }
 ?>

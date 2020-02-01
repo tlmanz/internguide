@@ -33,7 +33,7 @@ $error = '';
 	//////////////////////////////////////////////////////////////////////////
 
 	// Slider Image 1 /////////////////////////////////////////////////////////////
-$s_loc = "src/assets/companyImages/slider/";
+$s_loc = "../admin/src/assets/companyImages/slider/";
 $temp1 = explode(".", $_FILES["image1"]["name"]);
 $newfilename1 = round(microtime(true)) .$id.'slide1'.'.' . end($temp1);
 $s1photo = $s_loc.$newfilename1;

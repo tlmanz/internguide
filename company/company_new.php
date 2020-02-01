@@ -70,17 +70,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
     $vision = $row['vision'];
     $mission = $row['mission'];
     $photo1 = $row['image'];
-    $loc1 = "../company/src/assets/".$photo1;
+    $loc1 = "../admin/src/assets/".$photo1;
     $photo2 = $row['photo2'];
-    $loc2 = "../company/src/assets/".$photo2;  
+    $loc2 = "../admin/src/assets/".$photo2;  
     $photo3 = $row['photo3'];
-    $loc3 = "../company/src/assets/".$photo3; 
+    $loc3 = "../admin/src/assets/".$photo3; 
     $photo4 = $row['photo4'];
-    $loc4 = "../company/src/assets/".$photo4;
+    $loc4 = "../admin/src/assets/".$photo4;
     $photo5 = $row['photo5'];
-    $loc5 = "../company/src/assets/".$photo5; 
+    $loc5 = "../admin/src/assets/".$photo5; 
     $photo6 = $row['photo6'];
-    $loc6 = "../company/src/assets/".$photo6;  
+    $loc6 = "../admin/src/assets/".$photo6;  
     $field = $row['field'];      
     $areas = (explode(",",$field));  
     $_SESSION["loggedin"] = true;
@@ -161,11 +161,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="sidebar-item"> <a class="sidebar-link" href="studentlist.php"
-                                aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
-                                    class="hide-menu">View Student List</span></a></li>
+                                aria-expanded="false"><i class= "fa fa-search"></i><span
+                                    class="hide-menu">Search Student</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link" href="studentsearch.php"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
-                                    class="hide-menu">Search Students
+                                    class="hide-menu">Applied Students List
                                 </span></a>
                         </li>
                     </ul>
@@ -296,7 +296,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                     <h2 class="hidden-md hidden-sm">Find Us</h2>
                     <div class="social-link-warp">
                         <div class="social-links">
-                            <a href="<?php echo $row['pin'] ?>"><i class="fab fa-pinterest-p fa-1x"></i></a>
+                            <a href="<?php echo $row['pin'] ?>"><i class="fas fa-globe fa-1x"></i></a>
                             <a href="<?php echo $row['linkedin'] ?>"><i class="fab fa-linkedin-in fa-1x"></i></a>
                             <a href="<?php echo $row['facebook'] ?>"><i class="fab fa-facebook-f fa-1x"></i></a>
                             <a href="<?php echo $row['twitter'] ?>"><i class="fab fa-twitter fa-1x"></i></a>

@@ -4,7 +4,7 @@ require_once ('connect.php');
 $id = $_POST['id'];
 $username = $_POST['username'];
 
-$p_loc = "src/assets/companyImages/";
+$p_loc = "../admin/src/assets/companyImages/";
 $temp = explode(".", $_FILES["logo"]["name"]);
 $newfilename = $username.'logo'.'.' . end($temp);
 $lphoto = $p_loc.$newfilename;

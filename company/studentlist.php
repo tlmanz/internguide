@@ -156,11 +156,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="sidebar-item"> <a class="sidebar-link" href="studentlist.php"
-                                aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
-                                    class="hide-menu">View Student List</span></a></li>
+                                aria-expanded="false"><i class= "fa fa-search"></i><span
+                                    class="hide-menu">Search Student</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link" href="studentsearch.php"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
-                                    class="hide-menu">Search Students
+                                    class="hide-menu">Applide Students List
                                 </span></a>
                         </li>
                     </ul>
@@ -260,7 +260,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                 <h2 class="hidden-md hidden-sm">Find Us</h2>
                                     <div class="social-link-warp">
                                         <div class="social-links">
-                                            <a href="<?php echo $row['pin'] ?>"><i class="fab fa-pinterest-p fa-1x"></i></a>
+                                            <a href="<?php echo $row['pin'] ?>"><i class="fas fa-globe fa-1x"></i></a>
                                             <a href="<?php echo $row['linkedin'] ?>"><i class="fab fa-linkedin-in fa-1x"></i></a>
                                             <a href="<?php echo $row['facebook'] ?>"><i class="fab fa-facebook-f fa-1x"></i></a>
                                             <a href="<?php echo $row['twitter'] ?>"><i class="fab fa-twitter fa-1x"></i></a>
