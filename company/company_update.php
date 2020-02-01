@@ -33,7 +33,7 @@ $error = '';
 	//////////////////////////////////////////////////////////////////////////
 
 	// Slider Image 1 /////////////////////////////////////////////////////////////
-$s_loc = "src/assets/companyImages/slider/";
+$s_loc = "../admin/src/assets/companyImages/slider/";
 $temp1 = explode(".", $_FILES["image1"]["name"]);
 $newfilename1 = round(microtime(true)) .$id.'slide1'.'.' . end($temp1);
 $s1photo = $s_loc.$newfilename1;
@@ -102,7 +102,7 @@ else{
 				$run_query = mysqli_query($connection , $query1);
 				if($run_query){
 					echo "<script>alert ('Company Profile Updated!')</script>";
-					echo "<script>window.open('company_new.php?edit=$id','_self')</script>";
+					echo "<script>window.open('company_new.php','_self')</script>";
 				}
 				else{
 					echo "<script>alert ('Oops! Something Went Wrong.. Contact Help!')</script>";
