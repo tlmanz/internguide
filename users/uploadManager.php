@@ -9,7 +9,7 @@ $gender = $_POST['gender'];
 $field = $_POST['field'];
 $address = $_POST['address'];
 $phone = $_POST['telephone'];
-$email = $_POST['email'];
+$email = trim($_POST['email']);
 $gpa = $_POST['gpa'];
 $linkedin = $_POST['linkedin'];
 $web = $_POST['web'];
@@ -18,7 +18,7 @@ $username = $_POST['username'];
 $dob = $_POST['dob'];
 $age = $_POST['age'];
 $oldcv = $_POST['oldcv'];
-$oldemail = $_POST['oldemail'];
+$oldemail = trim($_POST['oldemail']);
 		// $cv = $POST['cv'];
 $emailnum = 0;
 
@@ -29,7 +29,7 @@ else{
 	$emailnum = 0;
 }
 
-if(!isset($_FILES['cv']) || $_FILES['cv']['error']== UPLOAD_ERR_NO_FILE){
+if(!isset($_FILES['cv']) || $_FILES['cv']['error'] == UPLOAD_ERR_NO_FILE){
 	$cvpath = $oldcv;
 }
 else{
@@ -45,8 +45,6 @@ else{
 		echo "<script>window.open('../../html/student_edit.php?edit=$cid','_self')</script>";
 	}
 }
-
-$emailnum = mysqli_num_rows(mysqli_query($connection, "SELECT * FROM `customer_account` WHERE ( `email` = '".$_POST['email']."' )"));
 $phonenum = preg_match('/^[0-9]{10}+$/', $phone);
 if ($phonenum < 1 && $emailnum > 0){
 	$error = 'Email Exists. Choose a Unique One!.. Check Your Contact Number Again!..';
