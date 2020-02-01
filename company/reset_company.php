@@ -1,10 +1,10 @@
 <?php
 
-require_once "../admin/config/connect.php";
+require_once "connect.php";
 session_start();
 
-if(!isset($_SESSION["reset"]) || $_SESSION["reset"] !== true || !isset($_SESSION["usertype"]) || $_SESSION["usertype"] !== 'student'){
-    header("location: usr_login.php");
+if(!isset($_SESSION["reset"]) || $_SESSION["reset"] !== true || !isset($_SESSION["usertype"]) || $_SESSION["usertype"] !== 'company'){
+    header("location: company_login.php");
     exit;
 }
 
@@ -15,33 +15,33 @@ if(!isset($_SESSION["reset"]) || $_SESSION["reset"] !== true || !isset($_SESSION
 <html lang="en">
 
 <head>
-	<title>Civic - CV Resume</title>
-	<meta charset="UTF-8">
-	<meta name="description" content="Civic - CV Resume">
-	<meta name="keywords" content="resume, civic, onepage, creative, html">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Favicon -->
-	<link href="civic/img/favicon.ico" rel="shortcut icon" />
+    <title>InternGuide</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Civic - CV Resume">
+    <meta name="keywords" content="resume, civic, onepage, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link href="../users/civic/img/favicon.ico" rel="shortcut icon" />
     <title>Intern Guide - One Place for All Intern Needs</title>
 
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet">
 
-	<!-- Stylesheets -->
-	<link rel="stylesheet" href="civic/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="civic/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="civic/css/flaticon.css" />
-	<link rel="stylesheet" href="civic/css/owl.carousel.css" />
-	<link rel="stylesheet" href="civic/css/magnific-popup.css" />
-	<link rel="stylesheet" href="civic/css/style.css" />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="civic/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="civic/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="civic/css/flaticon.css" />
+    <link rel="stylesheet" href="civic/css/owl.carousel.css" />
+    <link rel="stylesheet" href="civic/css/magnific-popup.css" />
+    <link rel="stylesheet" href="civic/css/style.css" />
 
     <script src="https://kit.fontawesome.com/6d41dc11d3.js" crossorigin="anonymous"></script>
 
 
-	<!--[if lt IE 9]>
-	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <!-- Tell the browser to be responsive to screen width -->
@@ -69,21 +69,21 @@ if(!isset($_SESSION["reset"]) || $_SESSION["reset"] !== true || !isset($_SESSION
 </head>
 
 <body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
 
-	<div class="home-five-style">
-		<!-- Header section start -->
-	<div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    <div class="home-five-style">
+        <!-- Header section start -->
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
             data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
             <!-- ============================================================== -->
             <!-- Topbar header - style you can find in pages.scss -->
             <!-- ============================================================== -->
             <header class="topbar" data-navbarbg="skin6">
 
-		        <nav class="navbar top-navbar navbar-expand-md">
+                <nav class="navbar top-navbar navbar-expand-md">
                     <div class="navbar-header" data-logobg="skin6">
                         <!-- This is for the sidebar toggle which is visible on mobile only -->
                         <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
@@ -157,22 +157,22 @@ if(!isset($_SESSION["reset"]) || $_SESSION["reset"] !== true || !isset($_SESSION
                 <!-- ============================================================== -->
                 <!-- Container fluid  -->
         
-		<section class="hero-section">
+        <section class="hero-section">
 
-			<div class="container-fluid">
+            <div class="container-fluid">
                  <?php
             //if(isset($_GET['edit'])){
                 $edit_id = $_SESSION['id'];
-                $get_student = "select * from customer_account where cid='$edit_id'";
+                $get_student = "select * from employee where id='$edit_id'";
                 $run_edit_student = mysqli_query($connection , $get_student);
                 $row_emp = mysqli_fetch_array($run_edit_student);
-                $id = $row_emp['cid'];
+                $id = $row_emp['id'];
                 $username = $row_emp['username'];
-                $photo = $row_emp['cphoto'];
+                $photo = $row_emp['image'];
                 $p_loc = "../admin/src/assets/".$photo;
             //}
             ?>
-				<div class="row">
+                <div class="row">
                 <div style='margin-left: auto; margin-right: auto;'class="col-8">
                     <div class="card">
                         <div class="card-body">
@@ -238,34 +238,34 @@ if(!isset($_SESSION["reset"]) || $_SESSION["reset"] !== true || !isset($_SESSION
         </div>
     </section>
 </div>
-		<!-- Info section end -->
+        <!-- Info section end -->
 
-		<!-- Resume section start -->
-		
+        <!-- Resume section start -->
+        
 
-	<!-- Footer section start -->
-	<footer class="footer-section">
-		<div class="container text-center">
-			<div class="copyright">
-				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-				Copyright &copy;<script>
-					document.write(new Date().getFullYear());
-				</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-			</div>
-		</div>
-	</footer>
-	<!-- Footer section end -->
+    <!-- Footer section start -->
+    <footer class="footer-section">
+        <div class="container text-center">
+            <div class="copyright">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;<script>
+                    document.write(new Date().getFullYear());
+                </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </div>
+        </div>
+    </footer>
+    <!-- Footer section end -->
 
 
 
-	<!--====== Javascripts & Jquery ======-->
-	<script src="civic/js/jquery-2.1.4.min.js"></script>
-	<script src="civic/js/bootstrap.min.js"></script>
-	<script src="civic/js/owl.carousel.min.js"></script>
-	<script src="civic/js/magnific-popup.min.js"></script>
-	<script src="civic/js/circle-progress.min.js"></script>
-	<script src="civic/js/main.js"></script>
+    <!--====== Javascripts & Jquery ======-->
+    <script src="../users/civic/js/jquery-2.1.4.min.js"></script>
+    <script src="../users/civic/js/bootstrap.min.js"></script>
+    <script src="../users/civic/js/owl.carousel.min.js"></script>
+    <script src="../users/civic/js/magnific-popup.min.js"></script>
+    <script src="../users/civic/js/circle-progress.min.js"></script>
+    <script src="../users/civic/js/main.js"></script>
 
 
 
