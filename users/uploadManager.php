@@ -46,7 +46,7 @@ else{
 	}
 }
 
-//$emailnum = mysqli_num_rows(mysqli_query($connection, "SELECT * FROM `customer_account` WHERE ( `email` = '".$_POST['email']."' )"));
+$emailnum = mysqli_num_rows(mysqli_query($connection, "SELECT * FROM `customer_account` WHERE ( `email` = '".$_POST['email']."' )"));
 $phonenum = preg_match('/^[0-9]{10}+$/', $phone);
 if ($phonenum < 1 && $emailnum > 0){
 	$error = 'Email Exists. Choose a Unique One!.. Check Your Contact Number Again!..';
@@ -63,7 +63,7 @@ else{
 	$query1 = "update customer_account set firstname='$firstname',lastname='$lastname', nic = '$nic', gender = '$gender', field = '$field', address='$address',telephone='$phone',email='$email', gpa = '$gpa', linkedin = '$linkedin', web = '$web', description1 = '$desc1', dob = '$dob', age = '$age', cv = '$cvpath' where cid = '$cid' ";
 	$run_query = mysqli_query($connection , $query1);
 	if($run_query){
-		echo "<script>alert ('Profile Updated Successfully111!')</script>";
+		echo "<script>alert ('Profile Updated Successfully!')</script>";
 		echo "<script>window.open('userprofile.php','_self')</script>";
 	}
 	else{
