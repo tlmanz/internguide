@@ -96,9 +96,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                         <a href="index.html">
                             <b class="logo-icon">
                                 <!-- Dark Logo icon -->
-                                <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                                <img src="../admin/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
                                 <!-- Light Logo icon -->
-                                <img src="assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                                <img src="../admin/assets/images/logo-icon.png" alt="homepage" class="light-logo" />
                             </b>
                             <span class="logo-text">
                                 InternGuid
@@ -156,11 +156,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="sidebar-item"> <a class="sidebar-link" href="studentlist.php"
-                                aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
-                                    class="hide-menu">View Student List</span></a></li>
+                                aria-expanded="false"><i class= "fa fa-search"></i><span
+                                    class="hide-menu">Search Student</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link" href="studentsearch.php"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
-                                    class="hide-menu">Search Students
+                                    class="hide-menu">Applide Students List
                                 </span></a>
                         </li>
                     </ul>
@@ -196,7 +196,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                 <th style='text-align: center;'>ID</th>
                                                 <th style='text-align: center;'>Name</th>
                                                 <th style='text-align: center;'>E-Mail</th>
-                                                <th style='text-align: center;'>University</th>
+                                                <th style='text-align: center;'>Contact Number</th>
                                                 <th style='text-align: center;'>Show</th>
                                                 <th style='text-align: center;'>Download CV</th>
                                             </tr>
@@ -212,7 +212,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                     $sid = $row['cid']; //cid for employee table is id
                                                     $firstname = $row['firstname'].' '.$row['lastname'];
                                                     $email = $row['email'];
-                                                    $uni = "UOM";
+                                                    $uni = $row['telephone'];
                                                     $cv = $row['cv'];
                                                     echo "
                                                         <tr>
@@ -224,7 +224,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                 <div style='text-align: center;' class='table-data-feature'>
                                                                     <a href='../users/viewprofile.php?sid=$sid'>
                                                                     <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
-                                                                        <i class='fas fa-list'></i>
+                                                                        <i class='fas fa-eye'></i>
                                                                     </button>
                                                                     </a>
                                                                 </div>
@@ -233,7 +233,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                 <div style='text-align: center;' class='table-data-feature'>
                                                                     <a href='../admin/src/assets/studentCV/$cv'>
                                                                     <button class='btn btn-primary btn-circle' data-toggle='tooltip' data-placement='top' title='Show'>
-                                                                        <i class='fas fa-list'></i>
+                                                                        <i class='fas fa-download'></i>
                                                                     </button>
                                                                     </a>
                                                                 </div>
@@ -260,7 +260,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                 <h2 class="hidden-md hidden-sm">Find Us</h2>
                                     <div class="social-link-warp">
                                         <div class="social-links">
-                                            <a href="<?php echo $row['pin'] ?>"><i class="fab fa-pinterest-p fa-1x"></i></a>
+                                            <a href="<?php echo $row['pin'] ?>"><i class="fas fa-globe fa-1x"></i></a>
                                             <a href="<?php echo $row['linkedin'] ?>"><i class="fab fa-linkedin-in fa-1x"></i></a>
                                             <a href="<?php echo $row['facebook'] ?>"><i class="fab fa-facebook-f fa-1x"></i></a>
                                             <a href="<?php echo $row['twitter'] ?>"><i class="fab fa-twitter fa-1x"></i></a>

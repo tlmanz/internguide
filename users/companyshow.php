@@ -174,11 +174,11 @@ if ($result = mysqli_query($connection, $sql)) {
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
                                 <a class="dropdown-item" href="javascript:void(0)"><i data-feather="user" class="svg-icon mr-2 ml-1"></i>
                                     My Profile</a>
-                                <a class="dropdown-item" href="editprofile.php"><i data-feather="credit-card" class="svg-icon mr-2 ml-1"></i>
+                                <a class="dropdown-item" href="editprofile.php">&nbsp<i class="fas fa-user-edit"></i>&nbsp&nbsp
                                     Edit profile</a>
 
                                     <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="companyshow.php"><i data-feather="power" class="svg-icon mr-2 ml-1"></i>
+                                <a class="dropdown-item" href="companyshow.php">&nbsp<i class="far fa-eye"></i>&nbsp&nbsp
                                     View company list</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="php/logout.php"><i data-feather="power" class="svg-icon mr-2 ml-1"></i>
@@ -193,7 +193,7 @@ if ($result = mysqli_query($connection, $sql)) {
                 </nav>
             </header>
             <!-- ============================================================== -->
-            <!-- End Topbar header -->
+            <!-- End Topbar header --><!-- <i class="fas fa-user-edit"></i> --> -->
             <!-- ============================================================== -->
             <!-- ============================================================== -->
             <!-- Left Sidebar - style you can find in sidebar.scss  -->
@@ -205,18 +205,24 @@ if ($result = mysqli_query($connection, $sql)) {
                     <nav class="sidebar-nav">
                         <ul id="sidebarnav">
                             
+                            <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="userprofile.php"
+                                    aria-expanded="false"><i data-feather="user" class="svg-icon mr-2 ml-1"></i><span
+                                        class="hide-menu">My profile
+                                    </span></a>
+                            </li>
+
                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="editprofile.php"
-                                    aria-expanded="false"><i data-feather="sidebar" class="feather-icon"></i><span
+                                    aria-expanded="false"><i class="fas fa-user-edit"></i>&nbsp<span
                                         class="hide-menu">Edit profile
                                     </span></a>
                             </li>
                             <li class="list-divider"></li>
                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="companyshow.php"
-                                    aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
+                                    aria-expanded="false"><i class="far fa-eye"></i><span
                                     class="hide-menu">View Company List </span></a></li>
                             <li class="list-divider"></li>
                             <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="php/logout.php"
-                                    aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
+                                    aria-expanded="false"><i class="fas fa-sign-out-alt"></i><span
                                         class="hide-menu">Logout</span></a></li>
 
                         </ul>

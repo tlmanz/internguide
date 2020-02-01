@@ -13,7 +13,7 @@ $imagepath = "userImages/".$newfilename;
 
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "JPG" && $imageFileType != "JPEG"&& $imageFileType != "PNG"){
 	echo "<script>alert ('Sorry, only JPG, JPEG, PNG & GIF files are allowed. Select Again!')</script>";
-	echo "<script>window.open('../../html/student_edit.php?edit=$id','_self')</script>";
+	echo "<script>window.open('editprofile.php','_self')</script>";
 }
 else{
 	if (move_uploaded_file($_FILES["profile"]["tmp_name"], $aphoto)) {
@@ -23,7 +23,7 @@ else{
 		$run_query = mysqli_query($connection , $query1);
 		if($run_query){
 			echo "<script>alert ('Student Photo Updated!')</script>";
-			echo "<script>window.open('userprofile.php')</script>";
+			echo "<script>window.open('userprofile.php','_self')</script>";
 		}
 		else{
 			echo "<script>alert ('Oops! Something Went Wrong 2.. Contact Help!')</script>";

@@ -69,17 +69,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
 			$vision = $row['vision'];
 			$mission = $row['mission'];
 			$photo1 = $row['image'];
-			$loc1 = "src/assets/".$photo1;
+			$loc1 = "../admin/src/assets/".$photo1;
 			$photo2 = $row['photo2'];
-			$loc2 = "src/assets/".$photo2;  
+			$loc2 = "../admin/src/assets/".$photo2;  
 			$photo3 = $row['photo3'];
-			$loc3 = "src/assets/".$photo3; 
+			$loc3 = "../admin/src/assets/".$photo3; 
 			$photo4 = $row['photo4'];
-            $loc4 = "src/assets/".$photo4;
+            $loc4 = "../admin/src/assets/".$photo4;
             $photo5 = $row['photo5'];
-            $loc5 = "src/assets/".$photo5; 
+            $loc5 = "../admin/src/assets/".$photo5; 
             $photo6 = $row['photo6'];
-            $loc6 = "src/assets/".$photo6;   
+            $loc6 = "../admin/src/assets/".$photo6;   
             $field = $row['field'];      
             $areas = (explode(",",$field));
             $_SESSION["loggedin"] = true;
@@ -100,9 +100,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                         <a href="index.html">
                             <b class="logo-icon">
                                 <!-- Dark Logo icon -->
-                                <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                                <img src="../admin/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
                                 <!-- Light Logo icon -->
-                                <img src="assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                                <img src="../admin/assets/images/logo-icon.png" alt="homepage" class="light-logo" />
                             </b>
                             <span class="logo-text">
                                 InternGuid
@@ -160,11 +160,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="sidebar-item"> <a class="sidebar-link" href="studentlist.php"
-                                aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
-                                    class="hide-menu">View Student List</span></a></li>
+                                aria-expanded="false"><i class= "fa fa-search"></i><span
+                                    class="hide-menu">Search Student</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link" href="studentsearch.php"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
-                                    class="hide-menu">Search Students
+                                    class="hide-menu">Applied Students List
                                 </span></a>
                         </li>
                     </ul>
@@ -204,12 +204,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                             $created = $row_emp['created_at'];
                             $vision = $row_emp['vision'];
                             $mission = $row_emp['mission'];
-                            $p_loc = "src/assets/".$photo;
-                            $p1_loc = "src/assets/".$photo2;
-                            $p2_loc = "src/assets/".$photo3;
-                            $p3_loc = "src/assets/".$photo4;
-                            $p4_loc = "src/assets/".$photo5;
-                            $p5_loc = "src/assets/".$photo6;
+                            $p_loc = "../admin/src/assets/".$photo;
+                            $p1_loc = "../admin/src/assets/".$photo2;
+                            $p2_loc = "../admin/src/assets/".$photo3;
+                            $p3_loc = "../admin/src/assets/".$photo4;
+                            $p4_loc = "../admin/src/assets/".$photo5;
+                            $p5_loc = "../admin/src/assets/".$photo6;
  
                         
                         ?>
@@ -400,6 +400,19 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
+                                                        <label class="col-md-2">WebSite</label>
+                                                        <div class="col-md-10">
+                                                            <div class="row">
+                                                                <div class="col-md-10">
+                                                                    <div class="form-group">
+                                                                        <input type="tel" class="form-control"
+                                                                        placeholder="URL.." value="<?php echo $pinterest ?>" name='pin' >
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
                                                         <label class="col-md-2">LinkedIn</label>
                                                         <div class="col-md-10">
                                                             <div class="row">
@@ -407,19 +420,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                                     <div class="form-group">
                                                                         <input type="tel" class="form-control"
                                                                         placeholder="URL.." value="<?php echo $linkedin ?>" name='linkedin' >
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label class="col-md-2">Pinterest</label>
-                                                        <div class="col-md-10">
-                                                            <div class="row">
-                                                                <div class="col-md-10">
-                                                                    <div class="form-group">
-                                                                        <input type="tel" class="form-control"
-                                                                        placeholder="URL.." value="<?php echo $pinterest ?>" name='pin' >
                                                                     </div>
                                                                 </div>
                                                             </div>
