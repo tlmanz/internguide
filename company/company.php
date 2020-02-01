@@ -88,12 +88,12 @@ require_once ('../company/connect.php');
                             class="ti-menu ti-close"></i></a>
                     <div class="navbar-brand">
                         <!-- Logo icon -->
-                        <a href="index.html">
+                        <a href="#">
                             <b class="logo-icon">
                                 <!-- Dark Logo icon -->
-                                <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                                <img src="../admin/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
                                 <!-- Light Logo icon -->
-                                <img src="assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                                <img src="../admin/assets/images/logo-icon.png" alt="homepage" class="light-logo" />
                             </b>
                             <span class="logo-text">
                                 InternGuid
@@ -120,17 +120,10 @@ require_once ('../company/connect.php');
                         </li>
                     </ul>
                     <ul class="navbar-nav float-right">
-                        <li class="nav-item dropdown">
-                            
-                            <!-- <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <img src="<?php echo $loc1 ?>"  style="max-height:500px; max-width : 100px" alt="user" class="rounded-circle"
-                                    width="40">
-                                <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
-                                        class="text-dark"><?php echo $row['username'] ?></span> <i data-feather="chevron-down"
-                                        class="svg-icon"></i></span>
-                            </a> -->
-                            
+                        <li class="nav-item dropdown"> 
+                               <li class="sidebar-item"> <a class="sidebar-link" href="../users/userprofile.php"
+                                aria-expanded="false"><i class= "fa fa-left-arrow"></i><span
+                                    class="hide-menu">Back</span></a></li>   
                         </li>
                     </ul>
                 </div>
@@ -142,6 +135,7 @@ require_once ('../company/connect.php');
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
+                        
                         <!-- <li class="sidebar-item"> <a class="sidebar-link" href="index.html"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
                                     class="hide-menu">View Student List</span></a></li>
