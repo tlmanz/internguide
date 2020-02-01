@@ -2,7 +2,10 @@
 // Include config file
 require_once ('connect.php');
 session_start();
-
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_SESSION["usertype"]) || $_SESSION["usertype"] !== 'company'){
+    header("location: company_login.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -51,8 +54,8 @@ session_start();
         </div>
     </div>
     <?php
-            // $get_admin = "select * from employee where id =            .$_SESSION['id']";
-            $get_admin = "select * from employee where id = 1";
+            $s_id =  $_SESSION['id'];
+            $get_admin = "select * from employee where id ='$s_id'";
             $run_edit_admin = mysqli_query($connection,$get_admin);
             $row = mysqli_fetch_array($run_edit_admin);
 			$name = $row['ename'];
@@ -65,19 +68,7 @@ session_start();
 			$vision = $row['vision'];
 			$mission = $row['mission'];
 			$photo1 = $row['image'];
-			$loc1 = "../company/src/assets/".$photo1;
-			$photo2 = $row['photo2'];
-			$loc2 = "../company/src/assets/".$photo2;  
-			$photo3 = $row['photo3'];
-			$loc3 = "../company/src/assets/".$photo3; 
-			$photo4 = $row['photo4'];
-            $loc4 = "../company/src/assets/".$photo4;
-            $photo5 = $row['photo5'];
-            $loc5 = "../company/src/assets/".$photo5; 
-            $photo6 = $row['photo6'];
-            $loc6 = "../company/src/assets/".$photo6; 
-            $photo7 = $row['photo7'];
-            $loc7 = "../company/src/assets/".$photo7;  
+			$loc1 = "../company/src/assets/".$photo1; 
             $field = $row['field'];      
             $areas = (explode(",",$field));                         
         ?>
@@ -134,11 +125,11 @@ session_start();
                                         class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                                <a class="dropdown-item" href="company.php"><i data-feather="settings"
+                                <a class="dropdown-item" href="company_edit.php"><i data-feather="settings"
                                         class="svg-icon mr-2 ml-1"></i>
                                     Account Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="login.php"><i data-feather="power"
+                                <a class="dropdown-item" href="php/logout.php"><i data-feather="power"
                                         class="svg-icon mr-2 ml-1"></i>
                                     Logout</a>
                             </div>
@@ -172,9 +163,8 @@ session_start();
             <!-- Start First Cards -->
             <!-- *************************************************************** -->
             <?php
-                $edit_id = $_SESSION['id'];
-                //$edit_id = '2';
-                            $get_student = "select * from employee where id='$edit_id'"; //id is id for admin table
+                            $edit_id = $_SESSION['id'];
+                            $get_student = "select * from employee where id='$edit_id'";
                             $run_edit_student = mysqli_query($connection , $get_student);
                             $row_emp = mysqli_fetch_array($run_edit_student);
                             $id = $row_emp['id'];
@@ -205,8 +195,6 @@ session_start();
                             $p4_loc = "../company/src/assets/".$photo5; 
                             $photo6 = $row_emp['photo6'];
                             $p5_loc = "../company/src/assets/".$photo6; 
-                            $photo7 = $row_emp['photo7'];
-                            $p6_loc = "../company/src/assets/".$photo7;
                         
                         ?>
                         <div class="row">
@@ -482,18 +470,11 @@ session_start();
                                                         </div>
                                                         <input type='hidden' id='file-input' name='defimage5' value='<?php echo $p5_loc?>'>
                                                     </div><br>
-                                                    <div class="input-group">
-                                                        <div class="custom-file">
-                                                            <input id='file-input' name='image6' type="file" class="custom-file-input" id="inputGroupFile04">
-                                                            <label class="custom-file-label" for="inputGroupFile04">Choose Slide Image 6</label>
-                                                        </div>
-                                                        <input type='hidden' id='file-input' name='defimage6' value='<?php echo $p6_loc?>'>
-                                                    </div><br>
                                                     <div style="font-size:100% ">
                                                         <fieldset class="checkbox">
                                                             <label>
                                                                 <input type='hidden' value='0' name='check'>
-                                                                <input style='transform: scale(1.5);' type="checkbox" name='check' value="1" >&nbsp&nbsp&nbspTick This to Update without Images
+                                                                <input style='transform: scale(1.5);' type="checkbox" name='check' value="1" >&nbsp &nbsp &nbsp Tick This to Update without Images
                                                             </label>
                                                         </fieldset>
                                                     </div>
@@ -502,9 +483,9 @@ session_start();
                                                             <a href = 'company_new.php' >
                                                                 <button type='' class="btn btn-rounded btn-success"><i class='fa fa-arrow-left'></i>&nbspBack</button>
                                                             </a>
-                                                            &nbsp&nbsp
+                                                            &nbsp &nbsp
                                                             <button type ='submit' class="btn btn-rounded btn-info"><i class='fa fa-sync-alt'></i>&nbspUpdate</button>
-                                                            &nbsp&nbsp
+                                                            &nbsp &nbsp
                                                             <button type="reset" class="btn btn-rounded btn-danger"><i class='fa fa-ban'></i>&nbspReset</button>
                                                         </div>
                                                     </div>

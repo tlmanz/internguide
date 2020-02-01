@@ -74,9 +74,7 @@ require_once (__DIR__.'/../../../config/connect.php');
             $photo5 = $row['photo5'];
             $loc5 = "../company/src/assets/".$photo5; 
             $photo6 = $row['photo6'];
-            $loc6 = "../company/src/assets/".$photo6; 
-            $photo7 = $row['photo7'];
-            $loc7 = "../company/src/assets/".$photo7;  
+            $loc6 = "../company/src/assets/".$photo6;   
             $field = $row['field'];      
             $areas = (explode(",",$field));                         
         ?>
@@ -262,10 +260,6 @@ require_once (__DIR__.'/../../../config/connect.php');
                                                 <div class="carousel-item">
                                                 <img class="img-fluid" src="<?php echo $loc6 ?>" style = "height : 500px; width : 500px;overflow : hidden;"
                                                         alt="Second slide">
-                                                </div>
-                                                <div class="carousel-item">
-                                                <img class="img-fluid" src="<?php echo $loc7 ?>" style = "height : 500px; width : 500px;overflow : hidden;"
-                                                        alt="Third slide">
                                                 </div>
                                             </div>
 										</div>
