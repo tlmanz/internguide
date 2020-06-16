@@ -52,11 +52,15 @@ else{
 		if(mysqli_connect_error()){
 			die('Connect Error('.mysqli_connect_error().')'.mysqli_connect_error());
 		}else{
+			$statement = $connection->prepare('UPDATE employee SET ename=?, description=?,email=?,phone=?,address=?,mainfield=?,field=?,introduction=?,vision=?,mission=?,pin=?,linkedin=?,facebook=?,twitter=? WHERE id=?');
 
-			$query1 = "update employee set ename='$name',description='$description',email='$email',phone='$phone',address='$address',mainfield='$mainfield',field='$field',introduction='$introduction',vision='$vision',mission='$mission',pin='$pin',linkedin='$linkedin',facebook='$facebook',twitter='$twitter' where id = '$id' ";
-			$run_query = mysqli_query($connection , $query1);
-			if($run_query){
-				echo "<script>alert ('Company Profile Updated!')</script>";
+			$statement->bind_param('sssssssssssssss',$name,$description,$email,$phone,$address,$mainfield,$field,$introduction,$vision,$mission,$pin,$linkedin,$facebook,$twitter,$id);
+
+
+			if($statement->execute()){
+				echo "<script>alert ('Profile Updated Successfully!')</script>";
+				$statement->close();
+				$connection->close();
 				echo "<script>window.open('company_new.php','_self')</script>";
 			}
 			else{

@@ -69,7 +69,7 @@
                         <!-- ============================================================== -->
                         <div class="navbar-brand">
                             <!-- Logo icon -->
-                            <a href="index.php">
+                            <a href="userprofile.php">
                                 <b class="logo-icon">
                                     <!-- Dark Logo icon -->
                                     <img src="../admin/src/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
@@ -559,7 +559,7 @@
                 <!-- ============================================================== -->
                 <footer class="footer text-center text-muted">
                     All Rights Reserved by Ward12. Designed and Developed by <a
-                href="#">TeamX</a>.
+                        href="https://wrappixel.com">TeamX</a>.
                 </footer>
                 <!-- ============================================================== -->
                 <!-- End footer -->

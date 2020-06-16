@@ -174,6 +174,7 @@ if ($result = mysqli_query($connection, $sql)) {
                                 $row_user = mysqli_fetch_array($run_edit_user);
                                 $name = $row_user['firstname']." ".$row_user['lastname'];
                                 $user_photo = $row_user['cphoto'];
+                            	$dob = $row_user['dob'];
                                     //$loc = "../admin/src/assets/".$user_photo; 
 
                                 ?>
@@ -311,7 +312,7 @@ if ($result = mysqli_query($connection, $sql)) {
                          <!-- <div class="col-md-6"> -->
                             <div class="hero-info mb-4 mb-md-0">
                                <ul>
-                                  <li><span>Date of Birth</span>Aug 25, 1988</li>
+                                  <li><span>Date of Birth</span><?php echo $dob?></li>
                                   <li><span>Address</span><?php echo $useraddress?></li>
                                   <li><span>E-mail</span><?php echo $usermail?></li>
                                   <li><span>Phone </span><?php echo $phoneno?></li>

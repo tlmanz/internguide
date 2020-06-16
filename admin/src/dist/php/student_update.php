@@ -28,9 +28,13 @@ if($email !== $oldemail ){
 else{
 	$emailnum = 0;
 }
-
+$size= $_FILES['cv']['size'];
 if(!isset($_FILES['cv']) || $_FILES['cv']['error']== UPLOAD_ERR_NO_FILE){
 	$cvpath = $oldcv;
+}
+elseif($size > 10485760){
+	echo "<script>alert ('Choose a file less than 10MB')</script>";
+	echo "<script>window.open('../../html/student_edit.php?edit=$cid','_self')</script>";
 }
 else{
 	$cv_loc = __DIR__."/../../assets/studentCV/";
@@ -60,10 +64,15 @@ if($phonenum < 1 || $emailnum > 0){
 }		// echo "outside";
 else{
 		// echo "insert";
-	$query1 = "update customer_account set firstname='$firstname',lastname='$lastname', nic = '$nic', gender = '$gender', field = '$field', address='$address',telephone='$phone',email='$email', gpa = '$gpa', linkedin = '$linkedin', web = '$web', description1 = '$desc1', dob = '$dob', age = '$age', cv = '$cvpath' where cid = '$cid' ";
-	$run_query = mysqli_query($connection , $query1);
-	if($run_query){
+	$statement = $connection->prepare('UPDATE customer_account SET firstname=?, lastname=?, nic=?,gender = ?, field = ?, address=?,telephone=?,email=?, gpa = ?, linkedin = ?, web = ?, description1 = ?, dob = ?, age = ?, cv = ? WHERE cid=?');
+
+	$statement->bind_param('ssssssssdssssiss',$firstname,$lastname,$nic,$gender,$field,$address,$phone,$email,$gpa,$linkedin,$web,$desc1,$dob,$age,$cvpath,$cid);
+
+	
+	if($statement->execute()){
 		echo "<script>alert ('Profile Updated Successfully!')</script>";
+		$statement->close();
+		$connection->close();
 		echo "<script>window.open('../../html/student_show.php?edit=$cid','_self')</script>";
 	}
 	else{

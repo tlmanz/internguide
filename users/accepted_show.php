@@ -290,7 +290,7 @@ if ($result = mysqli_query($connection, $sql)) {
                                         <div class="card">
                                             <div class="card-body">
                                                 <h4 class="card-title">Company Table</h4>
-                                                <h6 class="card-subtitle">This table contains all the Companies which registered with this system</h6>
+                                                <h6 class="card-subtitle">This table contains all the Companies which accepted your request</h6>
                                                 <div class="table-responsive">
                                                     <table id="default_order" class="table table-striped table-bordered display no-wrap"
                                                     style="width:100%">

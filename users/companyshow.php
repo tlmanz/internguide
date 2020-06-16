@@ -34,7 +34,7 @@ if ($result = mysqli_query($connection, $sql)) {
     <meta name="keywords" content="resume, civic, onepage, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
-    <link href="civic/img/favicon.ico" rel="shortcut icon" />
+    <link href="../admin/src/assets/images/favicon.png" rel="shortcut icon" />
     <title>Intern Guide - One Place for All Intern Needs</title>
 
     <!-- Google Fonts -->

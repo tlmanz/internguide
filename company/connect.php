@@ -1,5 +1,5 @@
 <?php 
-	$connection = mysqli_connect('localhost','root','','career');
+	$connection = mysqli_connect('localhost','root','Tharuka@1243','career');
 	if(!$connection){
 		echo "Error: Unable to connect to MySQL." . PHP_EOL;
 		echo "Debugging errno: " . mysql_connect_errno() . PHP_EOL;

@@ -407,7 +407,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_S
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td class='border-top-0 text-muted px-2 py-4 font-14'>Administrator</td>
+                                                <td class='border-top-0 text-muted px-2 py-4 font-14'>Companies</td>
                                                 <td class='border-top-0 px-2 py-4'>
                                                     <div style='text-align:left;'>
                                                         <a>$date</a>
