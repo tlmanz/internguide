@@ -1,6 +1,6 @@
 # Internguide <img alt="Website" src="https://img.shields.io/website?down_color=red&down_message=Offline&label=internguide.projects.com.lk&up_message=Online&url=https://internguide.projects.com.lk"> <img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/tharukamannapperuma/internguide?include_prereleases"> <img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/tharukamannapperuma/internguide/total?color=green">
 
-We designed this system to connect undergraduate students who are willing to go industrial training and companies who are offering internships. This is a three-end user system and they are,
+We designed this system to connect undergraduate students who are willing to go industrial training and companies who are offering internships. There are three end-users are in the system and they are,
 
 1. Undergraduate students 
 2. Companies 
