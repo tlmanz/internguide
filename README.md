@@ -37,7 +37,7 @@ We designed this system to connect undergraduate students who are willing to go 
   - Administrator can manage, change, edit Students accounts within a limit
   - Administrator can manage, change, edit Companies accounts within a limit
   - Administrator can search students and companies 
-  - There is a super Admin whose account cannot delete
+  - There is a super Admin whose account cannot be deleted
   
  ## Development Process
  -  Planning, Implementation and Testing is very time constrained and due to that reason, we choose “Agile Development” development method
