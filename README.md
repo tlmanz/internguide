@@ -6,6 +6,11 @@ We designed this system to connect undergraduate students who are willing to go 
 2. Companies 
 3. Administrators
 
+##  Contributors
+  - Company Part  - <a href="https://github.com/Sanjaya97">Sahan Sanjaya</a>
+  - Student Part  -  <a href="https://github.com/ShakyaPr">Shakya Rathnaweera</a>
+  - Admin Part  - <a href="https://github.com/TharukaMannapperuma">Tharuka Mannapperuma</a>
+
 ##  Login Details for User Accounts
   - Super Admin - Tharuka / sadmin@1996
   - Admin - Lakshan / TL@1996
